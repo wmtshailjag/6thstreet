@@ -1,0 +1,116 @@
+.HeaderWishlist {
+  &:not(&_isBottomBar) {
+    margin-left: auto;
+
+    label {
+      display: none;
+    }
+
+    .HeaderWishlist {
+      &-Button {
+        height: auto;
+        padding: 0;
+      }
+      &-Heart {
+        display: inline-block;
+
+        &::before {
+          background: url(./icons/favorites.svg) no-repeat;
+          background-size: 25px;
+          content: "";
+          width: 25px;
+          height: 25px;
+          display: inline-block;
+          // position: absolute;
+          // left: -30px;
+          //   top: 0;
+          // margin-top: 7px;
+        }
+
+        &_isBlack {
+          &::before {
+            background: url(./icons/favorites-active.svg) no-repeat;
+            background-size: 25px;
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+
+      &-Count {
+        display: none;
+
+        &_have {
+          color: $white;
+          display: inline-block;
+          position: absolute;
+          font-size: 10px;
+          left: 1px;
+          text-align: center;
+          top: 5px;
+          width: 23px;
+          z-index: 99;
+        }
+      }
+    }
+  }
+
+  &-Count {
+    display: none;
+  }
+
+  &_isBottomBar {
+    display: block;
+    text-transform: none;
+    font-size: 10px;
+    font-weight: var(--fw-medium);
+    letter-spacing: -0.2px;
+    line-height: 14px;
+    color: var(--inactive-button-header-color);
+    height: 40px;
+    width: 40px;
+    margin: 12px auto 0;
+    padding: 0;
+    text-align: center;
+
+    button {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      right: 0;
+      background: url(./icons/favorites.svg) no-repeat center center;
+      background-size: 24px;
+      width: 27px;
+      height: 29px;
+      display: inline-block;
+      font-size: 0;
+      filter: invert(26%) sepia(2%) saturate(21%) hue-rotate(43deg)
+        brightness(90%) contrast(80%);
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &_isWishlist {
+    color: var(--active-button-header-color);
+
+    &::before {
+      filter: invert(43%) sepia(60%) saturate(1535%) hue-rotate(335deg)
+        brightness(107%) contrast(95%);
+    }
+  }
+
+  &_isArabic {
+    &:not(&_isBottomBar) {
+      div {
+        &::before {
+          left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+main {
+    &.HomePage {
+        @include desktop {
+            padding-top: 156px;
+        }
+    }
+}
+
+.Header {
+    @include desktop {
+        background-color: #ffffff;
+        height: auto;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        top: 0;
+    }
+    @at-root .hiddenHeader {
+        /* stylelint-disable-next-line length-zero-no-unit */
+        --header-height: 0px;
+        --breadcrumb-padding-main: 0px;
+        .Breadcrumbs {
+            display: none;
+        }
+        .Header {
+            display: none;
+        }
+        .Footer {
+            display: none;
+        }
+        #ori-chatbot-root {
+            display: none;
+        }
+        #branch-banner-iframe {
+            display: none !important;
+        }
+        @include mobile {
+            .Container {
+                margin-top: 0;
+            }
+            #single {
+                .spck-box-one {
+                    margin-top: 0;
+                }
+            }
+            .LiveShopping {
+                padding-top: 7px;
+            }
+        }
+    }
+}

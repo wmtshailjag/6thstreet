@@ -1,0 +1,12 @@
+{
+  "name": "@6thstreetdotcom/algolia-sdk",
+  "version": "1.9.0",
+  "description": "Algolia wrapper to be used on both mobile-app and web",
+  "main": "index.js",
+  "dependencies": {
+    "algoliasearch": "^3.35.1",
+    "i18n-js": "^3.5.1",
+    "node-fetch": "^2.6.0",
+    "url-parse": "^1.4.7"
+  }
+}

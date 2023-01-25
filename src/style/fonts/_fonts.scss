@@ -1,0 +1,143 @@
+// Ultra light
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-ultra-light;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-UltraLight.woff2'), url('./AvenirNextCyr-UltraLight.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-ultra-light;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-UltraLightIt.woff2'), url('./AvenirNextCyr-UltraLightIt.ttf') format("ttf");
+}
+
+// Thin
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-thin;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Thin.woff2'), url('./AvenirNextCyr-Thin.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-thin;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-ThinItalic.woff2'), url('./AvenirNextCyr-ThinItalic.ttf') format("ttf");
+}
+
+// Light
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-light;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Light.woff2'), url('./AvenirNextCyr-Light.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-light;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-LightItalic.woff2'), url('./AvenirNextCyr-LightItalic.ttf') format("ttf");
+}
+
+// Regular
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-regular;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Regular.woff2'), url('./AvenirNextCyr-Regular.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-regular;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Italic.woff2'), url('./AvenirNextCyr-Italic.ttf') format("ttf");
+}
+
+// Medium
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-medium;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Medium.woff2'), url('./AvenirNextCyr-Medium.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-medium;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-MediumItalic.woff2'), url('./AvenirNextCyr-MediumItalic.ttf') format("ttf");
+}
+
+// Demi
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-demi;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Demi.woff2'), url('./AvenirNextCyr-Demi.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-demi;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-DemiItalic.woff2'), url('./AvenirNextCyr-DemiItalic.ttf') format("ttf");
+}
+
+// Bold
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-bold;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Bold.woff2'), url('./AvenirNextCyr-Bold.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-bold;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-BoldItalic.woff2'), url('./AvenirNextCyr-BoldItalic.ttf') format("ttf");
+}
+
+// Heavy
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-heavy;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-Heavy.woff2'), url('./AvenirNextCyr-Heavy.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $font-family;
+    font-style: $fs-italic;
+    font-weight: $fw-heavy;
+    font-display: $font-display;
+    src: url('./AvenirNextCyr-HeavyItalic.woff2'), url('./AvenirNextCyr-HeavyItalic.ttf') format("ttf");
+}
+
+@font-face {
+    font-family: $cairo-font-family;
+    font-style: $fs-normal;
+    font-weight: $fw-demi;
+    font-display: $font-display;
+    src: url('./Cairo-SemiBold.woff2'), url('./Cairo-SemiBold.ttf') format("ttf");
+}

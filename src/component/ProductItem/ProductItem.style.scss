@@ -1,0 +1,319 @@
+/**
+ * @category  6thstreet
+ * @author    Alona Zvereva <alona.zvereva@scandiweb.com>
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ * @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+ */
+
+ .ProductItem {
+    font-weight: var(--fw-regular);
+    // margin: 20px 5px;
+    min-width: 0;
+    padding-left: 0;
+    position: relative;
+    text-align: center;
+    &-SizeFilterBar{
+      height: 40px !important;
+      min-height: 40px !important;
+      overflow-x: scroll;
+      margin-bottom: 15px !important;
+      display: flex;
+      justify-content: center;
+      &_isArabic {
+        display: unset;
+        .PLPFilters{
+          &-QuickCategories {
+            overflow-x: auto;
+            overflow-y: hidden;
+            &_isArabic {
+              width: 425px !important;
+            }
+          }
+        }
+      }
+    }
+    &-FilterBar {
+      height: 55px !important;
+      min-height: 55px !important;
+      overflow-x: scroll;
+      margin-bottom: 0px !important;
+      &::after {
+        content: "";
+      }
+    }
+    &-BlankFilterBar {
+      height: 50px !important;
+      min-height: 50px !important;
+      &::after {
+        content: "";
+      }
+    }
+    @include desktop {
+      min-height: 368px;
+    }
+  
+    @include mobile {
+      min-height: 273px;
+    }
+  
+    &:last-child {
+      margin-bottom: 25.7px;
+    }
+  
+    &_isArabic {
+      .Price {
+        display: flex;
+        flex-direction: none;
+  
+        &-Wrapper {
+          justify-content: center;
+        }
+      }
+  
+      .WishlistIcon {
+        &-Icon {
+          left: unset !important;
+        }
+      }
+    }
+  
+    &::before {
+      display: none;
+    }
+  
+    &-ImageBox {
+      padding-top: 100%;
+      background: #ffffff;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .Image_imageStatus_2 {
+      display: flex;
+    }
+  
+    .Image {
+      top: 0;
+      left: 0;
+      padding-bottom: 0 !important;
+  
+      img {
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        position: static;
+        object-fit: initial;
+      }
+    }
+  
+    &:hover {
+      @include desktop {
+        //box-shadow: 0 0 7px #d3d3d3;
+      }
+    }
+  
+    a {
+      text-decoration: none;
+    }
+  
+    &-Brand {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 19px;
+      text-align: start;
+      margin: 0px 0px 6px 0px;
+  
+      @include mobile {
+        font-size: 11px;
+        letter-spacing: 0.18px;
+        line-height: 15px;
+      }
+    }
+  
+    &-OutOfStock {
+      display: block;
+      font-size: 13px;
+      line-height: 30px;
+      text-align: center;
+      color: var(--Cardinal);
+      text-transform: uppercase;
+      font-family: "Avenir Next Medium";
+    }
+  
+    &-Title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 80%;
+      margin-bottom: 0;
+      font-size: 13px;
+      letter-spacing: 0px;
+      line-height: 15px;
+      color: #4a4a4a;
+      text-align: left;
+  
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  
+    .ProductLabel {
+      width: 35px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #c8b581;
+      border-radius: 0 10px 10px 0;
+      position: absolute;
+      font-size: 11px;
+      color: #ffffff;
+      line-height: 13px;
+      font-weight: var(--fw-medium);
+    }
+  
+    .ProductTag {
+      width: 90px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #99cc99;
+      border-radius: 0 10px 10px 0;
+      position: absolute;
+      font-size: 11px;
+      color: #ffffff;
+      line-height: 13px;
+      font-weight: var(--fw-medium);
+    }
+  
+    .ProductContainer {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      justify-content: center;
+      top: 12px;
+      z-index: 1;
+      opacity: 0.7;
+      width: 35px;
+      height: 20px;
+    }
+  
+    .ProductTagContainer {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      justify-content: center;
+      top: 12px;
+      z-index: 1;
+      opacity: 0.7;
+      width: 90px;
+      height: 20px;
+    }
+  
+    .WishlistIcon {
+      width: 28px;
+      height: 28px;
+  
+      &-Icon {
+        width: 20px;
+        height: 20px;
+        background-size: 20px;
+        left: -1px;
+        top: 5px;
+      }
+    }
+  
+    // .WishlistIcon {
+    //     &-Icon{
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         padding: initial
+    //     }
+    // }
+    &_isArabic {
+      .ProductLabel {
+        border-radius: 10px 0 0 10px;
+        right: 0;
+      }
+  
+      .ProductTag {
+        border-radius: 10px 0 0 10px;
+        right: 0;
+      }
+  
+      .WishlistIcon {
+        left: 0.8rem;
+        right: auto;
+  
+        &-Icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: initial;
+        }
+      }
+    }
+  
+    .Price {
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      text-align: start;
+      margin-top: 8px;
+      display: flex;
+  
+      &-Wrapper {
+        justify-content: center;
+        margin-right: 5px;
+  
+        &_isArabic {
+          margin-left: 5px;
+        }
+      }
+  
+      &-Special,
+      &-Discount {
+        display: none;
+  
+        &_discount {
+          display: inline;
+          color: #d12228;
+        }
+      }
+  
+      &-Del {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+        align-self: center;
+      }
+  
+      &-Base {
+        &_discount {
+          // font-size: 11px;
+          // font-weight: var(--fw-demi);
+          // margin-right: 10px;
+        }
+      }
+    }
+  
+    &-AddToCart {
+      position: absolute;
+      bottom: 0%;
+      width: 100%;
+      border-radius: 30px 30px 0 0;
+      background-color: #ffffff;
+      min-height: 150px;
+      display: none;
+    }
+  
+    &:hover {
+      .ProductItem-AddToCart {
+        display: block;
+      }
+    }
+  }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>23DE4204-EB55-40C0-9305-E99C9DC5FCB0</title>
+    <defs>
+        <rect id="path-1" x="0" y="50" width="1440" height="435"></rect>
+        <filter x="-0.0%" y="-0.3%" width="100.1%" height="100.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.147871377 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Dsk-Shopping" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dsk-Home" transform="translate(-919.000000, -8048.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="8546"></rect>
+            <g id="Footer" transform="translate(0.000000, 7912.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F6F6F6" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group" transform="translate(479.000000, 114.000000)">
+                    <g id="elements/social-circle" transform="translate(418.000000, 0.000000)">
+                        <circle id="Oval" fill="#FFFFFF" cx="32" cy="32" r="32"></circle>
+                        <g id="icons/facebook" transform="translate(22.653061, 22.653061)" fill="#000000">
+                            <g id="facebook" transform="translate(5.833333, 2.500000)">
+                                <path d="M8.25,0 L6,0 C3.92893219,0 2.25,1.67893219 2.25,3.75 L2.25,6 L0,6 L0,9 L2.25,9 L2.25,15 L5.25,15 L5.25,9 L7.5,9 L8.25,6 L5.25,6 L5.25,3.75 C5.25,3.33578644 5.58578644,3 6,3 L8.25,3 L8.25,0 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

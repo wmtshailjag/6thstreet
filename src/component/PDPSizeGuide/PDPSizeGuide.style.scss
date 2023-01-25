@@ -1,0 +1,318 @@
+:root {
+  --button-border-color: #000000;
+  --divider-color: #efefef;
+  --scrollbar-color: #f3f3f3;
+  --scrollbar-thumb-color: #d1d3d4;
+  --guide-button-color: #4a4a4a;
+}
+.PDPSizeGuide {
+  &-HeaderContainer {
+    width: 100%;
+    overflow: visible;
+    min-height: 2rem;
+    margin-bottom: 2rem;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Divider {
+    width: 100%;
+    border-top: solid 1px var(--divider-color);
+    margin-top: none;
+
+    @include desktop {
+      float: left;
+    }
+  }
+
+  &-Header {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-weight: var(--fw-demi);
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+
+    @include desktop {
+      position: static;
+      transform: translateX(0);
+      left: 0;
+      text-align: left;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+
+      &_isArabic {
+        text-align: right;
+      }
+    }
+  }
+
+  &-SubHeader {
+    position: relative;
+    font-size: 14px;
+    font-weight: var(--fw-regular);
+    display: block;
+  }
+
+  &-Line {
+    overflow-y: hidden;
+    // width: 115%;
+    // margin-left: -7%;
+    width: 108%;
+    margin-left: -1rem;
+    margin-top: 1.5rem;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.39);
+
+    &_isArabic {
+      margin-left: 0;
+      margin-right: -7%;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &-BackBtn {
+    float: left;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 6px;
+    margin-top: 0.3rem;
+    margin-left: 5px;
+    transform: rotate(-225deg);
+    z-index: 100;
+
+    &_isArabic {
+      float: right;
+      transform: rotate(-45deg);
+      margin-left: 0;
+      margin-right: 5px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &-Button {
+    cursor: pointer;
+    padding: 0.4rem 0rem 0.4rem 0.8rem;
+    font-size: 13px;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-align: right;
+    text-decoration: underline;
+    &_isArabic {
+      padding-left: 0;
+    }
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &-Modal {
+    width: 100%;
+    height: 100%;
+    // justify-content: flex-end;
+    justify-content: center;
+
+    &_isOpen {
+      .Popup-Content {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+        @include mobile {
+        overflow: auto;
+        }
+
+        @include desktop {
+          overflow: visible;
+          padding: 1%;
+          // width: 28.5%;
+          width: 45.5%;
+          max-height: calc(100% - 50px);
+          height: 100vh;
+          border-radius: 0;
+          // top: 180px;
+        }
+
+        @include tablet {
+          min-height: 100%;
+        }
+      }
+    }
+
+    &_isArabic {
+      direction: rtl;
+    }
+  }
+
+  &-GuideContainer {
+    position: relative;
+    height: 100%;
+  }
+
+  &-TableContainer {
+    // margin-bottom: 14rem;
+
+    @include desktop {
+      position: absolute;
+      bottom: 0;
+      //   top: 7%;
+      top: 11%;
+      width: 100%;
+      padding-right: 6%;
+      overflow-y: auto;
+
+      &_isArabic {
+        padding-right: 0;
+        padding-left: 0;
+
+        .ExpandableContent {
+          width: 100%;
+
+          &-Button {
+            &:after {
+              right: unset;
+              left: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      &::-webkit-scrollbar {
+        background-color: var(--scrollbar-color);
+        width: 1rem;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb-color);
+      }
+    }
+
+    .ExpandableContent {
+      width: 100%;
+
+      &-Heading {
+        float: left;
+        font-size: 16px;
+        font-weight: var(--fw-bold);
+      }
+
+      &-Button {
+        width: 100%;
+        float: left;
+        border: none;
+        border-width: unset;
+        padding: 6px;
+        transform: none;
+        z-index: 1;
+        height: 70px;
+
+        &_isArabic {
+          float: left;
+          margin-left: 5px;
+          transform: rotate(-225deg);
+        }
+
+        &:before {
+          content: none;
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: solid black;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 3px 6px 6px 3px;
+          margin: 0 auto;
+          transform: rotate(-45deg);
+          right: 0;
+          top: 30px;
+          background: transparent;
+        }
+      }
+
+      &-Body {
+        display: none;
+
+        &_isOpen {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+.Popup {
+  &-Content {
+    .PDPSizeGuide {
+      &-TableContainer {
+        .ExpandableContent {
+          &-Button {
+            &_isContentExpanded {
+              &:after {
+                transform: rotate(-135deg);
+              }
+            }
+          }
+
+          &-Content {
+            .SizeTable {
+              display: none;
+            }
+
+            &_isContentExpanded {
+              .SizeTable {
+                display: block;
+              }
+            }
+
+            margin-top: 0;
+          }
+        }
+
+        &_isArabic {
+          padding-right: 0;
+
+          .ExpandableContent {
+            width: 100%;
+
+            &-Button {
+              &:after {
+                right: unset;
+                left: 0;
+                margin: 0;
+                transform: rotate(135deg);
+              }
+
+              &_isContentExpanded {
+                &:after {
+                  transform: rotate(-135deg);
+                }
+              }
+            }
+
+            &-Heading {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

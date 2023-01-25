@@ -1,0 +1,738 @@
+.CheckoutAddressForm {
+  .FieldForm {
+    &-Fields {
+      margin-bottom: 0;
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 2;
+      display: grid;
+      grid-template-columns: 20% 10% 20% 10% 40%;
+
+      @include before-desktop {
+        grid-template-columns: 35% 15% 10% 40%;
+      }
+
+      .Field-Label {
+        color: #000000;
+        font-size: 18px;
+        font-weight: var(--fw-demi);
+      }
+
+      input,
+      select {
+        font-size: 14px;
+        padding: 16px 15px;
+        height: 50px;
+      }
+
+      input {
+        text-transform: none;
+
+        &::placeholder {
+          text-transform: uppercase;
+        }
+      }
+
+      .Field {
+        &[type="checkbox"],
+        &[type="radio"] {
+          width: 0;
+        }
+
+        &:first-child {
+          grid-column: 3 / span 5;
+          grid-row: 1;
+          justify-content: space-between;
+          background: #ffffff;
+          padding: 20px 35px;
+          margin-bottom: 15px;
+          pointer-events: none;
+          text-align-last: 50%;
+
+          @include before-desktop {
+            display: none;
+          }
+
+          select {
+            padding-left: 35px;
+          }
+
+          label {
+            position: absolute;
+            bottom: 28px;
+            z-index: 1;
+          }
+
+          .FieldSelect {
+            &::after {
+              content: none;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          grid-column: 3 / span 5;
+          grid-row: 1;
+          justify-content: space-between;
+          background: #ffffff;
+          padding: 20px 35px;
+          margin-bottom: 15px;
+          pointer-events: none;
+          text-align-last: 50%;
+
+          @include before-desktop {
+            display: none;
+          }
+
+          select {
+            padding-left: 35px;
+          }
+
+          label {
+            position: absolute;
+            bottom: 28px;
+            z-index: 1;
+          }
+
+          .FieldSelect {
+            &::after {
+              content: none;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          grid-column: 1 / span 5;
+          grid-row: 1;
+
+          @include desktop {
+            padding-top: 20px;
+            grid-row: 2;
+          }
+
+          label {
+            padding-bottom: 22px;
+
+            @include before-desktop {
+              display: none;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          grid-column: 1 / span 5;
+          grid-row: 2;
+
+          @include desktop {
+            grid-row: 3;
+          }
+        }
+
+        &:nth-child(5) {
+          input {
+            pointer-events: none;
+            text-align: right;
+          }
+
+          ::-webkit-input-placeholder {
+            text-align: right;
+          }
+
+          :-moz-placeholder {
+            text-align: right;
+          }
+
+          grid-column: 1;
+          grid-row: 5;
+          padding-right: 5px;
+          padding-bottom: 20px;
+
+          @include desktop {
+            grid-row: 6;
+          }
+
+          label {
+            position: absolute;
+            top: 15px;
+            z-index: 1;
+          }
+        }
+
+        &_type_hide {
+          display: none;
+        }
+
+        &:nth-child(6) {
+          grid-column: 3 / span 4;
+          grid-row: 4;
+          padding-left: 5px;
+
+          @include desktop {
+            grid-column: 4 / span 5;
+            grid-row: 5;
+          }
+
+          label {
+            display: none;
+          }
+
+          ::after {
+            background: none;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-2px) rotate(45deg);
+            right: 20px;
+            border-style: solid;
+            border-color: #000000;
+            border-width: 0 1px 1px 0;
+          }
+        }
+
+        &:nth-child(8) {
+          grid-column: 1 / span 2;
+          grid-row: 4;
+          padding-right: 5px;
+
+          @include desktop {
+            grid-column: 1 / span 3;
+            grid-row: 5;
+          }
+
+          ::after {
+            background: none;
+            width: 6px;
+            height: 6px;
+            transform: translateY(-2px) rotate(45deg);
+            right: 20px;
+            border-style: solid;
+            border-color: #000000;
+            border-width: 0 1px 1px 0;
+          }
+        }
+
+        &:nth-child(7) {
+          grid-column: 1 / span 5;
+          grid-row: 3;
+
+          @include desktop {
+            grid-row: 4;
+          }
+        }
+
+        &:nth-child(9) {
+          grid-column: 1;
+          grid-row: 5;
+
+          @include desktop {
+            grid-row: 6;
+          }
+        }
+
+        &:nth-child(10) {
+          grid-column: 2 / span 5;
+          grid-row: 5;
+          padding-left: 5px;
+          padding-bottom: 20px;
+
+          @include desktop {
+            grid-row: 6;
+          }
+        }
+
+        background: #ffffff;
+        padding: 0 20px 10px;
+        margin: 0;
+
+        @include desktop {
+          padding: 0 30px 10px;
+        }
+      }
+    }
+  }
+  &_showCountry {
+    .FieldForm {
+      &-Fields {
+        .Field {
+          &:nth-child(2) {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+  &_ClickNCollect {
+    .FieldForm {
+      &-Fields {
+        .Field {
+          &:nth-child(5) {
+            grid-column: 1;
+            grid-row: 5 !important;
+            @include desktop {
+              grid-row: 5 !important;
+            }
+          }
+
+          &:nth-child(6) {
+            grid-column: 2 / span 5 !important;
+            grid-row: 5;
+            @include desktop {
+              grid-column: 2 / span 5 !important;
+              grid-row: 5 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  &_isGuestForm {
+    .FieldForm {
+      &-Fields {
+        margin-bottom: 0;
+        grid-row: 1 / span 2;
+        grid-column: 1 / span 2;
+        display: grid;
+        grid-template-columns: 20% 10% 20% 10% 40%;
+
+        @include before-desktop {
+          grid-template-columns: 35% 15% 10% 40%;
+        }
+
+        .Field-Label {
+          color: #000000;
+          font-size: 18px;
+          font-weight: var(--fw-demi);
+        }
+
+        input,
+        select {
+          font-size: 14px;
+          padding: 16px 15px;
+          height: 50px;
+          -webkit-appearance: none;
+        }
+
+        .Field {
+          &[type="checkbox"],
+          &[type="radio"] {
+            width: 0;
+          }
+
+          &:first-child {
+            grid-column: 1 / span 5;
+            grid-row: 3;
+            justify-content: unset;
+            padding: 0 20px 10px;
+            margin-bottom: unset;
+            pointer-events: all;
+            text-align-last: unset;
+            display: unset;
+
+            @include desktop {
+              grid-row: 4;
+              padding: 0 30px 10px;
+            }
+            @include tablet {
+              padding: 0 0 10px;
+            }
+            @include mobile {
+              padding-left: 0;
+              padding-right: 0;
+            }
+          }
+
+          &:nth-child(2) {
+            grid-column: 3 / span 5;
+            grid-row: 1;
+            justify-content: space-between;
+            background: #ffffff;
+            padding: 20px 35px;
+            margin-bottom: 15px;
+            pointer-events: none;
+            text-align-last: 50%;
+
+            @include before-desktop {
+              display: none;
+            }
+
+            select {
+              padding-left: 35px;
+            }
+
+            label {
+              position: absolute;
+              bottom: 28px;
+              z-index: 1;
+            }
+
+            .FieldSelect {
+              &::after {
+                content: none;
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            grid-column: 1 / span 5;
+            grid-row: 1;
+
+            @include desktop {
+              padding-top: 20px;
+              grid-row: 2;
+            }
+
+            label {
+              padding-bottom: 22px;
+
+              @include before-desktop {
+                display: none;
+              }
+            }
+          }
+
+          &:nth-child(4) {
+            grid-column: 1 / span 5;
+            grid-row: 2;
+
+            @include desktop {
+              grid-row: 3;
+            }
+          }
+
+          &:nth-child(5) {
+            input {
+              pointer-events: none;
+              text-align: right;
+            }
+
+            ::-webkit-input-placeholder {
+              text-align: right;
+            }
+
+            :-moz-placeholder {
+              text-align: right;
+            }
+
+            grid-column: 1;
+            grid-row: 6;
+            padding-right: 5px;
+            padding-bottom: 20px;
+
+            @include desktop {
+              grid-row: 7;
+            }
+
+            label {
+              position: absolute;
+              top: 15px;
+              z-index: 1;
+            }
+          }
+
+          &:nth-child(6) {
+            grid-column: 3 / span 4;
+            grid-row: 5;
+            padding-left: 5px;
+
+            @include desktop {
+              grid-column: 4 / span 5;
+              grid-row: 6;
+            }
+
+            label {
+              display: none;
+            }
+
+            ::after {
+              background: none;
+              width: 6px;
+              height: 6px;
+              transform: translateY(-2px) rotate(45deg);
+              right: 20px;
+              border-style: solid;
+              border-color: #000000;
+              border-width: 0 1px 1px 0;
+            }
+          }
+
+          &_type_hide {
+            display: none;
+          }
+
+          &:nth-child(7) {
+            grid-column: 1 / span 2;
+            grid-row: 5;
+            padding-right: 5px;
+
+            @include desktop {
+              grid-column: 1 / span 3;
+              grid-row: 6;
+            }
+
+            ::after {
+              background: none;
+              width: 6px;
+              height: 6px;
+              transform: translateY(-2px) rotate(45deg);
+              right: 20px;
+              border-style: solid;
+              border-color: #000000;
+              border-width: 0 1px 1px 0;
+            }
+
+            &:before {
+              content: none;
+            }
+          }
+
+          &:nth-child(9) {
+            grid-column: 1 / span 5;
+            grid-row: 4;
+
+            @include desktop {
+              grid-row: 5;
+            }
+          }
+
+          &:nth-child(8) {
+            display: none;
+          }
+
+          &:nth-child(10) {
+            grid-column: 2 / span 5;
+            grid-row: 6;
+            padding-left: 5px;
+            padding-bottom: 20px;
+
+            @include desktop {
+              grid-row: 7;
+            }
+          }
+
+          &:nth-child(11) {
+            grid-column: 1;
+            grid-row: 5;
+
+            @include desktop {
+              grid-row: 7;
+            }
+          }
+
+          background: #ffffff;
+          padding: 0 20px 10px;
+          margin: 0;
+
+          @include desktop {
+            padding: 0 30px 10px;
+          }
+          @include tablet {
+            padding: 0 0px 10px;
+          }
+          @include mobile {
+            padding: 0 0px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .Field {
+    &_type_select {
+      ul {
+        overflow-y: auto;
+      }
+    }
+  }
+}
+.PageWrapper {
+  &_isArabic {
+    .CheckoutAddressForm {
+      .FieldForm {
+        &-Fields {
+          .Field {
+            &:first-child {
+              select {
+                padding-right: 35px;
+              }
+            }
+
+            &:nth-child(4) {
+              padding-right: 20px;
+              padding-left: 5px;
+
+              @include desktop {
+                padding-right: 30px;
+                padding-left: 5px;
+              }
+
+              input {
+                text-align: left;
+              }
+
+              ::-webkit-input-placeholder {
+                text-align: left;
+              }
+
+              :-moz-placeholder {
+                text-align: left;
+              }
+            }
+
+            &:nth-child(5) {
+              padding-left: 20px;
+              padding-right: 5px;
+
+              @include desktop {
+                padding-left: 30px;
+                padding-right: 5px;
+              }
+
+              input {
+                text-align: left;
+              }
+
+              ::-webkit-input-placeholder {
+                text-align: left;
+              }
+
+              :-moz-placeholder {
+                text-align: left;
+              }
+            }
+
+            &:nth-child(6) {
+              padding-right: 20px;
+              padding-left: 5px;
+
+              @include desktop {
+                padding-right: 30px;
+                padding-left: 5px;
+              }
+
+              ::after {
+                right: unset;
+                left: 20px;
+              }
+            }
+
+            &:nth-child(8) {
+              &::before {
+                display: none;
+              }
+            }
+
+            &:nth-child(10) {
+              padding-left: 0;
+              padding-right: 5px;
+              @include desktop {
+                padding-left: 30px;
+                padding-right: 5px;
+              }
+            }
+          }
+        }
+      }
+
+      &_isGuestForm {
+        .FieldForm {
+          &-Fields {
+            .Field {
+              &:nth-child(2) {
+                select {
+                  padding-right: 35px;
+                }
+              }
+
+              &:nth-child(4) {
+                padding-right: 0;
+                padding-left: 0;
+
+                @include desktop {
+                  padding-right: 30px;
+                  padding-left: 30px;
+                }
+
+                input {
+                  text-align: right;
+                }
+
+                ::-webkit-input-placeholder {
+                  text-align: right;
+                }
+
+                :-moz-placeholder {
+                  text-align: right;
+                }
+              }
+
+              &:nth-child(5) {
+                padding-left: 5px;
+                padding-right: 0;
+
+                @include desktop {
+                  padding-left: 5px;
+                  padding-right: 30px;
+                }
+
+                ::after {
+                  right: unset;
+                  left: 20px;
+                }
+              }
+
+              &:nth-child(6) {
+                padding-left: 0;
+                padding-right: 5px;
+
+                @include desktop {
+                  padding-left: 30px;
+                  padding-right: 5px;
+                }
+
+                ::after {
+                  right: unset;
+                  left: 20px;
+                }
+              }
+
+              &:nth-child(7) {
+                padding-right: 0;
+                padding-left: 5px;
+
+                @include desktop {
+                  padding-right: 30px;
+                  padding-left: 5px;
+                }
+
+                ::after {
+                  right: unset;
+                  left: 20px;
+                }
+              }
+
+              &:nth-child(8) {
+                &::before {
+                  display: none;
+                }
+
+                &:after {
+                  content: none;
+                }
+              }
+
+              &:nth-child(9) {
+                padding-left: 0;
+                padding-right: 0;
+                @include desktop {
+                  padding-left: 30px;
+                  padding-right: 30px;
+                }
+                &:before {
+                  content: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

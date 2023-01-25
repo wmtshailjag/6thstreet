@@ -1,0 +1,107 @@
+.MyAccountReturnCreate {
+  margin-bottom: 20px;
+
+  &-Item {
+    padding-left: 0;
+
+    &::before {
+      content: unset;
+    }
+  }
+
+  &-OrderNumber {
+    font-weight: var(--fw-medium);
+    font-size: 22px;
+    margin-bottom: 40px;
+    text-transform: none;
+
+    @include before-desktop {
+      display: none;
+    }
+  }
+
+  &-Heading {
+    font-weight: var(--fw-regular);
+    font-size: 14px;
+    margin: 15px 0 35px;
+    text-align: center;
+    text-transform: none;
+
+    @include desktop {
+      //   margin-left: 40px;
+      text-align: unset;
+    }
+  }
+
+  &-Actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 320px;
+
+    @include desktop {
+      flex-direction: row-reverse;
+      margin: 10px 0 0 40px;
+    }
+
+    button {
+      font-size: 13px;
+
+      @include desktop {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-Button {
+    &Discard {
+      --button-background: #ffffff;
+      --button-border: #000000;
+      --button-border-width: 2px;
+      --button-color: #000000;
+      --button-hover-background: #000000;
+      --button-hover-color: var(--button-color);
+
+      @include desktop {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: var(--primary-base-color);
+        --button-hover-background: transparent;
+        --button-hover-border: transparent;
+        --button-hover-color: var(--button-color);
+
+        text-transform: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: #000000;
+        color: #ffffff;
+
+        @include desktop {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &Submit {
+      --button-background: #000000;
+      --button-border: #000000;
+      --button-border-width: 2px;
+      --button-color: #ffffff;
+      --button-hover-border: #000000;
+
+      min-width: 175px;
+
+      &:not(:disabled) {
+        &:hover,
+        &:focus,
+        &:active {
+          background: #ffffff;
+          color: #000000;
+        }
+      }
+    }
+  }
+}

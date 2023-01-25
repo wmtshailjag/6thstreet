@@ -1,0 +1,474 @@
+
+.renderSliderExperienceWrapper {
+    // margin-right: 30px;
+    // margin-left: 30px;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 40px;
+    margin-bottom: 60px !important;
+    max-width: var(--container-max-width);
+    text-align: left;
+
+    // @include mobile {
+    //     margin-top: 20px;
+    // }
+
+
+    &_isArabic {
+        text-align: right;
+    }
+
+    .SliderWithExperienceWrapper.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1);
+
+        .SliderWithExperiences {
+            a {
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+            }
+        }
+    }
+
+    .SliderWithExperienceWrapper {
+        display: flex;
+        // grid-gap: 10px;
+        overflow-x: auto;
+        scroll-behavior: auto;
+        scrollbar-width: none;
+        margin-top: 60px;
+
+        /* Firefox */
+        &::-webkit-scrollbar {
+            height: 4px;
+            border: 1px solid #d5d5d5;
+            display: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #585757;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #dcdcdc;
+        }
+
+        @include mobile {
+            // margin-right: 10px;
+            // margin-left: 10px;
+            margin-top: 0px;
+        }
+
+        @include tablet {
+            margin-top: 30px;
+        }
+
+    }
+
+
+    .SliderWithLabelWrapper.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        transform: scale(1);
+
+        .SliderWithLabel {
+            a {
+                cursor: grabbing;
+                cursor: -webkit-grabbing;
+            }
+        }
+    }
+
+    .SliderWithLabelWrapper {
+        display: flex;
+        // grid-gap: 10px;
+        overflow-x: auto;
+        scroll-behavior: auto;
+        scrollbar-width: none;
+
+        /* Firefox */
+        &::-webkit-scrollbar {
+            height: 4px;
+            border: 1px solid #d5d5d5;
+            display: none;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #585757;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #dcdcdc;
+        }
+
+        @include mobile {
+            // margin-right: 10px;
+            // margin-left: 10px;
+        }
+
+    }
+
+    .SliderWithLabel {
+        display: inline-block;
+        margin-right: 10.5px;
+        // padding: 10px;
+
+        &:nth-last-child(2) {
+            margin-right: 0;
+        }
+
+        &-Link {
+            width: 100%;
+            display: block;
+        }
+
+        &_isArabic {
+
+            &:nth-last-child(2) {
+                // margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            &:nth-child(2) {
+                // margin-left: 10px;
+                margin-right: 0px;
+            }
+        }
+    }
+
+    img {
+        // min-width: 238px;
+        width: 84px;
+        // height: 100%;
+        max-width: 84px;
+        margin-top: 42px;
+        margin-left: 35%;
+        object-fit: cover;
+
+        @include tablet {
+            min-width: 163px;
+            margin-left: 30%;
+            margin-top: 15px;
+            width: 50px;
+            max-width: 50px;
+            height: auto;
+        }
+
+        @include mobile {
+            // min-width: 41vw;
+
+            min-width: 163px;
+            margin-left: 35%;
+            margin-top: 20px;
+            width: 50px;
+            max-width: 50px;
+            height: auto;
+        }
+    }
+
+    .SliderText {
+        font-size: 24px;
+        line-height: 33px;
+        margin-top: 25px;
+        text-align: center;
+        font-weight: 600;
+        margin-left: 21px;
+        margin-right: 21px;
+
+        @include tablet {
+            color: #000000;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: 25px;
+            margin-left: 7px;
+            margin-right: 7px;
+            margin-top: 10px;
+        }
+
+        @include mobile {
+            font-size: 18px;
+            line-height: 25px;
+            margin-left: 7px;
+            margin-right: 7px;
+            margin-top: 21px;
+        }
+    }
+
+    .SliderTextDescri {
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: 16px;
+        text-align: center;
+        // font-weight: 500;
+        margin-left: 21px;
+        margin-right: 21px;
+
+        @include tablet {
+            color: #000000;
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 19px;
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 14px;
+            // margin-bottom: 10px;
+        }
+
+        @include mobile {
+            font-size: 14px;
+            // margin-top: 0;
+            line-height: 19px;
+            margin-left: 12px;
+            margin-right: 12px;
+            margin-top: 15px;
+        }
+    }
+
+
+
+    &-Label {
+        display: flex;
+        position: absolute;
+        bottom: 15rem;
+        right: 70%;
+        text-transform: uppercase;
+        align-items: center;
+        vertical-align: center;
+    }
+
+    .Slider {
+        &-Crumbs {
+            position: static;
+        }
+
+        &-Crumb {
+            width: 9px;
+            height: 9px;
+            border: 1px solid $black;
+            background: $white;
+
+            &_isActive {
+                width: 11px;
+                height: 11px;
+                border: 2px solid $white;
+                box-shadow: 0 0 0 1px $black;
+                background: $black;
+            }
+        }
+    }
+
+    .Outer {
+        width: 29.444vw;
+        overflow-x: auto;
+        scroll-behavior: auto;
+        margin: 50px auto 0 auto;
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+        // display: none;
+
+        &_Hidden {
+            display: none;
+        }
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        &::-webkit-scrollbar {
+            height: 3px;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #e9e9e9;
+        }
+
+        &-Inner {
+            height: 1px;
+        }
+    }
+
+    .Title {
+        font-size: 18px;
+        line-height: 25px;
+        text-align: left;
+        letter-spacing: 2px;
+        margin-bottom: 34px;
+        font-weight: 500;
+        text-transform: uppercase;
+
+
+        &_isArabic {
+            text-align: right;
+        }
+
+        @include mobile {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+            text-align: center;
+            letter-spacing: 0;
+            font-weight: 600;
+            line-height: 18px;
+
+        }
+
+        @include tablet {
+            margin-bottom: 20px;
+            margin-left: 30px;
+
+            &_isArabic {
+                margin-left: 0px;
+                margin-right: 30px;
+            }
+        }
+    }
+
+    @include mobile {
+        max-height: 700px;
+        overflow: none;
+        margin-left: 0;
+        margin-right: 0;
+
+        &-Label {
+            right: 2rem;
+            bottom: 2rem;
+            text-decoration: underline;
+            background: none !important;
+        }
+
+        .Slider {
+            &-Wrapper {
+                width: 80%;
+                margin: 10px;
+            }
+
+            &-Crumbs {
+                display: none;
+            }
+        }
+    }
+
+    .tns-nav {
+        @include mobile {
+            margin-top: 10px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .SliderHelperE {
+        display: inline-block;
+        min-width: 30px;
+        background: transparent;
+
+        @include mobile {
+            min-width: 10px;
+            display: none;
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .SliderHelperET {
+        display: inline-block;
+        min-width: 30px;
+        background: transparent;
+
+        @include mobile {
+            // min-width: 10px;
+            display: none;
+        }
+
+        @include tablet {
+            // display: none;
+        }
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    @include tablet {
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-bottom: 40px !important;
+    }
+}
+
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+
+.sliderwithexpclass {
+    margin: 10px;
+    height: 96%;
+    // box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.11);
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10%;
+    padding: 0px;
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // -webkit-box-sizing: border-box;
+
+    @include tablet {
+        height: 94%;
+        padding: 0;
+        min-height: 220px;
+    }
+
+    @include mobile {
+        height: 94%;
+        padding: 0;
+        min-height: 220px;
+    }
+}
+
+.SliderWithExperiences{
+    min-height: 330px;
+    // box-sizing: border-box;
+    // -moz-box-sizing: border-box;
+    // -webkit-box-sizing: border-box;
+
+    @include tablet {
+        min-height: 220px;
+    }
+
+    @include mobile {
+        min-height: 220px;
+    }
+}
+
+.imgwrapperdiv {
+    min-width: 270px;
+
+    @include tablet {
+        min-width: 190px;
+    }
+
+    @include mobile {
+        min-width: 190px;
+    }
+}

@@ -1,0 +1,121 @@
+:root {
+  --my-acc-default: rgb(216, 0, 0);
+  --my-acc-background: #f9f9f9;
+  --fw-expDate: #acacac;
+}
+
+.MyAccountWalletPaymentList {
+  display: flex;
+  align-items: center;
+}
+
+.MyAccountPaymentCard {
+  background: var(--my-acc-background);
+  width: 100%;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 10px 24px 17px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-DetailWrapper {
+    display: flex;
+    align-items: center;
+  }
+  &-DetailBlock {
+    padding: 0 8px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   right: 15px;
+  //   top: 47%;
+  //   border: solid $black;
+  //   border-width: 0 2px 2px 0;
+  //   display: inline-block;
+  //   padding: 4px;
+  //   transform: rotate(-45deg);
+  //   -webkit-transform: rotate(-45deg);
+  // }
+
+  @include desktop() {
+    &:hover {
+      cursor: auto;
+    }
+  }
+
+  &-Default {
+    color: var(--my-acc-default);
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  &-Picture {
+    img {
+      width: 50px !important;
+      height: 30px !important;
+    }
+  }
+
+  &-Name {
+    font: 12px sans-serif;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    line-height: 16px;
+    word-break: break-all;
+  }
+
+  &-cardNum {
+    word-break: break-all;
+  }
+
+  &-ExpDate {
+    color: var(--fw-expDate);
+    span {
+      color: var(--fw-expDate);
+    }
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .MyAccountWalletPaymentList {
+      &-ActionBtn {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    // .MyAccountPaymentCard {
+    //   @include desktop {
+    //     &::after {
+    //       right: 100%;
+    //       transform: rotate(135deg);
+    //     }
+    //   }
+    //   @include mobile {
+    //     &::before {
+    //       content: "";
+    //       position: absolute;
+    //       left: 15px;
+    //       top: 47%;
+    //       border: solid $black;
+    //       border-width: 0 2px 2px 0;
+    //       display: inline-block;
+    //       padding: 4px;
+    //       transform: rotate(135deg);
+    //       -webkit-transform: rotate(135deg);
+    //     }
+    //     &::after {
+    //       display: none !important;
+    //     }
+    //   }
+    // }
+  }
+}

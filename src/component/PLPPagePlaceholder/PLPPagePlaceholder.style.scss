@@ -1,0 +1,27 @@
+.PLPPagePlaceholder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 19.7px 28.6px;
+    margin-bottom: 25.7px;
+    @include mobile() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 29px 4px;
+    }
+    &_isFirst {
+        @include desktop {
+            //   margin-top: 150px;
+        }
+    }
+    &-Section {
+        height: 340px;
+        background-image: var(--placeholder-image);
+        background-size: var(--placeholder-size);
+        animation: var(--placeholder-animation);
+        //margin: 10px 0;
+        //padding-bottom: 30%;
+        margin-bottom: 6px;
+        @include mobile() {
+            height: 280px;
+        }
+    }
+}

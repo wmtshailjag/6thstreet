@@ -1,0 +1,82 @@
+.PLPDetails {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    &-Wrapper {
+        display: flex;
+        align-items: center;
+        grid-gap: 20px;
+        margin-bottom: 0px;
+        width: 100%;
+    }
+    &-ShareIcon {
+        display: flex;
+        justify-content: flex-end;
+        grid-gap: 25px;
+        margin-bottom: 20px;
+        img {
+            width: 25px !important;
+            margin-left: 15px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    &-BrandName {
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: -1px;
+        line-height: 1;
+        margin: 0 0 12px;
+    }
+    &-viewmore{
+        .PLPDetails-BrandHTML{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+    &-BrandHTML {
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 25px;
+        * {
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: 25px;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: block !important;
+        }
+    }
+    &-BrandImage {
+        flex: 1;
+        padding-block: 1rem;
+    }
+    &-BrandDescription {
+        flex: 1;
+        padding-block: 1rem;
+        text-align: center;
+        max-width: 70%;
+        margin: auto;
+            transition: all .5s ease-in-out;
+        @include mobile {
+            max-width: 100%;
+            padding-block: 0;
+        }
+        .PLPDetails-BrandName{
+            line-height: 55px;
+            margin: 0 0 16px;
+            text-transform: none;
+        }
+        &.notBrandImageVisible {
+            text-align: center;
+            .PLPDetails-BrandName {
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.MyAccountStoreCredit {
+    &-Balance {
+        padding-bottom: 45px;
+    }
+
+    &-BalanceText {
+        font-weight: var(--fw-regular);
+        font-size: 16px;
+        margin-right: 5px;
+    }
+
+    &-BalanceAmount {
+        font-weight: var(--fw-bold);
+        font-size: 16px;
+    }
+
+    &-BlockTitle {
+        font-size: 22px;
+        padding-bottom: 22px;
+    }
+
+    table {
+        width: 60%;
+        table-layout: auto;
+        margin-bottom: 25px;
+
+        th {
+            font-weight: var(--fw-medium);
+        }
+
+        th,
+        td {
+            padding: 0 5px 15px 0;
+            font-size: 14px;
+            min-width: auto;
+        }
+
+        td {
+            font-weight: var(--fw-regular);
+        }
+
+        tr {
+            background: none;
+        }
+    }
+}

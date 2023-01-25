@@ -1,0 +1,297 @@
+:root {
+    --card-paragraph-text-light-gray: #d1d1d1;
+    --card-mini-text-dark-gray: #4a4a4a;
+    --card-validator-red: #f01136;
+}
+
+.CreditCard {
+    @include mobile {
+        padding-bottom: 240px;
+    }
+    &-Card {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+        position: relative;
+        max-width: 355px;
+        width: 100%;
+        height: 170px;
+        padding: 0 20px;
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        @include mobile {
+            height: 160px;
+        }
+        @include desktop {
+            padding: 0 26px;
+        }
+        input {
+            max-width: 265px;
+            margin: 0;
+            font-weight: var(--fw-regular);
+        }
+        p {
+            margin: 0;
+            line-height: 1.5;
+            color: var(--card-paragraph-text-light-gray);
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+        p:first-child {
+            margin-top: 30px;
+        }
+        p:nth-child(2) {
+            margin-bottom: -5px;
+        }
+        #number {
+            width: 284px;
+            height: 34px;
+            padding: 3px 0;
+            font-size: 24px;
+            margin-bottom: 10px;
+            border: none;
+        }
+        #cvv {
+            // font-size: 18px;
+            width: 67px;
+            height: 36px;
+            padding: 0 7px;
+            margin: 0 10px;
+            letter-spacing: 2px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        &Logo {
+            margin: 0 10px;
+            img {
+                height: 30px;
+                width: auto;
+            }
+        }
+    }
+    &-Validator {
+        position: absolute;
+        top: 36px;
+        left: 20px;
+        color: var(--card-validator-red);
+        line-height: 19px;
+        z-index: 1;
+        max-width: 280px;
+        @include desktop {
+            max-width: 310px;
+            left: 26px;
+        }
+    }
+    &-Row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &-Info {
+        margin-top: 20px;
+    }
+    &-AcceptedCards,
+    &-Secure {
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        font-size: 8px;
+        color: var(--card-mini-text-dark-gray);
+        img {
+            height: 14px;
+            width: auto;
+            margin: 0 3px;
+            width: auto!important
+        }
+    }
+    &-Secure {
+        margin-top: 7px;
+        img {
+            margin: 0 5px 0 0;
+        }
+    }
+    &-ExpDateRow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #expDataMM,
+        #expDataYY {
+            width: 35px;
+            height: 25px;
+            border: none;
+            padding: 3px 0;
+            // font-size: 18px;
+            min-width: 35px;
+            letter-spacing: 1px;
+        }
+        span {
+            color: gray;
+            font-size: 20px;
+            margin-right: 1px;
+        }
+        #expDataMM {
+            text-align: center;
+        }
+    }
+}
+
+.PageWrapper {
+    &_isArabic {
+        .CreditCard {
+            &-Secure {
+                img {
+                    margin: 0 0 0 5px;
+                }
+            }
+            &-Validator {
+                right: 20px;
+                @include desktop {
+                    right: 26px;
+                }
+            }
+            .NewCard-btn {
+                width: 140px;
+            }
+        }
+    }
+}
+
+.SaveCard {
+    display: flex;
+    align-items: center;
+}
+
+.CreditCard-Label {
+    margin: 0.9rem 0 0 1rem;
+}
+
+.SavedCards-Container {
+    display: grid;
+    overflow-x: auto;
+    height: 140px;
+    grid-column-gap: 10px;
+}
+
+.SavedCard-Item {
+    width: 220px;
+    height: 120px;
+    display: flex;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 12px;
+    flex-direction: column;
+    background-color: #f6f6f6;
+}
+
+.SelectedSavedCard-Item {
+    width: 220px;
+    height: 120px;
+    display: flex;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 12px;
+    flex-direction: column;
+    border: 1px solid #042295;
+    background-color: #ffffff;
+}
+
+.MyCards-Label {
+    font-size: 14px;
+    color: #000000;
+    line-height: 22px;
+    margin-bottom: 9px;
+}
+
+.MyCards-Link {
+    font-size: 14px;
+    color: #000000;
+    line-height: 22px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.NewCard-btn {
+    height: 40px;
+    width: 130px;
+    display: flex;
+    cursor: pointer;
+    margin-top: 8px;
+    border-radius: 8px;
+    align-items: center;
+    background-color: #f6f6f6;
+    padding: 0px 23px 0px 17px;
+    label {
+        font-size: 14px;
+        color: #000000;
+        margin-left: 5px;
+        line-height: 19px;
+        pointer-events: none;
+    }
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.SavedCard-CardNumber {
+    font-size: 16px;
+    color: #9b9b9b;
+    line-height: 22px;
+    margin: 39px 17px 26px 45px;
+}
+
+.SavedCard-CvvImgCon {
+    display: flex;
+    padding: 0px 15px;
+    align-items: center;
+    justify-content: space-between;
+    img {
+        width: 40.27px;
+        height: 22px !important;
+        object-fit: contain !important;
+    }
+    span {
+        font-size: 13px;
+        color: #9b9b9b;
+    }
+}
+
+.SavedCard-Tick {
+    width: 18px;
+    border-radius: 9px;
+    margin: 11px 0px 0px 12px;
+}
+
+.SelectedSavedCard-CardNumber {
+    font-size: 16px;
+    color: #000000;
+    line-height: 22px;
+    margin: 15px 16px 16px 46px;
+}
+
+.SelectedSavedCard-CvvImgCon {
+    display: flex;
+    padding: 0px 15px;
+    align-items: center;
+    justify-content: space-between;
+    img {
+        width: 40.27px;
+        height: 22px !important;
+        object-fit: contain !important;
+    }
+    span {
+        font-size: 13px;
+        color: #747474;
+    }
+}
+
+.SelectedSavedCard-CvvImgCon {
+    #cvv {
+        width: 50px;
+        height: 29px;
+        padding: 0 9px;
+        font-size: 13px;
+        border-radius: 6px;
+        letter-spacing: 2px;
+    }
+}

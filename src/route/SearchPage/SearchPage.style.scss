@@ -1,0 +1,49 @@
+.SearchPage {
+    width: var(--main-container-width-dsk);
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto 82px;
+    @include mobile {
+        width: 100vw;
+        padding-top: 60px;
+    }
+    @include tablet {
+        width: 100vw;
+    }
+    .SortBy{
+      position: absolute;
+      right: 0;
+      top: -30px;
+      .PLPFilters-ProductsCount{
+          display: none;
+      }
+      .FilterHeader{
+          display: none;
+      }
+      &_isArabic{
+          right: unset;
+          left: 0;
+      }
+      .Products {
+        &-FixScroll {
+          position: static !important; // for resolving 2663.
+        }
+      }
+  }
+
+}
+
+
+main {
+    &.SearchPage {
+      .ContentWrapper {
+        & > .PLPDetails {
+          @include mobile() {
+            padding-top: 60px;
+          }
+        }
+      }
+    }
+  }

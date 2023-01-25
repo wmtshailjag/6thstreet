@@ -1,0 +1,26 @@
+.BrandGroup {
+    display: inline-block;
+    min-width: 210px;
+    vertical-align: top;
+
+    &-Letter {
+        align-items: center;
+        display: flex;
+        font-weight: var(--fw-medium);
+        height: 25px;
+        width: 25px;
+        font-size: 24px;
+    }
+
+    &-Group {
+        &_isFiltered {
+            display: flex;
+            flex-wrap: wrap;
+
+            .Brand {
+                margin-bottom: 5px;
+                min-width: 210px;
+            }
+        }
+    }
+}

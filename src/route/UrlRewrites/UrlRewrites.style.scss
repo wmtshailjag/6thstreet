@@ -1,0 +1,16 @@
+.UrlRewrites {
+  width: var(--main-container-width-dsk);
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include tablet {
+    width: 100vw;
+    padding-top: var(--main-content-padding);
+  }
+  @include mobile {
+    width: 100vw;
+    padding-top: 60px;
+  }
+}

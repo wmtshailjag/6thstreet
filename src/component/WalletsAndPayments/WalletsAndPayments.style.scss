@@ -1,0 +1,38 @@
+:root {
+    --new-address: #868686;
+}
+
+.WalletsAndPayments {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+    @include tablet{
+        margin-top: 594px;
+    }
+    &-backBtn {
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        top: -75px;
+        left: 0;
+        z-index: 9;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            border: solid $black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+        }
+
+        @include desktop() {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,283 @@
+$select-arrow-height: 6px !default;
+$select-arrow-width: 6px !default;
+
+:root {
+    --text-color: #000000;
+    --text-color-on-dark-background: #ffffff;
+    --loading-button-background-color: #808080;
+    --success-color: #00f0a5;
+    --checkout-border-gray: #d6d6d6;
+    --checkout-button-red: #ff0505
+}
+
+.PDPMixAndMatchProduct {
+    display: flex;
+    height: 100%;
+    @include desktop {
+        height: 264px;
+        width: 400px;
+        min-height: 264px;
+        min-width:400px;
+    }
+    // width: 120px;
+
+    &-ImageContainer{
+        // width: 50%;
+        @include mobile {
+            width: 186px;
+            min-width: 186px;
+        }
+        padding: 0 16px 0 0;
+        &_isArabic {
+            padding: 0 0 0 16px;
+        }
+        .WishlistIcon {
+            background: white;
+            top: 0.25rem;
+            right: 0.25rem;
+            margin: 4px 4px 4px 4px;
+            &-Icon {
+                padding: initial;
+            }
+        }
+    }
+
+    .Image {
+        padding-bottom: 0;
+        height: 100%;
+        &-Image {
+            object-position: 0% 50%;
+            object-fit: cover;
+        }
+        @include before-desktop {
+            &-Image {
+                object-position: unset;
+                object-fit: unset;
+            }
+        }
+    }
+
+    &-SummaryAndAddToCartContainer {
+        font-family: "Avenir Next";
+        letter-spacing: 0;
+        a {
+            h3 {
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 19px;
+                margin: 0px;
+            }
+
+            h6 {
+                margin-top: 4px;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 18px
+            }
+        };
+        &-ColorContainer {
+            margin: 16px 0 8px 0;
+            @include desktop {
+                padding: 21px 0 0 0;
+            }
+            h3 {
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 19px;
+                margin: 0px;
+                span {
+                    font-weight: 600;
+                }
+            }
+        }
+        .Price {
+            display: flex;
+            flex-direction: column;
+            font-family: "Avenir Next";
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 50px;
+            .Price-Discount, .Price-Special {
+                color: #D12228;
+            }
+            .Price-Discount {
+             &_discount {
+                margin-top: -24px;
+                margin-bottom: -26px
+             }
+            }
+        }
+        @include desktop {
+            width: 40% !important;
+        }
+    }
+
+    .PDPMixAndMatchAddToCart {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 16px 0 0px 0;
+
+        &-SizeSelector {
+            display: flex;
+            font-family: "Avenir Next";
+            letter-spacing: 0;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+
+            &::after {
+                content: "";
+                display: block;
+                width: $select-arrow-width;
+                height: $select-arrow-height;
+                transform: translateY(-2px) rotate(44deg);
+                position: absolute;
+                right: calc(60% - 25px);
+                bottom: 0;
+                top: 0;
+                margin-top: 22px;
+                border: solid var(--text-color);
+                border-width: 0 1px 1px 0;
+                @include desktop {
+                    right: calc(65% - 25px);
+                }
+            }
+
+            h3 {
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0;
+                line-height: 19px;
+                margin: 0px;
+            };
+            &-SizeSelectElement {
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                line-height: 30px;
+                text-align: center;
+                height: 38px;
+                width: 40%;
+                padding: 0;
+                border: 1px solid #000000;
+                border-radius: 6px;
+                margin-left: 8px;
+                padding: 0 10px 0 0;
+                @include desktop {
+                    width: 35%;
+                }
+            }
+        }
+
+        &-AddToCartButton {
+            width: 100%;
+            height: 40px;
+            font-weight: var(--fw-bold);
+            font-size: 14px;
+            line-height: 18px;
+            background: var(--text-color);
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            color: var(--text-color-on-dark-background);
+            margin-top: 16px;
+
+            @include desktop {
+                border-radius: 0;
+                font-size: 13px;
+                width: 200px;
+            }
+
+            span {
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+                transition-property: transform, opacity;
+                will-change: transform, opacity;
+                transition-timing-function: ease-in;
+                transition-duration: 0.25s;
+
+                &:nth-child(2),
+                &:last-child {
+                    width: 100%;
+                    left: 0;
+                    opacity: 0;
+                    position: absolute;
+                    transform: translateY(0);
+                }
+
+                &:last-child {
+                    left: 25%;
+                    margin-top: 5px;
+                    padding-top: 7px;
+                    background: url(../PDPAddToCart/icons/confirm@2x.png) no-repeat;
+                    background-size: 30px 30px;
+                    height: 30px;
+                    width: 180px;
+
+                    @media (max-width: 1020px) {
+                        left: 40%;
+                    }
+
+                    @media (max-width: 700px) {
+                        left: 30%;
+                    }
+
+                    @media (max-width: 430px) {
+                        left: 16%;
+                    }
+                }
+            }
+
+            &_isLoading {
+                border: 2px solid var(--loading-button-background-color);
+                background: var(--loading-button-background-color);
+
+                span {
+                    &:first-child,
+                    &:last-child {
+                        opacity: 0;
+                        transform: translateY(-100%);
+                    }
+
+                    &:nth-child(2) {
+                        opacity: 1;
+                        transform: translateY(-100%);
+                    }
+                }
+
+                &:active {
+                    span {
+                        &:nth-child(2) {
+                            opacity: 0.9;
+                            transform: translateY(-120%);
+                        }
+                    }
+                }
+            }
+
+            &_addedToCart {
+                border: 2px solid var(--success-color);
+                background: var(--success-color);
+
+                span {
+                    &:first-child,
+                    &:nth-child(2) {
+                        opacity: 0;
+                    }
+
+                    &:last-child {
+                        opacity: 1;
+                        transform: translateY(-100%);
+                        background: none;
+                        left: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+}

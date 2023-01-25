@@ -1,0 +1,18 @@
+.Accordion {
+  &-Heading {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-Expand {
+    display: flex;
+    justify-content: center;
+    @include desktop {
+      transform: translateY(6px);
+    }
+    &_isArabic {
+      transform: rotateY(180deg);
+    }
+  }
+}

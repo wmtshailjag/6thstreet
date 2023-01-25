@@ -1,0 +1,43 @@
+:root{
+    --footer-bottom-background-color: #333;
+    --footer-bottom-text-color: white;
+    --footer-bottom-hyperlink-color: #9b9b9b;
+}
+
+.FooterMobile {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    @include desktop{
+        display: none;
+    }
+
+    &-Wrapper {
+        background: var(--footer-bottom-background-color);
+        display: flex;
+        justify-content: space-between;
+        padding: 17px 20px 18px 21px;
+        height: 50px;
+    }
+
+    &-Copyright {
+        color: var(--footer-bottom-text-color);
+        font-size: 11px;
+        font-weight: var(--fw-medium);
+        letter-spacing: .42px;
+        line-height: 15px;
+    }
+
+    &-Hyperlinks, a {
+        margin-left: 0;
+        text-decoration: none;
+        padding-top: 1px;
+        font-size: 9px;
+        color: var(--footer-bottom-hyperlink-color);
+        font-weight: var(--fw-demi);
+        letter-spacing: .5px;
+        text-align: right;
+    }
+}

@@ -1,0 +1,89 @@
+:root {
+  --footer-bottom-background-color: #333;
+  --footer-bottom-text-color: $white;
+  --footer-bottom-hyperlink-color: #9b9b9b;
+}
+
+.FooterBottom {
+  background: #000000;
+  padding: 20.5px 0;
+
+  @include before-desktop {
+    display: none;
+  }
+
+  &-Layout {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0;
+    max-width: var(--container-max-width);
+    width: var(--main-container-width-dsk);
+  }
+
+  &_FooterBottomHidden {
+    display: none;
+  }
+
+  &-Copyright {
+    line-height: 37px;
+    color: var(--footer-bottom-text-color);
+    font-size: 13px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    width: auto;
+  }
+
+  &-Hyperlinks,
+  a {
+    margin: 0 5px;
+    text-decoration: none;
+    line-height: 37px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    color: var(--footer-bottom-hyperlink-color);
+    font-weight: var(--fw-demi);
+    letter-spacing: 0.5px;
+
+    &:last-child {
+      text-transform: none;
+    }
+  }
+
+  &-PaymentIcons {
+    // background: url(../../style/icons/icons.png) -620px -953px no-repeat;
+    width: 377px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    &-ClubApparel {
+      width: 48px !important;
+      height: 31px !important;
+      margin-right: 28px;
+    }
+    &-CashOnDelivery {
+      width: 52px !important;
+      height: 22px !important;
+      margin-right: 20px;
+    }
+    &-Mastercard {
+      width: 31px !important;
+      height: 19px !important;
+      margin-right: 20px;
+    }
+    &-Visa {
+      width: 48px !important;
+      height: 16px !important;
+      margin-right: 20px;
+    }
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .FooterBottom {
+      padding: 20px 50px 20px 50px;
+    }
+  }
+}

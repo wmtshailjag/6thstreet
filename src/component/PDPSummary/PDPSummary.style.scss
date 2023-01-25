@@ -1,0 +1,420 @@
+:root {
+  --pdp-new-text-color: #c8b581;
+  --pdp-exclusive-text-color: #9b9b9b;
+  --pdp-line-color: #efefef;
+}
+
+.PDPSummary {
+  font-weight: var(--fw-regular);
+  margin-top: -6px;
+  padding: 0 20px;
+  overflow-x: visible;
+
+  @include mobile {
+    overflow: hidden;
+  }
+
+  &_AreaOverlay {
+    padding: 0;
+  }
+
+  .PDPSummaryHeaderAndShareAndWishlistButtonContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .ShareAndWishlistButtonContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      padding: 0;
+      border-radius: 50%;
+      border: solid transparent;
+      background-color: #f6f6f6;
+      border-width: 0;
+    }
+
+    .WishlistIcon {
+      position: relative;
+      top: initial;
+      // right: initial;
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      margin-left: 16px;
+      right: unset;
+      left: unset;
+
+      &-Icon {
+        left: unset;
+        border-width: 0;
+      }
+
+      button {
+        top: 0;
+      }
+    }
+  }
+
+  .pdpsummarylinkTagStyle {
+    text-decoration: none;
+  }
+
+  @include desktop {
+    min-width: 40%;
+    padding-left: 34px;
+    padding-right: 0px;
+
+    &_isArabic {
+      padding-left: 0;
+      padding-right: 34px;
+    }
+  }
+
+  h1 {
+    font-size: 24px;
+    margin: 0.4px 0 0 0;
+    text-decoration: none;
+
+    @include before-desktop {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      line-height: 40px;
+      text-transform: uppercase;
+      margin: 0.4px 0 0 0;
+    }
+  }
+
+  .ProductLabel {
+    color: var(--pdp-new-text-color);
+    font-size: 16px;
+    margin-right: 4px;
+    text-transform: uppercase;
+  }
+
+  .ProductTag {
+    color: #99cc99;
+    font-size: 16px;
+    margin-right: 4px;
+    text-transform: uppercase;
+  }
+
+  &-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: right;
+  }
+
+  &-Heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-Name {
+    font-size: 18px;
+    display: block;
+    font-weight: 400;
+    line-height: 1.8;
+
+    @include before-desktop {
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 19px;
+      margin-bottom: 0;
+      color: #000000;
+    }
+
+    &-Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      letter-spacing: 0;
+      line-height: 30px;
+      text-align: right;
+
+      @include desktop {
+        padding: 0px 0 12px 0;
+      }
+    }
+
+    &:hover {
+      div::before {
+        background-image: url(./icons/hanger-white.svg);
+      }
+    }
+
+    @include desktop() {
+      width: 100%;
+
+      div:before {
+        top: -4px;
+        left: 10px;
+      }
+    }
+  }
+
+  &-WardrobeTxt {
+    display: none;
+
+    @include desktop() {
+      display: inline-block;
+      margin-left: 20px;
+    }
+  }
+
+  &-ShareTxt {
+    display: none;
+
+    @include desktop() {
+      margin-left: 20px;
+      display: inline-block;
+    }
+  }
+
+  // .PriceAndPDPSummaryHeader {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  // }
+
+  .Price {
+    font-weight: var(--fw-bold);
+    font-size: 20px;
+    margin: 0.36rem 0 0 0;
+
+    @include before-desktop {
+      font-size: 18px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 30px;
+    }
+  }
+
+  .PriceContainer {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      justify-content: space-between;
+    }
+
+    .discount {
+      justify-content: space-between !important;
+    }
+
+    .Price {
+      display: flex;
+      justify-content: flex-start;
+      font-weight: var(--fw-bold);
+      font-size: 20px;
+      margin: 0.36rem 0 0 0;
+
+      @include before-desktop {
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 30px;
+      }
+
+      &-Base {
+        &_discount {
+          // margin-right: 20px;
+          font-weight: var(--fw-medium);
+        }
+      }
+
+      &-Special {
+        color: #d12228;
+        font-size: 20px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 30px;
+        padding: 0 8px 0 0;
+      }
+
+      &-Del {
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 30px;
+        font-weight: var(--fw-medium);
+      }
+
+      &-Discount {
+        color: #d12228;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 30px;
+        text-align: right;
+      }
+    }
+
+    .AdditionShippingInformation {
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 30px;
+    }
+  }
+
+  .Seperator {
+    background-color: #efefef;
+    margin: 26px 0 20px 0;
+    height: 1px;
+
+    &_isDesktop {
+      display: none;
+    }
+  }
+
+  .Seperatortop {
+    background-color: #efefef;
+    margin: 0 0 15px 0;
+    height: 2.5px;
+  }
+
+  &-Tabby {
+    display: inline-block;
+    text-transform: none;
+    font-weight: 400;
+    // max-width: 366px;
+    width: 100%;
+    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    padding: 15px 2px 16px 2px;
+    font-size: 12px;
+    margin-top: 15px;
+    cursor: pointer;
+    justify-content: center;
+
+    @include desktop() {
+      padding: 15px 15px 14px 18px;
+      font-size: 14px;
+    }
+
+    strong {
+      padding: 0 4px;
+      font-size: 12px;
+    }
+
+    .Image {
+      display: inline-block;
+      overflow: inherit;
+
+      img {
+        width: 42px !important;
+        height: auto !important;
+        margin: 0 3px -8px 0;
+
+        @include desktop() {
+          width: 47px !important;
+        }
+      }
+    }
+
+    span {
+      text-decoration: underline;
+      font-weight: 600;
+      margin: 0;
+
+      @include desktop() {
+        margin: 0 4px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &-ProductColorBlock {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--pdp-line-color);
+    margin-top: 20px;
+    padding: 20px 0;
+    font-size: 17px;
+
+    @include desktop() {
+      max-width: 550px;
+    }
+  }
+
+  &-ProductColor {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    margin: 0 8px;
+  }
+
+  &-AvailableItems {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .PDPSummary {
+      &-HeaderShare {
+        @include desktop() {
+          div::before {
+            left: -60px;
+          }
+        }
+      }
+
+      &-New {
+        margin: 0 0 0 4px;
+      }
+
+      .Price {
+        &-Discount {
+          display: inline-block;
+          margin-right: 4px;
+        }
+      }
+
+      .PDPSummaryHeaderAndShareAndWishlistButtonContainer {
+        button {
+          border-width: 0;
+        }
+
+        .WishlistIcon {
+          margin-right: 8px !important;
+          margin-left: unset !important;
+        }
+      }
+    }
+  }
+}
+
+#TabbyPromo {
+  margin-top: 25px;
+}
+
+// hack for tabby promo issue PWA-2182
+ul {
+  li[class^='styles__tabby-promo__feature'] {
+    padding-left: 0 !important;
+
+    &::before {
+      display: none !important;
+    }
+  }
+}
+
+div[class^='styles__body'] {
+  height: auto !important;
+}
+
+.d-none{
+  display: none;
+}

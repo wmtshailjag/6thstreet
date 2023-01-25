@@ -1,0 +1,46 @@
+.HeaderGenders {
+  display: flex;
+
+  @include before-desktop {
+    display: none;
+   @include desktop{
+    margin-top: -30px;
+   }
+
+    .GenderButton {
+      &-Button {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+        line-height: 16px;
+
+        &_isCurrentGender {
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+  }
+  .GenderButton {
+    &-Button {
+      height: auto;
+      &_isCurrentGender {
+        font-weight: var(--fw-bold);
+        border-bottom: 2px solid;
+        @include mobile {
+          border-bottom: 1px solid;
+        }
+      }
+    }
+  }
+
+  &_isArabic {
+    .GenderButton {
+      &-Container {
+        &:not(:last-child) {
+          @include desktop {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

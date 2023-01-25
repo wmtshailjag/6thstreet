@@ -1,0 +1,114 @@
+.MyAccountMobileHeader {
+  display: flex;
+  z-index: 99;
+  background: $white;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  align-items: center;
+
+  @include after-mobile {
+    display: none;
+  }
+
+  .ExpandableContent {
+    &-Content {
+      @include before-desktop {
+        padding: 0 !important;
+      }
+    }
+  }
+  &-StoreCreditLink {
+    width: 100%;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+  }
+
+  &-Actions {
+    max-width: 50%;
+  }
+
+  &-TabOptionHeader {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  &-Heading {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  &-Button {
+    position: absolute;
+    left: 0;
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border: solid #000000;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 2px 5px 5px 2px;
+      margin: 0 auto;
+      transform: rotate(135deg);
+      left: 20px;
+      top: 14px;
+      background: transparent;
+    }
+
+    &_isArabic {
+      &:after {
+        left: unset;
+        right: 20px;
+        transform: rotate(-45deg);
+      }
+      left: unset;
+      right: 0;
+    }
+
+    &_isClubApparel {
+      z-index: 1;
+      top: -55px;
+
+      &:after {
+        border: solid #ffffff;
+        display: inline-block;
+        border-width: 0 2px 2px 0;
+        padding: 2px 7px 7px 2px;
+        top: 20px;
+      }
+    }
+  }
+
+  .MyAccountOverlay {
+    &-StoreSwitcher {
+      margin: 15px 10px 15px 0;
+    }
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .MyAccountMobileHeader {
+      .MyAccountOverlay {
+        &-StoreSwitcher {
+          margin: 15px 0 15px 20px;
+        }
+      }
+    }
+  }
+  .MyAccountMobileHeader {
+    &-Heading {
+      margin-bottom: 24px;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.PLPPagesContainer {
+  .PLPPages {
+    //width: calc(100% - 250px);
+    .InlineFilterContainer {
+      height: 95px;
+      padding: 8px 0px;
+      &-InlineSizeCont {
+        height: 145px;
+      }
+      .InlineFilter {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: #f9f9f9;
+        &-FilterLabel {
+          font-size: 12px;
+          margin-top: 5px;
+          line-height: 2rem;
+          font-weight: 600;
+          letter-spacing: 0.18px;
+        }
+        .PLPFilters{
+          &-QuickCategories {
+            overflow-x: auto;
+            overflow-y: hidden;
+            &_isArabic {
+              .FieldMultiselect {
+                direction: rtl !important;
+              }
+            }
+            @include desktop {
+              overflow: hidden;
+            }
+            .FieldMultiselect {
+              direction: ltr;
+            }
+            .QuickFilter {
+              &-List {
+                overflow-x: scroll;
+                overflow-y: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sort-box {
+      display: flex;
+      width: 30%;
+      background: var(--white-color);
+      margin-top: 1px;
+      z-index: 2;
+      overflow-y: auto;
+      border: none;
+      top: 40px;
+      right: 0px;
+      position: absolute;
+    }
+
+    .PLPPageFilter {
+      align-items: center;
+      border: 1px solid #d6d6d6;
+      border-radius: 6px;
+      display: flex;
+      font-size: 14px;
+      font-weight: var(--fw-light);
+      height: 34px;
+      justify-content: space-between;
+      letter-spacing: 0px;
+      line-height: 19px;
+      margin-right: 10px;
+      padding: 10px;
+      text-transform: capitalize;
+      z-index: 4;
+      .Image {
+        img {
+          width: 15px !important;
+          top: 2px;
+        }
+      }
+      @include tablet() {
+        display: none;
+      }
+      @include mobile() {
+        display: none;
+      }
+    }
+    .ProductToolBar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      // height: 50px;
+      // position: absolute;
+      // top: -74px;
+      z-index: 2;
+      width: 80%;
+
+      .ProductSelectedFilters {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+          height: 100%;
+          width: 100%;
+          list-style: none;
+          flex-wrap: wrap;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          min-height: 40px;
+
+          li {
+            display: inline-flex;
+            min-height: 34px;
+            font-size: 13px;
+            vertical-align: baseline;
+            margin: 0 !important;
+            padding: 0 !important;
+            &::before {
+              content: none;
+            }
+          }
+          button {
+            svg {
+              height: 15px;
+              width: 15px;
+              margin-left: 6px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  &.PLP {
+    .ContentWrapper {
+      & > .PLPDetails {
+        @include mobile() {
+          padding-top: 60px ;
+        }
+      }
+    }
+  }
+}

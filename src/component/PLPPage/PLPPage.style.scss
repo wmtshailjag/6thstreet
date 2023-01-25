@@ -1,0 +1,128 @@
+.PLPPage {
+    display: unset!important;
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 19.7px 28.6px;
+        @include mobile() {
+            grid-template-columns: repeat(2, 1fr);
+            margin: 0;
+            grid-gap: 29px 4px;
+            margin-top: 30px;
+        }
+        }
+        &:last-child{
+            ul {
+            @include mobile() {
+            margin-top: 0px;
+            }
+        }
+    }
+    .ProductItem {
+        &-ImageBox {
+            padding-top: unset!important;
+            margin-bottom: 6px;
+            @include mobile {
+                margin-bottom: 12px;
+            }
+            .Image {
+                position: unset!important;
+                top: unset!important;
+                left: unset!important;
+                padding-bottom: unset!important;
+            }
+        }
+        &-Brand {
+            text-align: left;
+            @include mobile {
+                font-size: 12px;
+                line-height: 7px;
+            }
+        }
+        &-Title {
+            //margin: 0 auto;
+            text-align: left;
+            @include mobile {
+                font-size: 11px;
+                line-height: 14px;
+            }
+        }
+        .Price {
+            justify-content: center;
+            display: block;
+            text-align: left;
+            @include mobile {
+                line-height: 17px;
+                &-Wrapper {
+                    display: block;
+                    //text-align: center;
+                }
+                &-Discount {
+                    display: block;
+                    //text-align: center;
+                }
+                &-Base {
+                    display: block;
+                    //text-align: center;
+                }
+                &-Base_discount {
+                    display: inline;
+                }
+            }
+        }
+        .PLPSummary-Colors {
+            background-color: #ffffff;
+            opacity: 0.8;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            padding: 4px 0px;
+        }
+        .PLPSummary-Exclusive {
+            background-color: #ffffff;
+            opacity: 0.8;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            padding: 4px 0px;
+            @include mobile {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.PageWrapper {
+    &_isArabic {
+        .PLPPage {
+            .ProductItem {
+                &-Brand {
+                    text-align: right;
+                }
+                &-Title {
+                    text-align: right;
+                }
+            }
+            .Price {
+                text-align: right;
+                // flex-direction: row-reverse;
+                &-Wrapper {
+                    display: inline-flex;
+                    //flex-direction: row-reverse;
+                    justify-content: flex-end;
+                }
+                &-Discount {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}
+
+.EmptySearch {
+    .PLPPage {
+        ul {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

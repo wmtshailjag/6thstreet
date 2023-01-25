@@ -1,0 +1,595 @@
+:root {
+  --dark-gray: #606060;
+}
+
+.CheckoutSuccess {
+  margin-bottom: -var(navi);
+  @include desktop {
+    padding-top: 156px;
+  }
+  .SuccessOverlay {
+    height: 100%;
+    background-color: var(--color-green-cyan);
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+
+    &.hidden {
+      opacity: 0;
+      transition: opacity 500ms linear;
+    }
+
+    @include desktop {
+      width: 100%;
+      padding: 0 52%;
+      z-index: 90;
+      text-align: center;
+      transform: translate(-15px, 0);
+      top: 90px;
+    }
+
+    @include mobile {
+      padding: 50%;
+      top: 0;
+    }
+
+    .OrderPlacedTextWrapper {
+      position: absolute;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+
+      .confirmSimbol {
+        background: url("./icons/confirm@2x.png");
+        height: 50px;
+        background-size: 50px;
+        width: 50px;
+        margin: auto;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: var(--fw-demi);
+        color: #ffffff;
+      }
+    }
+  }
+
+  section {
+    display: none;
+  }
+
+  &-Details {
+    margin: 0 10px;
+    .SuccessMessage {
+      &-Icon {
+        height: 50px;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 50px;
+
+      }
+
+      &-Text {
+        display: grid;
+        text-align: center;
+        font-size: 14px;
+
+        &-Title {
+          margin: 12px 0;
+          font-size: 16px;
+          font-weight: var(--fw-demi);
+        }
+
+        &-Email {
+          font-weight: var(--fw-medium);
+        }
+      }
+    }
+
+    .PhoneVerified {
+      margin-top: 40px;
+      text-align: center;
+      height: 70px;
+      width: 100%;
+      background-color: var(--color-green-cyan);
+
+      &-Content {
+        width: 220px;
+        margin: 0 auto;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+
+        &_isArabic {
+          padding-left: unset;
+          padding-right: 20px;
+
+          .PhoneVerified {
+            &-Text {
+              margin-left: unset;
+              margin-right: -33px;
+            }
+          }
+        }
+      }
+
+      &-Image {
+        padding-top: 17px;
+
+        img {
+          width: 33px;
+          height: 33px;
+        }
+      }
+
+      &-Text {
+        padding-top: 22px;
+        width: 100%;
+        margin-left: -33px;
+        color: #ffffff;
+        font-family: var(--avenir-demi-font);
+        font-weight: var(--fw-medium);
+        display: grid;
+        font-size: 18px;
+      }
+
+      @include mobile() {
+        margin-left: -24px;
+        width: 100vw;
+
+        &_isArabic {
+          margin-left: unset;
+          margin-right: -24px;
+        }
+      }
+
+      @include desktop() {
+        margin-left: 0;
+        width: 640px;
+      }
+    }
+
+    .TrackOrder {
+      background-color: var(--lightest-gray);
+      height: auto;
+      margin-left: -24px;
+      margin-top: 32px;
+      padding: 28px 0;
+      text-align: center;
+      width: 100vw;
+
+      button {
+        height: 40px;
+        margin-top: 32px;
+        width: 60vw;
+        border-radius: 5px;
+
+        &.secondary {
+          margin-top: 12px !important;
+          background-color: #ffffff;
+          font-size: 12px;
+          &:hover {
+            background-color: #000000;
+          }
+        }
+
+        &.primary {
+          border-radius: 10px;
+          width: 70%;
+
+          &:hover {
+            background-color: #ffffff;
+          }
+        }
+      }
+
+      &-Text {
+        font-family: var(--avenir-demi-font);
+        margin: 0 60px;
+        display: grid;
+
+        &-Title {
+          font-size: 16px;
+          font-weight: var(--fw-demi);
+          text-transform: capitalize;
+        }
+
+        &-SubTitle {
+          margin: 16px 0;
+          margin: 6px auto;
+          font-size: 14px;
+        }
+
+        &-Phone {
+          width: 100%;
+          button {
+            text-decoration: underline;
+            margin-top: -5px;
+            font-weight: var(--fw-demi);
+          }
+        }
+      }
+
+      &_isSignedIn {
+        background-color: var(--lightest-gray);
+        height: 118px;
+        padding: 35px 0;
+
+        button {
+          border-radius: 0;
+          margin-top: 0;
+        }
+      }
+
+      &_isPhoneVerification {
+        height: unset;
+        margin-top: 40px;
+
+        button {
+          width: 100%;
+
+          @include desktop() {
+            padding: 0 50px;
+          }
+        }
+
+        .TrackOrder {
+          &-Text {
+            &-Title {
+              margin-bottom: 10px;
+            }
+
+            &-Message {
+              color: var(--dark-gray);
+            }
+
+            &-Email {
+              text-decoration: underline;
+              font-weight: var(--fw-demi);
+            }
+          }
+
+          &-Code {
+            input {
+              text-align: center;
+              width: calc(100% - 15px);
+              background-color: transparent;
+              border: 0;
+              letter-spacing: 15px;
+              font-size: 27px;
+              margin-left: 15px;
+              caret-color: transparent;
+            }
+          }
+
+          &-ResendCode {
+            button {
+              font-weight: var(--fw-regular);
+              color: var(--dark-gray);
+              font-size: 14px;
+              margin-top: 0;
+              text-transform: capitalize;
+            }
+          }
+        }
+
+        @include before-desktop() {
+          background-color: #ffffff;
+        }
+      }
+
+      @include after-mobile() {
+        margin-left: 0;
+        width: 100%;
+
+        button {
+          width: unset;
+        }
+      }
+
+      @include desktop() {
+        width: 640px;
+      }
+
+      @include mobile() {
+        width: auto;
+        margin-inline: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+        &_isArabic {
+          // margin-left: unset;
+          // margin-right: -24px;
+        }
+      }
+    }
+
+    .TotalItems {
+      padding: 20px 0;
+
+      &-OrderId {
+        font-weight: var(--fw-demi);
+        font-size: 16px;
+      }
+    }
+
+    .ContactInfo {
+      text-align: center;
+      a + a {
+        margin: 0 !important;
+      }
+      &-Timing {
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0;
+      }
+      &-Time {
+        font-weight: var(--fw-bold);
+      }
+      &-Links {
+        display: grid;
+        grid-auto-flow: column;
+        margin: 30px 0;
+        text-decoration: none !important;
+      }
+      &-LinkName {
+        margin-top: 5px;
+      }
+      &-Link,
+      &-LinkMiddle {
+        padding: 0px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 25px;
+          height: 25px;
+        }
+      }
+      &-LinkMiddle {
+        border-right: 2px solid var(--lightest-gray);
+        border-left: 2px solid var(--lightest-gray);
+      }
+    }
+
+    .PriceTotals {
+      border-top: 2px solid var(--lightest-gray);
+      padding: 20px 0;
+      display: grid;
+      font-size: 14px;
+
+      .Totals {
+        display: grid;
+        grid-auto-flow: column;
+
+        &:last-child {
+          border-top: 2px solid var(--lightest-gray);
+          margin: 10px 0 0 0;
+          padding: 10px 0 0 0;
+        }
+
+        &-Title {
+          margin-top: 3px;
+        }
+
+        &-Price {
+          margin-left: auto;
+          font-weight: var(--fw-demi);
+        }
+
+        &-TotalTitles {
+          .Title {
+            font-size: 16px;
+            margin-right: 5px;
+          }
+
+          .SubTitle {
+            color: var(--gray-color);
+          }
+        }
+
+        &-TotalPrice {
+          font-size: 18px;
+          margin-left: auto;
+          font-weight: var(--fw-bold);
+        }
+      }
+
+      &_isArabic {
+        .Totals {
+          &-Price {
+            margin-left: unset;
+            margin-right: auto;
+          }
+
+          &-TotalPrice {
+            margin-left: unset;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+
+    .Addresses {
+      .Address {
+        padding: 15px 0;
+        border-top: 2px solid var(--lightest-gray);
+        display: grid;
+        grid-gap: 5px;
+        font-size: 14px;
+
+        &-Title {
+          font-size: 16px;
+          font-weight: var(--fw-demi);
+          margin-bottom: 5px;
+        }
+        &-FullName {
+          font-weight: var(--fw-demi);
+        }
+        &-PostCode {
+          font-weight: var(--fw-demi);
+        }
+        &-Street {
+          word-break: break-all;
+        }
+      }
+    }
+
+    .DeliveryOptions {
+      border-top: 2px solid var(--lightest-gray);
+      padding: 20px 0;
+      font-size: 14px;
+
+      &-Title {
+        font-size: 18px;
+        font-weight: var(--fw-demi);
+        margin-bottom: 10px;
+      }
+    }
+
+    .PaymentType {
+      border-top: 2px solid var(--lightest-gray);
+      padding: 20px 0;
+      font-size: 14px;
+
+      &-Title {
+        font-size: 16px;
+        font-weight: var(--fw-demi);
+        margin-bottom: 15px;
+      }
+
+      .Details {
+        text-transform: uppercase;
+        border-radius: 10px;
+        display: flex;
+        height: auto;
+        align-items: center;
+
+        &-TypeLogo {
+          width: 40px;
+          display: flex;
+          margin: auto 0;
+          justify-content: flex-start;
+          align-items: center;
+          img {
+            max-width: 30px;
+            max-height: 30px;
+          }
+        }
+
+        &-TypeTitle {
+          display: block;
+          font-size: 14px;
+          text-align: left;
+        }
+
+        &-Number {
+          display: grid;
+          grid-auto-flow: column;
+          grid-column-gap: 5px;
+          margin-right: auto;
+          margin-left: 5px;
+          letter-spacing: 3px;
+
+          &-Dots {
+            margin-right: 10px;
+            width: 30px;
+            display: grid;
+            grid-auto-flow: column;
+
+            & > div {
+              background-color: black;
+              margin: auto;
+              width: 3px;
+              height: 3px;
+              border-radius: 50px;
+              @include desktop() {
+                width: 5px;
+                height: 5px;
+              }
+            }
+            @include desktop() {
+              width: 40px;
+            }
+          }
+          @include desktop() {
+            margin-left: 15px;
+          }
+        }
+      }
+
+      &_isArabic {
+        .Details {
+
+          &-Number {
+            margin-left: auto;
+            margin-right: 5px;
+            @include desktop() {
+              margin-right: 15px;
+            }
+          }
+
+          &-TypeTitle {
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    @include desktop() {
+      margin: 0 auto;
+    }
+  }
+
+  &-ButtonWrapper {
+    background-color: #ffffff;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 25px;
+    right: 0;
+
+    a {
+      button {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  @include desktop() {
+    margin: 0 auto;
+    width: 640px;
+    background-color: #ffffff;
+
+    section {
+      max-width: 250px;
+      display: block;
+    }
+
+    &-Details {
+      width: 640px;
+
+      .SuccessMessage {
+        width: 640px;
+      }
+    }
+
+    &-ButtonWrapper {
+      padding: 50px 0 0;
+      position: static;
+
+      a {
+        button {
+          border-radius: 0;
+          width: 640px;
+        }
+      }
+    }
+  }
+}

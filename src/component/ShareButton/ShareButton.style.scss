@@ -1,0 +1,13 @@
+.Share {
+    &_openShareOverlay {
+        &::after {
+            content: '';
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            width: 70px;
+            bottom: -10px;
+            left: -10px;
+        }
+    }
+}

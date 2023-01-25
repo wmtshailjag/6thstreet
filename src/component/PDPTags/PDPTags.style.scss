@@ -1,0 +1,26 @@
+.PDPTags {
+  &-Container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    // justify-content: space-evenly;
+    // margin-top: -8px;
+    margin-left: -8px;
+    @include desktop {
+      padding: 16px 0 16px 0;
+    }
+    @include mobile {
+      //   margin-top: 0;
+    }
+  }
+
+  &-Tags {
+    display: flex;
+    padding: 8px 12px 8px 12px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin: 0px 8px;
+  }
+}

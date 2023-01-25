@@ -1,0 +1,81 @@
+.MyAccountReturnListItem {
+    border-bottom: 1px solid var(--color-gainsboro);
+    display: table;
+    font-weight: var(--fw-regular);
+    padding: 30px 0;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+
+    &:first-of-type {
+        border-top: 1px solid var(--color-gainsboro);
+    }
+
+    &-Status {
+        display: table-cell;
+        padding-right: 20px;
+        text-align: right;
+        vertical-align: middle;
+        width: calc(100% / 4);
+
+        &::after {
+            border-bottom: 1px solid #000000;
+            border-right: 1px solid #000000;
+            content: '';
+            height: 5px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg) scale(1.5);
+            width: 5px;
+
+            .PageWrapper_isArabic & {
+                left: 0;
+                right: unset;
+                transform: translateY(-50%) rotate(135deg) scale(1.5);
+            }
+        }
+
+        .PageWrapper_isArabic & {
+            padding-left: 20px;
+            padding-right: 0;
+            text-align: left;
+        }
+    }
+
+    &-OrderNumber {
+        display: table-cell;
+        font-weight: var(--fw-bold);
+        text-align: center;
+        text-decoration: underline;
+        vertical-align: middle;
+        width: calc(100% / 4);
+    }
+
+    &-OrderIncrement {
+        display: table-cell;
+        font-weight: var(--fw-bold);
+        text-align: left;
+        text-decoration: underline;
+        vertical-align: middle;
+        width: calc(100% / 4); 
+
+        .PageWrapper_isArabic & {
+            text-align: right;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &-Date {
+        display: table-cell;
+        vertical-align: middle;
+        width: calc(100% / 4);
+    }
+}

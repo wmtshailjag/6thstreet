@@ -1,0 +1,72 @@
+:root {
+  --store-credit-link-background: #f3f3f3;
+}
+
+.StoreCredit {
+  &-Amount {
+    font-weight: var(--fw-demi);
+    white-space: nowrap;
+
+    &::before {
+      content: " ";
+      display: inline;
+    }
+  }
+
+  &_canApply {
+    padding: 11px 0;
+    @include mobile{
+      padding: 2px 0;
+    }
+
+    .Field {
+      margin: 0;
+      display: inline-block;
+    }
+
+    > label {
+      margin-left: 10px;
+      vertical-align: top;
+      display: inline-block;
+      line-height: 22px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+}
+
+li.MyAccountTabListItem {
+  &_StoreCreditLink {
+    padding: 15px 20px;
+
+    @include mobile {
+      display: none;
+    }
+
+    button {
+      min-width: auto;
+      min-height: auto;
+      height: auto;
+      background-color: var(--store-credit-link-background);
+      padding: 10px 20px 10px 10px;
+      cursor: pointer;
+      border-radius: 6px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    label {
+      text-transform: capitalize;
+      font-weight: var(--fw-regular);
+      cursor: pointer;
+      line-height: 20px;
+      letter-spacing: 0.5px;
+
+      span {
+        font-weight: var(--fw-demi);
+      }
+    }
+  }
+}

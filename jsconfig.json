@@ -1,0 +1,56 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "Style/*": [
+                "src/style/*"
+            ],
+            "Component/*": [
+                "src/component/*"
+            ],
+            "Route/*": [
+                "src/route/*"
+            ],
+            "Store/*": [
+                "src/store/*"
+            ],
+            "Util/*": [
+                "src/util/*"
+            ],
+            "Query/*": [
+                "src/query/*"
+            ],
+            "Type/*": [
+                "src/type/*"
+            ],
+            "SourceStyle/*": [
+                "src/style/*",
+                "node_modules/@scandipwa/scandipwa/src/style/*"
+            ],
+            "SourceComponent/*": [
+                "src/component/*",
+                "node_modules/@scandipwa/scandipwa/src/component/*"
+            ],
+            "SourceRoute/*": [
+                "src/route/*",
+                "node_modules/@scandipwa/scandipwa/src/route/*"
+            ],
+            "SourceStore/*": [
+                "src/store/*",
+                "node_modules/@scandipwa/scandipwa/src/store/*"
+            ],
+            "SourceUtil/*": [
+                "src/util/*",
+                "node_modules/@scandipwa/scandipwa/src/util/*"
+            ],
+            "SourceQuery/*": [
+                "src/query/*",
+                "node_modules/@scandipwa/scandipwa/src/query/*"
+            ],
+            "SourceType/*": [
+                "src/type/*",
+                "node_modules/@scandipwa/scandipwa/src/type/*"
+            ]
+        }
+    }
+}

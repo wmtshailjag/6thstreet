@@ -1,0 +1,94 @@
+.Menu {
+    list-style-type: square;
+    --pink: #e35467;
+
+    &-Container {
+        display: flex;
+    }
+
+    @include before-desktop {
+        border-right: 1px solid var(--light-gray);
+        height: 100%;
+        margin-top: 150px;
+        width: 100%;
+
+        &-Container {
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+
+            .HeaderGenders {
+                background: #ffffff;
+                display: flex;
+                justify-content: center;
+                padding-top: 14px;
+                position: fixed;
+                top: 80px;
+                width: 100%;
+
+                .GenderButton-Container {
+                    display: flex;
+                    justify-content: center;
+                    width: 33.33%;
+                    height: auto;
+
+                    .GenderButton-Button {
+                        height: 30px;
+                        margin-top: 6px;
+                        padding: 0 4px;
+                    }
+                }
+            }
+        }
+
+        &-Header {
+            &-Mobile {
+                background-color: var(--pink);
+                position: fixed;
+                width: 100%;
+                z-index: 10;
+
+                &-Top {
+                    .HeaderCart {
+                        &-Button {
+                            float: right;
+                            margin-right: 20px;
+                            margin-top: -35px;
+                        }
+                    }
+
+                    &_isArabic {
+                        .HeaderCart {
+                            &-Button {
+                                float: left;
+                                margin-left: 20px;
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_isArabic {
+            border-left: 1px solid var(--light-gray);
+        }
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: left;
+
+        &-Container {
+            .HeaderGenders {
+                display: none;
+            }
+        }
+
+        &-Header {
+            &-Mobile {
+                display: none;
+            }
+        }
+    }
+}

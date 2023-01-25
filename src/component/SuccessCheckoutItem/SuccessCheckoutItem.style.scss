@@ -1,0 +1,333 @@
+:root {
+  --successcheckout-item-heading-color: #000000;
+  --successcheckout-item-subheading-color: #888;
+  --successcheckout-item-option-color: #adadad;
+  --successcheckout-item-background: #ffffff;
+  --successcheckout-item-actions-background: var(--secondary-base-color);
+  --successcheckout-item-actions-color: #000000;
+  --successcheckout-item-divider-color: var(--expandable-content-divider-color);
+  --successcheckout-item-action-border: var(--successcheckout-item-divider-color);
+
+  --Gallery: #efefef;
+  --Cardinal: #d12228;
+}
+
+.SuccessCheckoutItem {
+  --header-color: var(--successcheckout-item-actions-color);
+
+  font-weight: var(--fw-regular);
+
+  &-Link {
+    color: inherit;
+    padding: 0;
+    height: auto;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &-Option,
+  & {
+    padding-left: 0;
+    margin-bottom: 30px;
+
+    @include desktop() {
+      margin-bottom: 10px;
+    }
+
+    &::before {
+      content: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .AdditionShippingInformation {
+      font-family: "Avenir Next";
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 16px;
+      text-align: left;
+      font-weight: var(--fw-medium);
+      &_isArabic{
+        text-align: right;
+      }
+    }
+    .AreaText {
+      display: flex;
+      color: #9b9b9b;
+      top: 4px;
+      padding-bottom: 10px;
+      font-family: "Avenir Next";
+      font-size: 12px;
+      font-weight:var(--fw-medium) ;
+      align-items: center;
+      letter-spacing: 0;
+      line-height: 12px;
+      text-transform: none;
+      &_isArabic span:nth-child(2) {
+        margin-right: 4px;
+        margin-left: 0px;
+        color: #28d9aa;
+      }
+      span:nth-child(2) {
+        margin-left: 4px;
+        color: #28d9aa;
+      }
+    }
+    &_isLikeTable {
+      @include after-mobile {
+        padding-bottom: 0;
+        min-height: 5rem;
+        align-self: center;
+      }
+    }
+  }
+
+  &-Wrapper {
+    display: grid;
+    grid-template-columns: 110px calc(87% - 110px);
+    background: var(--successcheckout-item-background);
+    padding-top: 15px;
+    text-transform: capitalize;
+
+    @include desktop() {
+      border-top: 2px solid var(--lightest-gray);
+    }
+  }
+
+  &-Options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &_isLikeTable {
+      @include after-mobile {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &-Option {
+    font-size: 10px;
+    text-transform: uppercase;
+    border: 1px solid var(--successcheckout-item-option-color);
+    color: var(--successcheckout-item-option-color);
+    padding: 3px 5px;
+    margin-right: 5px;
+  }
+
+  &-ItemOptionsWrapper {
+    &_isLikeTable {
+      @include desktop {
+        max-width: 45%;
+      }
+    }
+  }
+
+  &-ItemOption {
+    display: flex;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  &-ItemOptionLabel {
+    align-self: center;
+    font-weight: var(--fw-bold);
+    margin-right: 0.5rem;
+  }
+
+  &-Heading {
+    font-size: 14px;
+    line-height: 1.2;
+    width: 100%;
+    margin-bottom: 0.5rem !important;
+    color: var(--successcheckout-item-heading-color);
+    text-align: left;
+    letter-spacing: 0.75px;
+    font-weight: var(--fw-demi);
+
+    &_isArabic {
+      text-align: right;
+    }
+  }
+
+  &-Details {
+    font-size: 12px;
+    line-height: 24px;
+    text-align: left !important;
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &_isArabic {
+      text-align: right !important;
+    }
+    @include before-desktop {
+      max-width: 200px;
+    }
+  }
+
+  &-Picture {
+    height: 110px;
+    width: 85px;
+    margin-right: 24px;
+    background-color: var(--image-default-background);
+
+    &_isArabic {
+      margin: 0 0 0 24px;
+    }
+    @include before-desktop {
+      height: 95px;
+    }
+  }
+
+  &-Price,
+  &-ColSizeQty {
+    margin-top: auto;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: left;
+    color: #000000;
+    letter-spacing: 0.75px;
+
+    &_isArabic {
+      text-align: right;
+    }
+  }
+
+  &-Price {
+    div {
+      display: flex;
+    }
+  }
+
+  .Price > span:first-child {
+    color: #000000;
+  }
+
+  .Price {
+    color: var(--Cardinal);
+    text-decoration: unset;
+    font-weight: var(--fw-demi);
+    &_isArabic {
+      text-align: left;
+      direction: ltr;
+      display: inline !important;
+    }
+    &-Discount{
+      margin-left: 4px;
+    }
+    span {
+      del {
+        color: #000000;
+        text-decoration-line: line-through;
+        -webkit-text-decoration-line: line-through;
+        padding-right: 5px;
+        font-weight: var(--fw-regular);
+      }
+    }
+  }
+  &-DiscountPercentage {
+    color: inherit;
+    margin-right: 5px;
+    &_isArabic {
+      text-align: right;
+      display: inline !important;
+    }
+  }
+  &-WithoutDiscount {
+    display: flex;
+    flex-direction: row-reverse;
+
+    &_isArabic {
+      flex-direction: row;
+      margin-right: 5px;
+    }
+  }
+
+  &-ColSizeQty {
+    font-weight: var(--fw-regular);
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    span {
+      margin-left: 5px;
+      color: #9b9b9b;
+      &:first-child {
+        margin-left: 0 !important;
+      }
+    }
+
+    &_isArabic {
+      text-align: right;
+    }
+  }
+
+  & &-Qty {
+    margin-top: 10px;
+    display: flex;
+
+    input {
+      background: transparent;
+      border: 0;
+      color: var(--successcheckout-item-actions-color);
+      height: 28px;
+      font-weight: var(--fw-regular);
+      text-align: center;
+      padding: 0;
+      order: 2;
+      width: 44px;
+      min-width: 44px;
+      font-size: 15px;
+    }
+
+    button {
+      position: relative;
+      order: 1;
+      border: 1px solid var(--successcheckout-item-actions-color);
+      width: 18px;
+      height: 18px;
+      top: 15px;
+      left: 0;
+      color: var(--successcheckout-item-actions-color);
+      background: transparent;
+
+      &:first-of-type {
+        left: 0;
+        order: 3;
+      }
+
+      &:last-of-type {
+        right: 0;
+        order: 1;
+      }
+
+      span {
+        @include mobile {
+          top: -2.2px;
+        }
+      }
+    }
+  }
+  &-ClickAndCollect {
+    display: flex;
+    font-family: "Avenir Next";
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 10px;
+    line-height: 1.2;
+    text-align: left;
+    color: var(--cart-item-heading-color);
+    font-weight: var(--fw-medium);
+    margin-left: -3px;
+  }
+}

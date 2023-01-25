@@ -1,0 +1,328 @@
+.MyAccountExchangeCreate {
+  margin-bottom: 20px;
+
+  .CheckoutAddressBook {
+    top: 4px;
+  }
+
+  .showExchangeAddress {
+    display: none;
+  }
+
+  .AddressContainer {
+    position: absolute;
+    top: 0;
+    background: #ffffff;
+    width: 100%;
+    top: -100px;
+    @include desktop{
+      position: relative;
+      top: -168px;
+    }
+  }
+
+  .MyAccountAddressBook {
+    &-ContentWrapper {
+      @include mobile {
+        .MyAccountAddressPopup {
+          &-DeleteBtn {
+            position: absolute;
+            top: 5px;
+          }
+          &-DeletePopup {
+            z-index: 99;
+          }
+        }
+      }
+      &_formContent {
+        .MyAccountAddressPopup {
+          position: relative;
+          padding-bottom: 20px;
+        }
+      }
+      .MyAccountAddressBook {
+        &-MobileBackButton {
+          position: absolute;
+          top: 5px;
+          right: unset;
+          left: -8px;
+          z-index: 9;
+          color: #ec694f;
+          font-weight: var(--fw-regular);
+          text-transform: none;
+        }
+
+        &-backButton {
+          @include desktop {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-ContentWrapper {
+      @include before-desktop {
+        top: 0px;
+      }
+
+      &_formContent {
+        .MyAccountAddressBook {
+          &-backButton {
+            position: fixed;
+            width: 20px;
+            height: 30px;
+            top: 20px;
+            right: unset;
+            left: 10px;
+            z-index: 9;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 5px;
+              border: solid $black;
+              border-width: 0 2px 2px 0;
+              display: inline-block;
+              padding: 4px;
+              transform: rotate(135deg);
+              -webkit-transform: rotate(135deg);
+            }
+
+            @include desktop() {
+              height: 0;
+            }
+
+            &_isArabic {
+              top: 20px;
+              left: unset;
+              right: 10px;
+              transform: rotate(180deg);
+              -webkit-transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    &-NewAddressWrapper {
+      top: 10px;
+      float: right;
+      z-index: 1;
+
+      @include before-desktop {
+        width: 100%;
+        top: 264px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 4;
+      }
+
+      &_formContent {
+        display: none;
+      }
+
+      &_isArabic {
+        float: left;
+      }
+      &_isCountryNotAddressAvailable {
+        display: none;
+      }
+    }
+
+    &-NewAddress {
+      font-weight: var(--fw-regular);
+      font-size: 13px;
+      line-height: 18px;
+      background: transparent;
+      color: #000000;
+      border: none;
+      margin: 0 5px;
+      top: -20px;
+      // padding-inline: 20px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include before-desktop {
+        border-radius: 7px;
+        background: var(--my-acc-background);
+        text-transform: capitalize;
+        min-width: 140px;
+        margin-top: 8px;
+
+        &:hover {
+          text-decoration: underline;
+          background: var(--my-acc-background);
+        }
+      }
+    }
+  }
+
+  .MyAccountAddressPopup {
+    margin: 0 auto 20px auto;
+    background: #ffffff;
+    height: 100% !important;
+    position: absolute;
+    width: 100%;
+    .MyAccountAddressFieldForm {
+      @include mobile {
+        top: 0;
+      }
+    }
+
+    .Form {
+      @include desktop {
+        top: 0;
+        padding: 20px 30px 30px 30px;
+        background: #ffffff;
+      }
+
+      .MyAccountAddressFieldForm {
+        &-Header {
+          h2 {
+            border-top: none;
+            margin-left: 0;
+          }
+        }
+        @include desktop {
+          max-width: unset !important;
+        }
+      }
+    }
+
+    &_isArabic {
+      .Form {
+        @include desktop {
+          padding: 20px 30px 30px 30px;
+          background: #ffffff;
+        }
+
+        .MyAccountAddressFieldForm {
+          &-Header {
+            h2 {
+              border-top: none;
+              margin-left: 0;
+            }
+          }
+          @include desktop {
+            max-width: unset !important;
+          }
+        }
+      }
+    }
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  .MyAccountReturnCreateItem {
+    &-Resolution {
+      border-bottom: none;
+    }
+  }
+  &-Item {
+    padding-left: 0;
+
+    &::before {
+      content: unset;
+    }
+  }
+
+  &-OrderNumber {
+    font-weight: var(--fw-medium);
+    font-size: 22px;
+    margin-bottom: 40px;
+    text-transform: none;
+
+    @include before-desktop {
+      display: none;
+    }
+  }
+
+  &-Heading {
+    font-weight: var(--fw-regular);
+    font-size: 14px;
+    margin: 15px 0 35px;
+    text-align: center;
+    text-transform: none;
+
+    @include desktop {
+      //   margin-left: 40px;
+      text-align: unset;
+    }
+  }
+
+  &-Actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 320px;
+    margin-top: 140px;
+    @include desktop {
+      flex-direction: row-reverse;
+      margin: 10px 0 0 40px;
+    }
+
+    button {
+      font-size: 13px;
+
+      @include desktop {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &-Button {
+    &Discard {
+      --button-background: #ffffff;
+      --button-border: #000000;
+      --button-border-width: 2px;
+      --button-color: #000000;
+      --button-hover-background: #000000;
+      --button-hover-color: var(--button-color);
+
+      @include desktop {
+        --button-background: transparent;
+        --button-border: transparent;
+        --button-color: var(--primary-base-color);
+        --button-hover-background: transparent;
+        --button-hover-border: transparent;
+        --button-hover-color: var(--button-color);
+
+        text-transform: none;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: #000000;
+        color: #ffffff;
+
+        @include desktop {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &Submit {
+      --button-background: #000000;
+      --button-border: #000000;
+      --button-border-width: 2px;
+      --button-color: #ffffff;
+      --button-hover-border: #000000;
+
+      min-width: 175px;
+
+      &:not(:disabled) {
+        &:hover,
+        &:focus,
+        &:active {
+          background: #ffffff;
+          color: #000000;
+        }
+      }
+    }
+  }
+}

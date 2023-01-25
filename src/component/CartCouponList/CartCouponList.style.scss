@@ -1,0 +1,142 @@
+.CouponLists {
+    list-style: none;
+    //margin: 30px 18px 6px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 389px;
+    margin-left: 18px;
+    padding-right: 14px;
+    @include mobile {
+        margin-left: 0;
+        padding-right: 0;
+        max-height: 320px;
+    }
+    &::-webkit-scrollbar {
+        width: 4px;
+        border: 1px solid #d5d5d5;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #585757;
+        border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #dcdcdc;
+    }
+    .couponListItem {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        border: 1px dashed #28D9AA;
+        border-radius: 6px;
+        background-color: #F4FFFC;
+        &::before {
+            display: none;
+        }
+        .couponItemBlock {
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+            .couponItemDetail {
+                padding-right: 10px;
+                .couponItemCode {
+                    color: #28D9AA;
+                    font-family: "Avenir Next";
+                    font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    margin: 0 0 6px;
+                    word-break: break-word;
+                }
+                .couponItemName {
+                    color: #4A4A4A;
+                    font-family: "Avenir Next";
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    line-height: 16px;
+                    margin: 0 0 6px;
+                    word-break: break-word;
+                }
+                .couponItemViewBtn {
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+                    color: #4A4A4A;
+                    font-family: "Avenir Next";
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    line-height: 16px;
+                    text-decoration: underline;
+                    text-transform: none;
+                    font-weight: normal;
+                    cursor: pointer;
+                }
+            }
+            .couponItemBtn {
+                margin-left: auto;
+                height: 34px;
+                text-transform: none;
+                cursor: pointer;
+                min-width: 80px;
+                &.apply {
+                    border: 1px solid #28D9AA;
+                    border-radius: 8px;
+                    background-color: #FFFFFF;
+                    color: #28D9AA;
+                    font-family: "Avenir Next";
+                    font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    text-align: center;
+                }
+                &.remove {
+                    border-radius: 8px;
+                    background-color: #28D9AA;
+                    color: #FFFFFF;
+                    font-family: "Avenir Next";
+                    font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.CartPage {
+    &_isArabic {
+        .CouponLists {
+            @include desktop {
+                margin-left: initial;
+                padding-right: initial;
+                margin-right: 18px;
+                padding-left: 14px;
+            }
+            .couponListItem {
+                .couponItemBlock {
+                    .couponItemDetail {
+                        padding-left: 10px;
+                        padding-right: 0;
+                    }
+                    .couponItemBtn {
+                        margin-left: initial;
+                        margin-right: auto;
+                    }
+                }
+            }
+        }
+        .couponPopupTop .closeCouponPopupBtn {
+            float: left !important;
+            &::before {
+                left: 5px !important;
+                right: initial !important;
+            }
+        }
+    }
+}

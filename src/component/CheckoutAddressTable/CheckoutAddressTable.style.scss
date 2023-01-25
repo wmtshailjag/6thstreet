@@ -1,0 +1,25 @@
+.EditAddress {
+  &-Logo {
+    content: "";
+    max-width: 30px;
+    top: 47%;
+    border: solid #0a0a0a;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    &_isArabic{
+      transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    }
+  }
+  &-Container {
+    width: 40px !important;
+    z-index: 900;
+    padding-left: 30px;
+    &_isArabic{
+      padding-left: 0;
+    }
+  }
+}

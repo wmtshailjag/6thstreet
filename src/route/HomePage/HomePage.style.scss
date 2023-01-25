@@ -1,0 +1,113 @@
+html { height: 100%; overflow:auto; }
+body { height: 100%; }
+.HomePage {
+  // min-height: 500px;
+ @include mobile{
+   padding-bottom: 106px;
+   padding-top: 147px;
+ }
+ @include tablet{
+  padding-top: 147px;
+
+ }
+  .DynamicContentBanner {
+    box-sizing: border-box;
+    margin: 0;
+    // padding: 0 8px;
+
+    &:last-of-type {
+      padding-bottom: 30px;
+
+      @include desktop() {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  // @include desktop {
+  text-align: center;
+
+  .DynamicContent {
+    > div:not(.DynamicContentFullWidthBannerSlider) {
+      @include desktop {
+        margin: 0 auto;
+        width: var(--main-container-width-dsk);
+        max-width: var(--container-max-width);
+      }
+    }
+    .DynamicContentGrid {
+      @include tablet {
+        margin-left: 30px !important;
+        margin-right: 30px !important;
+      }
+    }
+  }
+  .DynamicContent {
+    > div:not(.DynamicContentCircleItemSlider  )  {
+      // margin-bottom: 60px !important;
+      @include tablet {
+        // margin-bottom: 40px !important;
+      }
+      @include mobile {
+        margin-bottom: 20px !important;
+      }
+    }
+  }
+
+  // }
+}
+
+@keyframes move {
+  to {
+    transform: translateX(calc(50% + 100px));
+  }
+}
+
+.AnimationWrapper {
+  width: 100%;
+  min-height: 300px;
+  // background-image: var(--placeholder-image);
+  // background-size: var(--placeholder-size);
+  // animation: var(--placeholder-animation);
+  background-image: linear-gradient(
+    to right,
+    #e2e2e2 calc(50%),
+    #dcdcdc 50%,
+    #e6e6e6 calc(50%)
+  );
+  background-size: 0;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(200% + 200px);
+    bottom: 0;
+    background-image: inherit;
+    animation: move 1s linear infinite;
+  }
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: flex-start;
+  overflow: hidden;
+  width: var(--main-container-width-dsk);
+  margin: 30px auto;
+  &-Card {
+    min-width: 16.528vw;
+    height: 285px;
+    margin-right: 7px;
+    background-image: var(--placeholder-image);
+    background-size: var(--placeholder-size);
+    animation: var(--placeholder-animation);
+    @include tablet {
+      min-width: 21.224vw;
+    }
+    @include mobile {
+      min-width: 41vw;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.PDPGalleryTag {
+  background-color: #fff;
+  opacity: 0.8;
+  width: 100%;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 0;
+  &-Tag {
+    color: #000000;
+    font-size: 14px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    line-height: 15px;
+    text-align: center;
+  }
+}

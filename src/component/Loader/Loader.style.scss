@@ -1,0 +1,69 @@
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/base-theme
+ * @link https://github.com/scandipwa/base-theme
+ */
+
+:root {
+  --loader-scale: 1;
+  --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+  --s-loader-width: 50px;
+  --s-loader-height: var(--s-loader-width);
+  --s-loader-border-color-trans: #ddd;
+  --s-loader-border-color-full: #000000;
+}
+
+.Loader {
+  background-color: var(--overlay-black-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 75;
+  margin: auto;
+
+  &-Main {
+    background-image: url(./images/loader-1.gif) no-repeat;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background: #ffffff;
+  }
+
+  &-Scale {
+    position: absolute;
+    transform: translate(-50%, -50%) scale(var(--loader-scale));
+    left: 50%;
+    top: calc(100vh / 2 - (3px * var(--loader-scale)));
+  }
+  // @include before-desktop {
+  //     display: none;
+  // }
+  &-SpinningLoader {
+    width: var(--s-loader-width);
+    height: var(--s-loader-height);
+    border: 1px solid var(--s-loader-border-color-trans);
+    border-left-color: var(--s-loader-border-color-full);
+    border-radius: 50%;
+    background: transparent;
+    animation-name: rotate-s-loader;
+    animation-iteration-count: infinite;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    position: relative;
+  }
+}
+@keyframes rotate-s-loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

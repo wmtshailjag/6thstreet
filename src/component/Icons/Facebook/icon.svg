@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>098F99BF-4A23-4E52-8DE6-E99BFFC2D3D5</title>
+    <defs>
+        <rect id="path-1" x="0" y="2" width="427" height="205" rx="12"></rect>
+        <filter x="-3.5%" y="-7.3%" width="107.0%" height="114.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.149644545 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboards" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dsk-share" transform="translate(-1244.000000, -463.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1440" height="1459"></rect>
+            <g id="Group-6" transform="translate(965.000000, 345.000000)">
+                <g id="Rectangle" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group" transform="translate(21.000000, 100.000000)">
+                    <g id="elements/social-circle" transform="translate(240.000000, 0.000000)">
+                        <circle id="Oval" fill="#F6F6F6" cx="30" cy="30" r="30"></circle>
+                        <g id="icons/facebook" transform="translate(18.000000, 18.000000)" fill="#000000">
+                            <g id="facebook" transform="translate(7.000000, 3.000000)">
+                                <path d="M9.9,0 L7.2,0 C4.71471863,0 2.7,2.01471863 2.7,4.5 L2.7,7.2 L0,7.2 L0,10.8 L2.7,10.8 L2.7,18 L6.3,18 L6.3,10.8 L9,10.8 L9.9,7.2 L6.3,7.2 L6.3,4.5 C6.3,4.00294373 6.70294373,3.6 7.2,3.6 L9.9,3.6 L9.9,0 Z" id="Path"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

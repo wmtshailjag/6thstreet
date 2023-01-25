@@ -1,0 +1,34 @@
+.PLPPage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  //   margin: 0 20px;
+  grid-gap: 35px 25px;
+
+  @include mobile() {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+
+
+
+
+}
+
+.PageWrapper {
+  &_isArabic {
+    .PLPPage {
+      .Price {
+        // flex-direction: row-reverse;
+
+        &-Wrapper {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+
+        &-Discount {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}

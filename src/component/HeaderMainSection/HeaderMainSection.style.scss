@@ -1,0 +1,562 @@
+:root {
+  --main-content-padding: 147px;
+}
+
+main {
+  @include mobile {
+    padding-top: var(--main-content-padding);
+  }
+  @include tablet {
+    padding-top: var(--main-content-padding);
+  }
+}
+.HeaderSearchSection {
+  .HeaderSearch {
+    @include mobile {
+      background: $white;
+      position: fixed;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: top;
+      padding-top: 5px;
+      height: 54px;
+      top: 49px;
+    }
+    @include tablet {
+      background: $white;
+      position: fixed;
+      display: flex;
+      width: 100%;
+      padding-top: 5px;
+      justify-content: center;
+      align-items: top;
+      height: 54px;
+      top: 49px;
+    }
+    @include after-mobile {
+      // display: none;
+    }
+  }
+  .HeaderSearch {
+    @include mobile {
+      top: 49px;
+    }
+    @include tablet {
+      top: 49px;
+    }
+  }
+}
+.HeaderMainSection {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  .leftContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    order: 2;
+    @include desktop {
+      z-index: 3;
+    }
+  }
+
+  @include mobile {
+    &_showPLPSearch {
+      &[data-visible="true"] {
+        z-index: 9999 !important;
+      }
+    }
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+    background: $white;
+    top: 0;
+    &[data-visible="false"] {
+      // display: none;
+      // width:0;
+      // height:0;
+      visibility: hidden;
+      top: -50px;
+    }
+    &[data-visible="true"] {
+      z-index: 94;
+    }
+  }
+  @include tablet {
+    z-index: 90;
+    position: fixed;
+    width: 100%;
+    background: $white;
+    top: 0;
+    &[data-visible="false"] {
+      // display: none;
+      // top: -50px;
+      visibility: hidden;
+      top: -50px;
+    }
+  }
+
+  .HeaderGenders {
+    display: flex;
+    flex: 1;
+    order: 0;
+  }
+
+  .HeaderLogo {
+    order: 1;
+    @include mobile {
+      position: fixed;
+      top: 15px;
+      z-index: 1;
+    }
+    @include tablet {
+      position: fixed;
+      top: 15px;
+      width: 90%;
+    }
+  }
+  .SearchIcon {
+    order: 2;
+    // display: none;
+    // padding-right: 47px;
+    img {
+      cursor: pointer;
+    }
+    &-Button {
+      content: "";
+      background: url(./icons/search-black.svg) no-repeat;
+      background-size: 24px;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      position: relative;
+      // top: -4px;
+    }
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .CategoryTitle {
+    @include mobile {
+      font-size: 12px;
+      padding-left: 15px;
+      padding-right: 15px;
+      top: 0;
+      width: 70%;
+      margin-left: 15%;
+      height: 40px;
+      line-height: 40px;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &_isArabic {
+        margin-right: 15%;
+        margin-left: unset;
+      }
+
+      &_isPDP {
+        top: 5px;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+    @include tablet {
+      font-size: 12px;
+      padding-left: 15px;
+      padding-right: 15px;
+      top: 0;
+      width: 70%;
+      margin-left: 15%;
+      height: 40px;
+      line-height: 40px;
+
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &_isArabic {
+        margin-right: 15%;
+        margin-left: unset;
+      }
+    }
+    @include after-mobile {
+      display: none;
+    }
+  }
+  .BackArrow {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    @include mobile {
+      height: 30px;
+    }
+    position: fixed;
+    top: 11px;
+    left: 15px;
+
+    background: $white;
+
+    &_isArabic {
+      right: 15px;
+      left: unset;
+
+      .BackArrow {
+        &-Button {
+          right: 5px;
+          left: unset;
+
+          &::before {
+            right: 5px;
+            left: unset;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+
+    &-Button {
+      top: 0;
+      left: 5px;
+      background-size: 30px;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      p {
+        display: none;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 5px;
+        border: solid $black;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+    }
+
+    @include after-mobile {
+      display: none;
+    }
+  }
+
+  .HeaderWishlist {
+    order: 3;
+    height: 25px;
+    margin-left: 22px;
+    margin-right: 22px;
+  }
+
+  .HeaderAccount {
+    order: 4;
+    margin-left: 22px;
+    margin-right: 22px;
+    &_isArabic {
+      // margin-left: 0;
+    }
+  }
+
+  .HeaderCart {
+    order: 5;
+    margin-left: 22px;
+    &_isArabic {
+      margin-right: 22px;
+      margin-left: 0;
+    }
+
+    @include before-desktop {
+      top: 5px;
+      width: 45px;
+      margin: 0 auto;
+      @include mobile {
+        position: fixed;
+        top: 14px;
+        right: 20px;
+
+        background: $white;
+        height: 30px;
+        width: 30px;
+        border-radius: 20px;
+
+        &-Button {
+          left: 5px;
+          background-size: 24px;
+          width: 24px;
+          height: 24px;
+        }
+
+        &-Count {
+          top: 2px;
+          right: -2px;
+        }
+
+        &_isArabic {
+          right: unset;
+          left: 20px;
+          .HeaderCart {
+            margin-left: 0 !important;
+            &-Button {
+              right: 5px;
+              left: unset;
+            }
+          }
+        }
+      }
+    }
+    @include tablet {
+      position: fixed;
+      top: 14px;
+      right: 20px;
+
+      background: $white;
+      height: 40px;
+      width: 30px;
+      border-radius: 20px;
+
+      &-Button {
+        right: 5px;
+        background-size: 24px;
+        width: 24px;
+        height: 24px;
+      }
+
+      &-Count {
+        top: 0px;
+        right: -5px;
+      }
+
+      &_isArabic {
+        right: unset;
+        left: 20px;
+        .HeaderCart {
+          &-Button {
+            right: 5px;
+            left: unset;
+            // background-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  &_showPLPSearch {
+    .HeaderGenders {
+      @include mobile {
+        &_isMobile {
+          top: 7px !important;
+          flex-direction: row;
+          justify-content: start !important;
+          width: 65% !important;
+          overflow: scroll;
+          z-index: 999;
+          padding-bottom: 13px !important;
+        }
+      }
+    }
+  }
+  .HeaderGenders {
+    @include mobile {
+      &_isMobile {
+        display: flex;
+        background: $white;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 18px;
+        align-items: center;
+        margin-top: 0px;
+        top: 100px;
+        position: fixed;
+        justify-content: center;
+        padding-left: 17.5%;
+        padding-right: 17.5%;
+      }
+
+      .GenderButton-Container {
+        display: flex;
+        justify-content: center;
+        width: 33.33%;
+
+        .GenderButton-Button {
+          padding: 0 0px;
+        }
+      }
+    }
+    @include tablet {
+      &_isMobile {
+        display: flex;
+        background: $white;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 18px;
+        align-items: center;
+        margin-top: 0px;
+        top: 100px !important;
+        position: fixed;
+        justify-content: center;
+      }
+
+      .GenderButton-Container {
+        display: flex;
+        justify-content: center;
+        // width: 33.33%;
+
+        .GenderButton-Button {
+          padding: 0;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .HeaderWishlist,
+  .HeaderAccount {
+    label {
+      span {
+        display: none;
+      }
+    }
+    &_isMobile {
+      @include before-desktop {
+        display: none;
+      }
+    }
+  }
+
+  @include desktop() {
+    display: flex;
+    height: 84px;
+    flex-direction: unset;
+    // padding: 0 15px;
+    padding: 0;
+    width: var(--main-container-width-dsk);
+
+    &_isMobile {
+      display: block;
+    }
+  }
+
+  @include desktop() {
+    display: flex;
+  }
+
+  .DesktopSearch {
+    position: fixed;
+    top: 115px;
+    background: #f6f6f6;
+    width: 100%;
+    height: 40px;
+    left: 0;
+    z-index: 10;
+    .HeaderSearch {
+      position: relative;
+      width: var(--main-container-width-dsk);
+      max-width: var(--container-max-width);
+      height: 40px;
+      top: 0;
+      border-radius: 0;
+      margin-left: auto;
+      margin-right: auto;
+      background: #f6f6f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #f6f6f6;
+      &-Clear {
+        padding-right: 0px;
+        padding-left: 0px;
+        width: 15px;
+      }
+
+      .Form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .Field {
+        input {
+          padding-left: 35px !important;
+        }
+      }
+      &-Clear {
+        display: flex;
+      }
+      &-SubmitBtn {
+        left: 0;
+        right: 0;
+      }
+    }
+    .SearchSuggestion {
+      width: 100%;
+      left: 0;
+      right: 0;
+      &-Shade {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        position: fixed;
+        left: 0;
+        content: '.';
+        color: transparent;
+        z-index: -1;
+        pointer-events: none;
+      }
+      &-Content {
+        margin-left: 0;
+        opacity: 1;
+        max-height: 400px;
+        overflow-y: auto;
+        right: 0;
+        & > div {
+          max-width: var(--container-max-width);
+          width: var(--main-container-width-dsk);
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0 35px;
+        }
+      }
+    }
+  }
+}
+
+.SearchIcon {
+  margin-right: 22px;
+  @include mobile {
+    margin-right: 56px;
+    top: 4px;
+
+    &_isArabic {
+      margin-right: 0;
+      margin-left: 56px !important;
+    }
+  }
+  &_isArabic {
+    margin-right: 0;
+    margin-left: 22px;
+  }
+}
+.HeaderSearchSection {
+  @include mobile {
+    &_isPDP {
+      .HeaderSearch {
+        display: none;
+      }
+    }
+    z-index: 95;
+  }
+}

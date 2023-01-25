@@ -1,0 +1,149 @@
+.ChangePhonePopup {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &_isChangePhonePopupOpen {
+        display: block;
+    }
+
+    &-Background {
+        position: fixed;
+        background-color: black;
+        opacity: 0.7;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &-Close {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+
+        &:after {
+            top: 5px;
+            right: 5px;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background-color: #000000;
+            opacity: 0.3;
+            border-radius: 50px;
+        }
+
+        &_isArabic {
+            left: 5px;
+            right: unset;
+        }
+    }
+
+    &-Content {
+        background-color: #ffffff;
+        margin: auto;
+        margin-top: 200px;
+        max-width: 400px;
+        max-height: 230px;
+        opacity: 1;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+
+        form {
+            button {
+                border-radius: 10px;
+                max-width: 230px;
+                width: 100%;
+            }
+        }
+
+        &-Title {
+            font-size: 16px;
+            margin: 10px 20px;
+        }
+
+        input {
+            margin-bottom: 20px;
+
+        }
+    }
+
+    &-Phone {
+        margin: 20px 10% 30px;
+        display: flex;
+        height: 60px;
+
+        &Field {
+            height: 60px;
+            margin-left: 10px;
+            width: calc(100% - 10px);
+        }
+
+        .Field {
+            margin-top: 0;
+
+            &_type_text {
+                width: calc(100% - 100px);
+            }
+
+            p {
+                margin-top: 5px;
+            }
+        }
+
+        &_isArabic {
+            .ChangePhonePopup {
+                &-PhoneField {
+                    margin-left: unset;
+                    margin-right: 10px;
+                    text-align: right;
+                }
+            }
+
+            .Field {
+                .FieldSelect {
+                    &-Select {
+                        padding-left: 15px;
+                        padding-right: 40px;
+                    }
+                }
+            }
+        }
+    }
+
+    .FieldSelect {
+        height: 60px;
+        width: 100px;
+
+        &-Select {
+            height: 60px;
+            width: 100px;
+            padding-left: 40px;
+            padding-right: 10px;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .CountryMiniFlag-Container {
+        position: absolute;
+        top: 23px;
+        left: 2%;
+        z-index: 1;
+
+        &_isArabic {
+            left: unset;
+            right: 2%;
+        }
+    }
+}

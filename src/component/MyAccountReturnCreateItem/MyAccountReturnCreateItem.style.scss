@@ -1,0 +1,243 @@
+.MyAccountReturnCreateItem {
+  margin-bottom: 30px;
+  .PDPAddToCart {
+    &-OutOfStockContainer {
+      width: 80%;
+      padding: 10px;
+      margin-left: 40px;
+    }
+  }
+  .PLPAddToCart {
+    &-SizeSelector {
+      align-items: flex-start;
+      margin-left: 40px;
+      padding: 0px 0 25px 0;
+      border-bottom: 2px solid var(--color-gainsboro);
+      &-SizeOptionContainerOOS {
+        cursor: pointer;
+        pointer-events: unset;
+      }
+    }
+  }
+  .PDPAlsoAvailable {
+    margin-left: 40px;
+    margin-top: 15px;
+    border-bottom: 2px solid var(--color-gainsboro);
+    &-List{
+      margin-bottom: 20px;
+    }
+
+    .PDPAlsoAvailableProduct {
+      &-SizeOptionContainerOOS {
+        border: 2px solid var(--color-gainsboro);
+        cursor: pointer;
+        pointer-events: unset;
+      }
+      &-selectedProduct {
+        border: 2px solid var(--selected-step-color);
+        padding: 6px;
+      }
+    }
+    li {
+      padding: 6px;
+      cursor: pointer;
+    }
+    li:last-child{
+      margin-bottom: 6px;
+    }
+
+    li:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+  .SizeParentWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 14px;
+    max-width: 46%;
+    min-width: 12%;
+    @include mobile {
+      max-width: 84%;
+    }
+    .PLPAddToCart {
+      &-SizeTypeSelectElement {
+        margin-bottom: 0px;
+      }
+      &-SizeSelector {
+        &-SizeContainer {
+          width: 85%;
+          @include mobile {
+            width: 100%;
+          }
+          &-AvailableSizes {
+            scrollbar-width: none;
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+  &-Content {
+    display: flex;
+    margin-bottom: 15px;
+    padding-left: 40px;
+
+    .PageWrapper_isArabic & {
+      padding-right: 40px;
+      padding-left: unset;
+    }
+  }
+
+  &-Checkbox {
+    left: 10px;
+    margin-top: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .PageWrapper_isArabic & {
+      left: unset;
+      right: 10px;
+    }
+
+    label {
+      border-radius: 50%;
+    }
+  }
+
+  &-Image {
+    margin-right: 15px;
+    max-width: 80px;
+    // padding-bottom: 100px;
+
+    .PageWrapper_isArabic & {
+      margin-left: 15px;
+      margin-right: unset;
+    }
+  }
+
+  &-Details {
+    &Options {
+      display: flex;
+      .Quantity{
+        display: flex;
+        .CartItem{
+          &-Quantity{
+            margin-left: 5px;
+          }
+        }
+      }
+      p {
+        color: var(--color-light-grey);
+        margin: 0;
+        padding: 0 5px;
+
+        &:not(:last-of-type) {
+          border-right: 1px solid var(--color-gainsboro);
+
+          .PageWrapper_isArabic & {
+            border-left: 1px solid var(--color-gainsboro);
+            border-right: 0;
+          }
+        }
+
+        &:first-of-type {
+          &:not(:last-of-type) {
+            padding: 0 5px 0 0;
+
+            .PageWrapper_isArabic & {
+              padding: 0 0 0 5px;
+            }
+          }
+        }
+
+        &:last-of-type {
+          padding: 0;
+
+          &:not(:first-of-type) {
+            padding: 0 0 0 5px;
+
+            .PageWrapper_isArabic & {
+              padding: 0 5px 0 0;
+            }
+          }
+        }
+
+        span {
+          color: var(--color-gray);
+        }
+      }
+    }
+
+    h2 {
+      font-weight: var(--fw-bold);
+      font-size: 14px;
+      margin: 0 0 10px;
+      text-transform: none;
+    }
+  }
+
+  &-Resolutions {
+    @include desktop {
+      margin: 10px 0 0 40px;
+    }
+  }
+
+  &-Resolution {
+    border-bottom: 2px solid var(--color-gainsboro);
+    margin-left: 40px;
+    padding-bottom: 16px;
+
+    .PageWrapper_isArabic & {
+      margin-left: unset;
+      margin-right: 40px;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &-Resolutions,
+  &-Reasons {
+    margin-top: 0;
+    width: 100%;
+
+    &:not(:last-of-type) {
+      @include before-desktop {
+        margin-bottom: 10px;
+      }
+    }
+
+    @include desktop {
+      width: calc(50% - 10px);
+    }
+  }
+
+  .Price {
+    span {
+      del {
+        text-decoration: line-through;
+      }
+    }
+
+    .SearchProduct {
+      &-Discount {
+        color: #d12229;
+        margin-left: 10px;
+      }
+    }
+
+    &-Discount {
+      color: #d12229;
+      margin-left: 10px;
+    }
+  }
+
+  .FieldSelect-Options_isExpanded {
+    overflow-y: auto;
+  }
+}

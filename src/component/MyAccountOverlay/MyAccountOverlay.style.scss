@@ -1,0 +1,1378 @@
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/base-theme
+ * @link https://github.com/scandipwa/base-theme
+ */
+
+:root {
+  --checkbox-label-color: #0a0a0a;
+  --my-account-input-label-color: rgba(10, 10, 10, 0.59);
+  --my-account-overlay-width: 450px;
+  --my-account-overlay-border-width: 1px;
+  --radio-label-color: black;
+  --gray-color: #9b9b9b;
+  --btn-bg-lite-gray-color: #d1d3d4;
+  --likelink-button-color: #4a4a4a;
+}
+.sk-three-bounce > div {
+  height: 6px;
+  width: 6px;
+  margin-right: 5px;
+}
+.sk-circle {
+  width: 10px;
+  height: 30px;
+}
+
+.MyAccountOverlay {
+  --overlay-background: var(--overlay-content-background);
+
+  grid-column: 3;
+  right: 0;
+  padding-top: 1rem;
+  opacity: 1;
+  overflow: visible;
+  z-index: 1000;
+  pointer-events: all;
+  cursor: auto;
+
+  &_isPopup {
+    opacity: 0;
+    overflow: hidden;
+  }
+  &-LoadingButton {
+    background-color: #a9a9a9 !important;
+    border: #a9a9a9 !important;
+  }
+  &-Image {
+    display: flex;
+    justify-content: center;
+    color: white;
+    z-index: 1;
+    height: 276px;
+    width: 100%;
+    background-image: url(https://static.6media.me/static/version1600859154/frontend/6SNEW/6snew/en_US/images/6street-login-banner.png);
+    background-size: cover;
+    background-position: 0, -330px;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    @include mobile() {
+      background-image: url(https://mobilecdn.6thstreet.com/auth_screen/login.jpg);
+      background-position: top;
+    }
+    span {
+      font-size: 52px;
+      transform: translateY(-4px);
+      font-weight: 400;
+    }
+    sup {
+      vertical-align: top;
+      font-weight: 600;
+      font-size: 26px;
+    }
+  }
+
+  label {
+    &::before {
+      content: none !important;
+    }
+  }
+
+  @include desktop {
+    display: block;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    width: var(--my-account-overlay-width);
+  }
+
+  @include before-desktop {
+    height: 100%;
+    padding-bottom: 0;
+    padding-top: 0;
+    top: 0;
+    position: relative;
+  }
+
+  &_isVisible {
+    @include desktop {
+      border: var(--my-account-overlay-border-width) solid
+        var(--overlay-desktop-border-color);
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    --input-color: var(--black-color);
+    caret-color: var(--black-color);
+    text-transform: none;
+    border: 0.5px solid #d1d3d4;
+    border-radius: 6px;
+
+    &::placeholder {
+      text-transform: uppercase;
+      color: var(--gray-color);
+      font-weight: var(--fw-medium);
+      letter-spacing: 0.5px;
+      line-height: 16px;
+    }
+  }
+  .VerifyPhone {
+    height: auto;
+    text-align: center;
+    margin: 30px 0;
+
+    &-Text {
+      font-family: var(--avenir-demi-font);
+      margin: 0 60px;
+      display: grid;
+
+      &-Title {
+        font-size: 18px;
+        font-weight: var(--fw-demi);
+        text-transform: capitalize;
+        margin: 0px 0 10px;
+      }
+
+      &-Message {
+        color: #4a4a4a;
+        font-size: 14px;
+      }
+
+      &-SubTitle {
+        margin: 16px 0;
+        margin: 6px auto;
+        font-size: 14px;
+      }
+
+      &-Phone {
+        width: 100%;
+        button {
+          text-decoration: underline;
+          margin-top: -7px;
+          font-weight: var(--fw-demi);
+        }
+      }
+    }
+    &-Code {
+      input {
+        text-align: center;
+        // width: 50%;
+        margin: auto;
+        background-color: transparent;
+        border: 0;
+        letter-spacing: 15px;
+        font-size: 27px;
+        // margin-left: 15px;
+        // caret-color: transparent;
+      }
+    }
+    &-ErrMessage {
+      display: none;
+      &_isValidated {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        color: #f01136;
+        font-size: 13px;
+        margin-top: 11px;
+      }
+    }
+    &-OtpLoader {
+      display: none;
+      &_isSubmitted {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px 40px 0px;
+      }
+    }
+    &-ResendCode {
+      display: none;
+      &_isVerifying {
+        display: block;
+        margin: 40px 0px 40px 0px;
+      }
+      button {
+        font-weight: var(--fw-regular);
+        font-size: 14px;
+        margin-top: 0;
+        text-transform: capitalize;
+        text-decoration: underline;
+        color: #4a4a4a;
+      }
+    }
+
+    @include before-desktop() {
+      background-color: #ffffff;
+    }
+
+    & form {
+      padding: 15px 60px 0px 60px;
+    }
+    @include after-mobile() {
+      margin-left: 0;
+      width: 100%;
+
+      button {
+        width: unset;
+      }
+    }
+
+    @include mobile() {
+      width: auto;
+      margin-inline: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &-Heading {
+    // text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: center;
+
+    @include before-desktop {
+      display: none;
+    }
+  }
+
+  &-Subtitle {
+    font-size: 13px;
+    text-align: center;
+    text-transform: none;
+    font-weight: var(--fw-regular);
+  }
+
+  &-Notification {
+    background-color: var(--primary-dark-color);
+    padding: 2rem;
+  }
+
+  &-Navigation {
+    li {
+      margin: 0;
+      padding: 0;
+
+      &::before {
+        content: none;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        display: block;
+      }
+    }
+
+    a,
+    button {
+      width: 100%;
+      text-align: left;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+
+      &:hover {
+        background-color: var(--color-cart-light);
+        text-decoration: none;
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+
+      @include desktop {
+        padding: 0.5rem;
+      }
+    }
+    @include desktop {
+      padding: 0.5rem;
+    }
+  }
+
+  &-Action form,
+  &-Additional {
+    padding: 0 60px 60px 60px;
+
+    @include before-desktop() {
+      max-width: 100vw;
+      padding: 0 20px;
+    }
+  }
+
+  &-Action {
+    display: block;
+    // display: grid;
+    // grid-template-rows: max-content 1fr;
+    overflow-y: auto;
+
+    &_state {
+      &_createAccount {
+        height: 100vh;
+        @include desktop() {
+          max-height: 91vh;
+        }
+
+        h4 {
+          padding-right: 1rem;
+          display: inline;
+        }
+
+        h3 {
+          margin-bottom: 1rem;
+        }
+
+        .Field {
+          margin-top: 0.7rem;
+        }
+      }
+
+      &_forgotPassword {
+        height: 100vh;
+        max-height: 745px;
+
+        h4 {
+          width: initial;
+        }
+
+        button {
+          font-weight: var(--fw-bold);
+        }
+      }
+
+      &_forgotPasswordSuccess {
+        height: 100vh;
+        max-height: 522px;
+      }
+
+      &_signIn {
+        height: 100vh;
+        @include desktop() {
+          max-height: 88vh;
+        }
+        h4 {
+          text-align: center;
+        }
+      }
+      &_otpVerification {
+        height: 100vh;
+        @include desktop() {
+          height: 642px;
+          max-height: 88vh;
+        }
+        h4 {
+          text-align: center;
+        }
+      }
+      &_initialLinks{
+        .MyAccountOverlayOuter{
+          .signInQuote{
+            @include mobile() {
+              opacity: 1;
+              visibility: visible;
+              height: auto;
+              margin: 40px 0 0;
+            }
+          }
+        }
+      }
+
+      &_loggedIn {
+        .MyAccountOverlay-Heading {
+          @include desktop {
+            display: none;
+          }
+        }
+        @include desktop {
+          width: 180px;
+          padding: 0;
+        }
+      }
+      &_initialLinks {
+        .logInScreenLinks {
+          margin-top: 40px;
+          .MyAccountTabListItem {
+            padding-left: 3.5rem;
+            border-bottom: 1px solid #eaeaea;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            &::before {
+              display: none;
+            }
+            a {
+              position: static;
+              text-align: left;
+              font-size: 16px;
+              font-weight: 600;
+              text-transform: capitalize;
+              letter-spacing: 0.55px;
+              display: block;
+              height: 50px;
+              line-height: 50px;
+              padding: 0 15px;
+              &::before {
+                left: 20px;
+                top: 24px;
+                background-repeat: no-repeat;
+                position: absolute;
+                background-size: contain;
+                width: 25px;
+                height: 30px;
+                content: "";
+                display: inline-block;
+              }
+              &.return_policy {
+                &::before {
+                  background-image: url(../../route/MyAccount/icons/account.png);
+                }
+              }
+              &.free_delivery {
+                &::before {
+                  background-image: url(../../route/MyAccount/icons/delivery.png);
+                }
+              }
+              &.faq {
+                &::before {
+                  background-image: url(../../route/MyAccount/icons/faq.png);
+                }
+              }
+              a {
+              }
+            }
+          }
+        }
+      }
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      font-weight: var(--fw-bold);
+      margin-bottom: 0.5rem;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    @include desktop {
+      width: calc(
+        var(--my-account-overlay-width) -
+          (var(--my-account-overlay-border-width) * 2)
+      );
+    }
+  }
+
+  &-Additional {
+    padding-top: 5.5rem;
+
+    section {
+      display: flex;
+
+      padding-top: 20px;
+
+      &:first-of-type {
+        padding-top: 0;
+      }
+    }
+
+    &_state {
+      &_createAccount {
+        padding-top: 2rem;
+
+        @include before-desktop {
+          display: none;
+        }
+
+        h4 {
+          margin: 0;
+          padding-right: 0;
+        }
+
+        button {
+          width: initial;
+          height: initial;
+          margin: 0;
+          padding-left: 0.4rem;
+        }
+      }
+
+      &_signIn {
+        section {
+          flex-direction: column;
+        }
+      }
+
+      &_confirmEmail {
+        padding-top: 0;
+      }
+
+      &_forgotPassword {
+        padding-top: 2.8rem;
+        padding-left: 2.1rem;
+
+        @include before-desktop {
+          display: none;
+        }
+
+        section {
+          display: flex;
+
+          button {
+            width: initial;
+            margin-top: 0;
+            padding-left: 5px;
+            font-weight: var(--fw-demi);
+          }
+
+          h4 {
+            margin-bottom: 0;
+            align-self: center;
+          }
+
+          &:last-of-type {
+            padding-top: 0.1rem;
+          }
+        }
+      }
+
+      &_forgotPasswordSuccess {
+        padding-top: 0;
+
+        h4 {
+          font-size: 1rem;
+          line-height: 1.5;
+          padding-bottom: 1.4rem;
+          font-weight: var(--fw-regular);
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+
+  &-CloseButton {
+    &::before,
+    &::after {
+      background-color: var(--header-color);
+      content: "";
+      height: 20px;
+      position: absolute;
+      right: 27px;
+      top: -13px;
+      transform-origin: 50% 50%;
+      width: 1px;
+      z-index: 1;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
+  &-Close {
+    position: absolute;
+    top: 10px;
+    width: 30px !important;
+    height: 30px;
+    border-radius: 100%;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 10;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      fill: $white;
+    }
+
+    &_isArabic {
+      left: 0;
+      right: unset;
+    }
+  }
+
+  &-ForgotPasswordButton {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &-ForgotPasswordSubheading {
+    font-size: 14px;
+    text-transform: none;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  &-Buttons {
+    display: flex;
+    margin: 30px 90px;
+    @include mobile(){
+      justify-content: center;
+    }
+    // @include mobile() {
+    //     margin: 30px 72px 39px 72px!important
+    // }
+
+    .Button {
+      --button-color: var(--gray-color);
+      --button-background: var(--white-color);
+      --button-border: var(--white-color);
+      --button-hover-color: var(--black-color);
+      --button-hover-border: var(--black-color);
+      --button-hover-background: var(--white-color);
+      white-space: nowrap;
+      padding: 0 5%;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 0.46px;
+      line-height: 15px;
+      height: 30px;
+      border-radius: 20px;
+      margin: 0 10px;
+      transition: none;
+
+      button {
+        padding: 0;
+
+        &:focus {
+          background-color: var(--color-cart-light) !important;
+          border: 2px solid var(--button-hover-border);
+        }
+      }
+
+      &:hover {
+        background-color: var(--white-color);
+        border: 2px solid $black;
+      }
+
+      &_isSignIn,
+      &_isCreateAccount {
+        --button-border: var(--black-color);
+        --button-color: var(--black-color);
+        border: 2px solid var(--button-border);
+        padding: 0 15px;
+      }
+      @include mobile() {
+        &.signBtns {
+          height: 45px;
+          line-height: 45px;
+          border: 1px solid #000;
+          color: #000;
+          font-size: 12px;
+          font-weight: 700;
+          border-radius: 6px;
+          flex: 0 0 40%;
+          &.signUpBtn {
+            color: #fff;
+            background: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &_isArabic {
+    .MyAccountOverlay {
+      &-Button {
+        &_isSignIn {
+          &::after {
+            left: 10px;
+            right: unset;
+          }
+        }
+      }
+    }
+  }
+
+  &-Button {
+    &:hover {
+      background-color: var(--btn-bg-lite-gray-color) !important;
+      border-radius: 6px !important;
+    }
+
+    .Button {
+      --button-background: var(--btn-bg-lite-gray-color);
+      --button-border: var(--btn-bg-lite-gray-color);
+      --button-hover-background: var(--btn-bg-lite-gray-color);
+      --button-hover-border: var(--btn-bg-lite-gray-color);
+      --button-color: var(--white-color);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 16px;
+      border-radius: 6px;
+
+      &[disabled] {
+        opacity: unset;
+        background-color: var(--btn-bg-lite-gray-color);
+      }
+    }
+
+    &_isMargin {
+      margin-top: 20px;
+    }
+
+    &_likeLink {
+      top: 4px;
+      height: 20px;
+      margin-top: 8px;
+      --button-color: var(--gray-color);
+      text-transform: none;
+      text-align: left;
+      vertical-align: bottom;
+      padding: 0;
+      margin-bottom: 20px;
+      color: var(--likelink-button-color);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 16px;
+      text-decoration: underline;
+    }
+
+    &_isArabic {
+      text-align: right;
+    }
+
+    &_isSignIn {
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        mask-image: url(../Icons/Lock/icon.svg);
+        mask-position: center;
+        mask-repeat: no-repeat;
+        -webkit-mask-image: url(../Icons/Lock/icon.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        background-color: #ffffff !important;
+        width: 54px;
+        height: 54px;
+        display: inline-block;
+        font-size: 0;
+      }
+    }
+
+    &_isSignInValidated,
+    &_isCreateValidated,
+    &_isForgotValidated {
+      .Button {
+        --button-background: var(--black-color);
+        --button-border: var(--black-color);
+        --button-hover-background: var(--black-color);
+        --button-hover-border: var(--black-color);
+        --button-color: var(--white-color);
+      }
+    }
+
+    &_isCreateAccountButton {
+      margin-top: 24px;
+      @include mobile(){
+        margin-bottom: 25px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        mask-image: url(../Icons/Lock/icon.svg);
+        mask-position: center;
+        mask-repeat: no-repeat;
+        -webkit-mask-image: url(../Icons/Lock/icon.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        background-color: #ffffff !important;
+        width: 54px;
+        height: 54px;
+        display: inline-block;
+        font-size: 0;
+      }
+    }
+  }
+
+  &-SSO {
+    &_disabled {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
+    margin: 40px 60px 0;
+    border-top: 1.5px solid #efefef;
+
+    @include before-desktop() {
+      margin: 40px 20px;
+    }
+
+    &-title {
+      background-color: #ffffff;
+      position: absolute;
+      transform: translateY(-50%);
+      padding: 0 16px;
+      color: #4a4a4a;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.91px;
+      line-height: 14px;
+      text-align: center;
+    }
+    &-Buttons {
+      display: flex;
+      margin: 42px 0;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      @include mobile() {
+        margin-bottom: 24px;
+      }
+      &-Facebook,
+      &-Google {
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-align: center;
+        border-radius: 6px;
+        margin: 5px 0px;
+        width: 47% !important;
+      }
+      &-Facebook {
+        &_disabled {
+          display: none;
+        }
+        background-color: #3b5998;
+      }
+      &-Google {
+        &_disabled {
+          display: none;
+        }
+        background-color: #dc4139;
+      }
+    }
+  }
+
+  &-Checkbox {
+    margin-top: 15px;
+    display: flex;
+
+    .Field [type="checkbox"] {
+      + label {
+        margin-right: 10px;
+      }
+
+      &:checked + label {
+        --primary-base-color: var(--black-color);
+      }
+
+      &:hover + label {
+        --primary-base-color: var(--black-color);
+      }
+    }
+
+    &_isArabic {
+      .Field [type="checkbox"] {
+        + label {
+          margin-left: 10px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &-Radio {
+    display: flex;
+    margin-top: 10px;
+
+    .Field [type="radio"] {
+      + label {
+        position: relative;
+        height: 14px;
+        width: 14px;
+        margin-right: 6px;
+        align-items: center;
+
+        &:hover {
+          &::after {
+            --checkmark-color: var(--black-color);
+          }
+        }
+
+        border-radius: 50%;
+
+        &::after {
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          width: 0.5rem;
+          height: 0.5rem;
+          border-radius: 50%;
+          transition-property: background-color, box-shadow;
+          will-change: background-color, box-shadow;
+        }
+      }
+      span {
+        display: block;
+      }
+      &:disabled + label {
+        color: #b8b8b8;
+        cursor: auto;
+      }
+
+      &:checked + label {
+        --primary-base-color: var(--black-color);
+        background: none;
+
+        &::after {
+          --checkmark-color: var(--black-color);
+        }
+      }
+
+      &:focus {
+        + label {
+          &::after {
+            --checkmark-color: var(--black-color);
+          }
+        }
+      }
+    }
+    .Field_type_radio {
+      span {
+        display: block !important;
+      }
+      label {
+        align-items: center;
+      }
+    }
+
+    label {
+      color: var(--radio-label-color);
+      text-transform: none;
+      margin-right: 12px;
+      font-weight: var(--fw-light);
+      font-size: 13px;
+    }
+
+    &_isArabic {
+      label {
+        direction: ltr;
+      }
+    }
+  }
+
+  &-Legend {
+    margin-top: 10px;
+    .UserIdentifierFieldsContainer {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: 1rem;
+      &_isOTP {
+        height: 48px;
+        border-top: 0.5px solid #d1d3d4;
+        border-right: 0.5px solid #d1d3d4;
+        border-bottom: 0.5px solid #d1d3d4;
+        border-left: 0.5px solid #d1d3d4;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        .Field-Message {
+          margin: 5px 0 0;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+      .PhoneCountryCodeField {
+        height: 40px;
+        margin-bottom: 32px;
+        margin-top: 0px;
+        width: 104px;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        .CountryMiniFlag {
+          &-Container {
+            margin-bottom: -36px;
+          }
+        }
+        .Field {
+          border-top: none;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+          &_type_select {
+            height: 40px;
+            .FieldSelect-Select {
+              border-top: none;
+              border-right: none;
+              border-bottom: none;
+              border-left: none;
+              height: 40px;
+            }
+          }
+        }
+      }
+      .Field {
+        min-height: 40px;
+        margin-top: 0;
+        width: 100%;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        &_type_text {
+          height: 40px;
+          width: calc(100% - 104px);
+          input {
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            height: 40px;
+          }
+        }
+      }
+    }
+    .Password {
+      width: 100%;
+      &_isOTP {
+        margin-top: 0;
+      }
+    }
+    .Mask {
+      color: #9b9b9b;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 40px;
+      position: absolute;
+      bottom: 0;
+      right: 12px;
+      cursor: pointer;
+      &_isArabic {
+        left: 12px;
+        right: unset;
+        direction: ltr;
+      }
+    }
+  }
+
+  &-PhoneNumber {
+    margin-top: 10px;
+    .UserIdentifierFieldsContainerCreate {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 48px;
+      border-top: 0.5px solid #d1d3d4;
+      border-right: 0.5px solid #d1d3d4;
+      border-bottom: 0.5px solid #d1d3d4;
+      border-left: 0.5px solid #d1d3d4;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      .Field-Message {
+        margin: 5px 0 0;
+        font-size: 12px;
+        line-height: 12px;
+      }
+      .PhoneCountryCodeField {
+        height: 40px;
+        margin-bottom: 32px;
+        margin-top: 0px;
+        width: 104px;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        .CountryMiniFlag {
+          &-Container {
+            margin-bottom: -36px;
+          }
+        }
+        .Field {
+          border-top: none;
+          border-right: none;
+          border-bottom: none;
+          border-left: none;
+          &_type_select {
+            height: 40px;
+            .FieldSelect-Select {
+              border-top: none;
+              border-right: none;
+              border-bottom: none;
+              border-left: none;
+              height: 40px;
+            }
+          }
+        }
+      }
+      .Field {
+        min-height: 40px;
+        margin-top: 0;
+        width: 100%;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
+        border-left: none;
+        &_type_phone {
+          height: 40px;
+          width: calc(100% - 104px);
+          input {
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
+            height: 40px;
+          }
+        }
+      }
+    }
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // width: 100%;
+    // height: 40px;
+    // margin-top: 10px;
+    // .PhoneCountryCodeField {
+    //   height: 40px;
+    //   margin-bottom: 32px;
+    //   margin-top: 0px;
+    //   width: 104px;
+    //   .CountryMiniFlag {
+    //     &-Container {
+    //       margin-bottom: -36px;
+    //     }
+    //   }
+    //   select {
+    //     height: 40px;
+    //     border: 0.5px solid #d1d3d4;
+    //     border-radius: 6px;
+    //   }
+    // }
+    // .Field {
+    //   height: 40px;
+    //   margin-top: 0;
+    //   &_type_text {
+    //     width: calc(100% - 112px);
+    //     margin-left: 8px;
+    //     input {
+    //       height: 40px;
+    //       border: 0.5px solid #d1d3d4;
+    //       border-radius: 6px;
+    //     }
+    //   }
+    // }
+  }
+
+  &-LockImg {
+    .LazyLoad-wrapper {
+      img {
+        width: auto !important;
+        height: 60px !important;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 0 42%;
+      }
+    }
+  }
+
+  &-StoreSwitcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 40px auto;
+    z-index: 12;
+
+    .LanguageSwitcher {
+      margin: 0;
+
+      button {
+        padding: 0 10px;
+      }
+    }
+
+    .WelcomeScreen {
+      &-Content {
+        margin: 0 auto;
+
+        h1,
+        p {
+          text-align: left;
+        }
+      }
+
+      &-ButtonsContainer {
+        .primary {
+          margin-right: 10px;
+        }
+      }
+
+      &-Close {
+        top: 10px;
+        right: 0;
+        width: 30px;
+      }
+    }
+
+    .CountrySwitcher {
+      margin: 0;
+
+      &-CountryBtn {
+        margin: 0;
+        padding: 0;
+
+        &:after,
+        &:before {
+          content: none;
+        }
+      }
+
+      .StoreSwitcherPopup {
+        position: relative !important;
+        &-Image {
+          display: none;
+        }
+
+        &-Container {
+          right: 0;
+          &_isArabic {
+            @include mobile {
+              right: auto;
+              left: 35px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .HeaderAccount {
+    &-PopUp {
+      .MyAccountOverlay {
+        .MyAccountOverlay-Action {
+          &_state {
+            &_forgotPassword {
+              .MyAccountOverlay-Image,
+              .MyAccountOverlay-Buttons {
+                display: none;
+              }
+              .MyAccountOverlay-Heading {
+                top: 10px;
+                margin-top: 10px;
+                font-size: 14px;
+                line-height: 30px;
+              }
+              .Form {
+                padding-top: 15%;
+                .MyAccountOverlay-Heading {
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+          .Form {
+            .MyAccountOverlay {
+              &-Button {
+                &_likeLink {
+                  &:hover {
+                    background: transparent !important;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .PageWrapper {
+    &_isArabic {
+      .MyAccountOverlay {
+        &-StoreSwitcher {
+          .WelcomeScreen {
+            &-Content {
+              h1,
+              p {
+                text-align: right;
+              }
+            }
+
+            &-ButtonsContainer {
+              .primary {
+                margin-right: 0;
+                margin-left: 10px;
+              }
+            }
+
+            &-Close {
+              right: auto;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.MyAccountOverlayOuter {
+  position: relative;
+  .signInQuote {
+    display: none;
+    @include mobile() {
+      display: block;
+      height: 0;
+      opacity: 0;
+      margin: 0;
+      transition: height .4s ease-out, margin .4s ease-out; 
+      position: relative;
+      text-align: center;
+      width: 100%;
+      h5 {
+        color: #000;
+        font-size: 20px;
+        max-width: 70%;
+        margin: auto;
+        line-height: 28px;
+        font-weight: 600;
+        span{
+          color: #ec694f;
+        }
+      }
+    }
+  }
+}
+.Field_hasError + .Mask {
+  bottom: 1.8rem !important;
+}

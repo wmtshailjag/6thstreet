@@ -1,0 +1,115 @@
+:root {
+    --club-dark-gray: #333;
+}
+
+.MyAccountSignedInOverlay {
+    border: 1px solid var(--color-gainsboro);
+    border-radius: 5px;
+    left: 50%;
+    min-width: 270px;
+    padding: 0 20px;
+    top: 20px;
+    transform: translateX(-50%);
+
+    &::before {
+        background: #ffffff;
+        border-top: 1px solid var(--color-gainsboro);
+        border-right: 1px solid var(--color-gainsboro);
+        content: '';
+        height: 15px;
+        left: 50%;
+        position: absolute;
+        top: -9px;
+        transform: translateX(-50%) rotate(-45deg);
+        width: 15px;
+    }
+
+    &-Link {
+        &Title {
+            font-size: 13px;
+            vertical-align: middle;
+            font-weight: var(--fw-medium);
+
+            &:hover{
+                font-weight: var(--fw-demi);
+            }
+        }
+
+        &Account {
+            svg {
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+        }
+
+        &ClubBtn {
+            font-size: 10px;
+            background: var(--club-dark-gray);
+            line-height: initial;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $white;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+    }
+
+    &-Image {
+        height: 0;
+        display: inline-block;
+        margin-right: 10px;
+        padding-bottom: 20px;
+        vertical-align: middle;
+        width: 20px;
+        img{
+            height: 20px !important;
+        }
+    }
+
+    a {
+        border-bottom: 1px solid var(--color-gainsboro);
+        display: block;
+        font-weight: var(--fw-bold);
+        padding: 20px 0;
+        text-decoration: none;
+        text-transform: capitalize;
+
+        & + a {
+            margin-left: 0;
+        }
+    }
+
+    button {
+        color: #000000;
+        display: block;
+        font-weight: var(--fw-bold);
+        height: auto;
+        padding: 20px 0;
+        text-transform: none;
+    }
+
+    &_isArabic {
+        .MyAccountSignedInOverlay {
+            &-Link {
+                &Account {
+                    svg {
+                        margin-left: 10px;
+                        margin-right: unset;
+                    }
+                }
+
+                &ClubBtn {
+                    right: unset;
+                    left: 0;
+                }
+            }
+
+            &-Image {
+                margin-left: 10px;
+                margin-right: unset;
+            }
+        }
+    }
+}

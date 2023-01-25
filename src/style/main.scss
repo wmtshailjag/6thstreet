@@ -1,0 +1,13 @@
+// Default styles
+@import "../../node_modules/@scandipwa/scandipwa/src/style/main";
+
+// Rewritten styles
+@import "./abstract/variables.extended";
+@import "./abstract/button.extended";
+
+@import "./fonts/fonts";
+
+@import "./base/reset.extended";
+@import "./base/root.extended";
+@import "./base/inputs.extended";
+@import "./main-container/main-container.scss";

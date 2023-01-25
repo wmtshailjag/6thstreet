@@ -1,0 +1,159 @@
+/**
+ * @category  sixth-street
+ * @author    Vladislavs Belavskis <info@scandiweb.com>
+ * @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+ * @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+ */
+
+:root {
+  --color-dove-gray: #666;
+  --color-dusty-gray: #999;
+  --color-white: #ffffff;
+}
+
+.NoMatch {
+  margin: auto;
+
+  @include mobile {
+    //padding-top: 0;    
+    padding-bottom: 106px;
+    padding-top: 80px;
+  }
+
+  &-PageNotFound {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    margin-top: var(--header-height);
+    padding: 30px 0 100px;
+
+    @include tablet {
+      background: var(--color-white);
+      text-align: center;
+      width: 100%;
+    }
+
+    @include mobile {
+      font-size: 1rem;
+      margin: 0 0 20px;
+      padding: 25px 0 80px;
+    }
+  }
+
+  .PageNotFound {
+    &-Title {
+      font-size: 1.4rem;
+      margin-bottom: 45px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      span {
+        color: var(--primary-dark-color);
+        margin: 0 5px;
+      }
+
+      @include tablet {
+        margin-bottom: 30px;
+      }
+
+      @include mobile {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-SubTitle {
+      color: var(--color-dove-gray);
+      display: block;
+      font-weight: var(--fw-regular);
+      font-size: 1.4rem;
+      margin: 17px 0;
+      text-transform: uppercase;
+
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+
+    &-Content {
+      color: var(--color-dusty-gray);
+      font-weight: var(--fw-light);
+      font-size: 1.4rem;
+      line-height: 33px;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 349px;
+
+      @include mobile {
+        font-size: 14px;
+        width: 290px;
+      }
+    }
+
+    &-LinkHome {
+      background-color: var(--link-color);
+      color: var(--color-white);
+      font-weight: var(--fw-regular);
+      font-size: 12px;
+      padding: 13px 23px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .Image {
+      .lazyload-wrapper {
+        height: auto;
+        max-width: 160px;
+
+        @include mobile {
+          width: 23%;
+        }
+
+        img {
+          display: inline-block;
+          height: auto;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.NotFoundContent {
+  padding-top: 12px;
+  text-align: center;
+  .notFoundImage{
+    text-align: center;
+    margin-bottom: 2px;
+    .Image{
+      width: 120px;
+      display: inline-block;
+    }
+  }
+  .Title {
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -0.83px;
+    line-height: 1;
+    text-align: center;
+    padding-bottom: 8px;
+    @include mobile {
+      font-size: 21px;
+    }
+  }
+
+  .SubTitle {
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

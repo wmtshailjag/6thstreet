@@ -1,0 +1,38 @@
+.VuePLP {
+  &-VuePLPContainer {
+    .PLPPage {
+      display: unset !important;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: 19.7px 28.6px;
+        @include mobile() {
+          grid-template-columns: repeat(2,1fr);
+          margin: 0;
+          grid-gap: 29px 4px;
+        }
+      }
+    }
+        .VueProductSlider{
+            &-VueProductContainer{
+                height: auto;
+                position: relative;
+                margin-right: 0px;
+                display: inline-block;
+                vertical-align: top;
+                overflow-y: hidden;
+                @include mobile{
+                  width: 168px ;
+                  min-height: 273px;
+                }
+            }
+    }
+    .Products-Wrapper {
+      @include desktop() {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 17px;
+      }
+    }
+  }
+}

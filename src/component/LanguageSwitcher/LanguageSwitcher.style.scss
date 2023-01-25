@@ -1,0 +1,86 @@
+.LanguageSwitcher {
+    display: flex;
+    margin-left: auto;
+
+    .Field {
+        display: none;
+    }
+
+    button {
+        font-weight: var(--fw-light);
+        font-size: 12px;
+        height: auto;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+
+        span {
+            border-right: 1px solid var(--border-color);
+            padding-right: 8px;
+            padding-left: 8px;
+            font-family: 'Cairo';
+        }
+        .Language-Active{
+            text-decoration: underline;
+            text-underline-position: under;
+            color: black;
+            &.hidden {
+                display: none;
+            }
+        }
+        .Language-Inactive{
+            color: gray;
+        }
+
+    }
+    button.Popup-button{
+        margin-top: 12px;
+        height: 40px;
+        display: flex;
+        .Language-Active{
+            display: block;
+            border: 1px solid #000000;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 11px 30px;
+            text-decoration: none;
+            width: 117px;
+        }
+        .Language-Inactive{
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 6px;
+            background-color: #9B9B9B;
+            color: white;
+            width: 117px;
+        }
+        span{
+            &:first-child{
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &_isArabic {
+        margin-left: 0;
+        margin-right: auto;
+
+        button {
+            span {
+                border-left: 1px solid var(--border-color);
+                border-right: none;
+                padding-left: 15px;
+            }
+        }
+    }
+}

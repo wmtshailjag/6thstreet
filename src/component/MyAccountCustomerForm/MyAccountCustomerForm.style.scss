@@ -1,0 +1,353 @@
+:root {
+    --dark-gray: #b8b8b8;
+    --light-gray: #cacaca;
+    --middle-gray: #b7b7b7;
+}
+
+.MyAccountCustomerForm {
+    display: grid;
+    grid-auto-flow: row;
+    margin-bottom: 100px;
+    &>div {
+        margin-top: 40px;
+    }
+    form {
+        input {
+            text-transform: none;
+            &::placeholder {
+                text-transform: uppercase;
+            }
+        }
+        .Button {
+            width: 100%;
+            @include after-mobile() {
+                margin-top: 30px;
+                width: unset;
+            }
+        }
+        @include mobile() {
+            height: 80vh;
+            min-height: 470px;
+            .Button {
+                bottom: 0;
+                position: absolute;
+            }
+        }
+    }
+    .Field-Label {
+        font-weight: var(--fw-medium);
+    }
+    .Field {
+        width: 100%;
+        @include desktop() {
+            padding-top: 0.5rem;
+        }
+        &.Field_type_radio {
+            label:last-of-type {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .Mask {
+            top: 18px!important;
+        }
+    }
+    .Button {
+        background: #000000;
+        border: 2px solid #000000;
+        color: #ffffff;
+        font-weight: var(--fw-bold);
+        height: 50px;
+        margin-top: 9px;
+        padding: 0 15px;
+        text-transform: uppercase;
+        transition-duration: 0.25s;
+        transition-property: background-color, color, border;
+        transition-timing-function: ease-out;
+        &:hover {
+            background: transparent;
+            border-color: #000000;
+            color: #000000;
+        }
+    }
+    &-Gender {
+        &-Radio {
+            display: flex;
+            margin-top: 0px;
+            @include after-mobile() {
+                margin-top: 10px;
+            }
+            @include mobile() {
+                margin-top: 10px;
+            }
+            .Field {
+                margin-right: 23px;
+                margin-top: 5px;
+                padding-top: 0;
+                width: unset;
+                @include desktop() {
+                    margin-top: 0 !important;
+                    margin-bottom: 5px !important;
+                }
+                label {
+                    label {
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .Field [type="radio"] {
+                +label {
+                    border-radius: 50%;
+                    height: 15px;
+                    position: relative;
+                    width: 15px;
+                    @include after-mobile() {
+                        height: 14px;
+                        width: 14px;
+                    }
+                    &:hover {
+                        &::after {
+                            --checkmark-color: var(--black-color);
+                        }
+                    }
+                    &::after {
+                        border-radius: 50%;
+                        bottom: 0;
+                        height: 0.5rem;
+                        left: 0;
+                        margin: auto;
+                        right: 0;
+                        top: 0;
+                        transition-property: background-color, box-shadow;
+                        width: 0.5rem;
+                        will-change: background-color, box-shadow;
+                    }
+                }
+                &:disabled+label {
+                    color: var(--dark-gray);
+                    cursor: auto;
+                }
+                &:checked+label {
+                    --primary-base-color: var(--black-color);
+                    &:after {
+                        display: none;
+                    }
+                }
+                &:not(:checked)+label+span {
+                    color: var(--middle-gray);
+                }
+                &:focus {
+                    +label {
+                        &::after {
+                            --checkmark-color: var(--black-color);
+                        }
+                    }
+                }
+            }
+            &_isArabic {
+                .Field {
+                    label {
+                        label {
+                            margin-left: 5px;
+                            margin-right: 0;
+                        }
+                    }
+                    &:first-child {
+                        margin-right: 0;
+                    }
+                }
+                .Field [type="radio"] {
+                    &:not(:checked)+label {
+                        &:after {
+                            margin-left: -48px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    input {
+        font-size: 12px;
+        height: 60px;
+        &.MyAccountCustomerForm-PhoneField_isArabic {
+            width: calc(100% - 115px);
+        }
+    }
+    &-PasswordField {
+        width: 100%;
+        button {
+            width: 100px;
+        }
+    }
+    .MyAccountPasswordForm {
+        @include mobile() {
+            background: $white;
+            height: 100%;
+            margin-top: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+        form {
+            height: 75vh;
+        }
+        &-Title {
+            display: inline-flex;
+            font-size: 20px;
+            font-weight: var(--fw-regular);
+            text-transform: none;
+            width: 100%;
+            span {
+                font-weight: var(--fw-thin);
+            }
+            .Cross {
+                background: url("./icons/x-close.svg");
+                height: 20px;
+                margin-left: auto;
+                margin-right: 0;
+                padding: 0;
+                width: 20px;
+            }
+        }
+    }
+    &-Phone {
+        margin-right: 115px;
+        @include mobile() {
+            margin-top: 18px;
+        }
+        .Field {
+            @include desktop() {
+                margin-bottom: -14px;
+            }
+        }
+        &_isArabic {
+            margin-right: 0;
+        }
+    }
+    &-PhoneField {
+        margin-left: 115px;
+        position: absolute;
+        top: -75px;
+        @include desktop() {
+            top: -67px;
+        }
+        &_isArabic {
+            margin-left: 0;
+            margin-right: 115px;
+        }
+    }
+    &-BirthDay {
+        margin-top: 1rem;
+        &:after {
+            background-color: #ffffff;
+            content: "";
+            height: 58px;
+            margin-bottom: 2px;
+            margin-left: -60px;
+            pointer-events: none;
+            position: absolute;
+            right: 1px;
+            top: 1px;
+            width: 59px;
+            @include mobile() {
+                height: 50px;
+                top: 20px;
+            }
+        }
+        .Field {
+            &:after {
+                border: solid var(--light-gray);
+                border-width: 0 2px 2px 0;
+                content: "";
+                height: 6px;
+                margin-bottom: 2px;
+                margin-left: -15px;
+                pointer-events: none;
+                position: absolute;
+                right: 20px;
+                top: 37px;
+                transform: rotate(45deg);
+                width: 6px;
+                z-index: 1;
+                @include desktop() {
+                    top: 25px;
+                }
+            }
+            @include mobile() {
+                margin-top: 18px;
+            }
+        }
+        &_isArabic {
+            &:after {
+                margin-left: 0;
+                right: 12px;
+            }
+            input {
+                @include desktop() {
+                    margin-right: 10px;
+                }
+            }
+        }
+        @include desktop() {
+            margin-top: -0.5rem;
+        }
+    }
+    #change-password-button {
+        color: var(--light-gray);
+        font-weight: var(--fw-thin);
+        height: 50px;
+        position: absolute;
+        right: 0;
+        text-transform: capitalize;
+        top: 12px;
+        width: 100px;
+        @include mobile() {
+            top: 4px;
+        }
+    }
+    &_isArabic {
+        form {
+            @include desktop() {
+                margin-left: 10px;
+                margin-right: -10px;
+            }
+        }
+        #change-password-button {
+            left: -15px;
+            right: unset;
+        }
+        .MyAccountPasswordForm {
+            &-Title {
+                .Cross {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+    @include after-mobile {
+        grid-auto-flow: column;
+        grid-column-gap: 2rem;
+        // grid-template-columns: 1fr;
+        margin-bottom: 0;
+        &>div {
+            margin-top: -50px;
+        }
+        .Button {
+            width: 50%;
+        }
+        &-Gender {
+            margin-bottom: 0px;
+            margin-top: 0;
+        }
+        .MyAccountPasswordForm {
+            &-Title {
+                margin: 18px 0 8px;
+            }
+        }
+    }
+    @include desktop {
+        margin-bottom: 150px;
+        // width: 800px;
+    }
+}

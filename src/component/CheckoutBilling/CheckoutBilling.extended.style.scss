@@ -1,0 +1,292 @@
+:root {
+  --gray: #efefef;
+}
+.sk-three-bounce > div {
+  height: 6px;
+  width: 6px;
+  margin: 2px;
+}
+.CheckoutBilling {
+  padding: 0 0.5rem;
+  @include mobile {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  button {
+    @include before-desktop {
+      font-size: 14px !important;
+    }
+    &:disabled {
+      // opacity: 0.25;
+      background-color: #a9a9a9 !important;
+      border: #a9a9a9 !important;
+    }
+  }
+
+  &-spinningButton {
+    background-color: #a9a9a9 !important;
+    border: #a9a9a9;
+    opacity: 1 !important;
+  }
+
+  &-tabbyButton {
+    background-color: #20efbe !important;
+    border: #20efbe !important;
+    color: black !important;
+  }
+
+  &-Checkbox {
+    display: grid;
+    margin-bottom: 2rem;
+
+    @include before-desktop {
+      width: 300px;
+      grid-column: 1 / span 2;
+      grid-row: 6;
+    }
+
+    label {
+      grid-column: 2 / span 20;
+      grid-row: 1;
+      padding-top: 1px;
+      color: #000000;
+      font-size: 14px;
+      font-weight: var(--fw-regular);
+
+      span {
+        font-weight: var(--fw-demi);
+      }
+    }
+
+    div {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+
+  &-Line {
+    @include desktop {
+      padding: 16px 30px 0;
+    }
+
+    hr {
+      border: 1px solid var(--gray);
+    }
+  }
+
+  &-AddressHeader {
+    display: flex;
+    justify-content: space-between;
+    background: #ffffff;
+  }
+
+  &-AddressHeading {
+    font-weight: var(--fw-demi);
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0;
+    text-transform: none;
+    padding: 30px 30px 0;
+  }
+
+  .CheckoutPayments,
+  .CreditCardTooltip,
+  &-AddressHeading,
+  &-Line {
+    background-color: $white;
+  }
+
+  .MyAccountAddressBook {
+    &-ContentWrapper {
+      .MyAccountAddressBook {
+        &-backButton {
+          @include desktop {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &-ContentWrapper {
+      @include before-desktop {
+        top: -90px;
+      }
+
+      &_formContent {
+        .MyAccountAddressBook {
+          &-backButton {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            top: -100px;
+            left: 0;
+            z-index: 9;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 5px;
+              border: solid $black;
+              border-width: 0 2px 2px 0;
+              display: inline-block;
+              padding: 4px;
+              transform: rotate(135deg);
+              -webkit-transform: rotate(135deg);
+            }
+
+            @include desktop() {
+              height: 0;
+            }
+
+            &_isArabic {
+              top: -100px;
+              transform: rotate(180deg);
+              right: 5px;
+              -webkit-transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    &-NewAddressWrapper {
+      top: 17px;
+      float: right;
+      z-index: 1;
+
+      @include before-desktop {
+        top: 0;
+        display: flex;
+        justify-content: center;
+        grid-row: 4;
+      }
+
+      &_formContent {
+        display: none;
+      }
+
+      &_isArabic {
+        float: left;
+      }
+    }
+
+    &-NewAddress {
+      font-weight: var(--fw-regular);
+      font-size: 13px;
+      line-height: 18px;
+      background: transparent;
+      color: #000000;
+      border: none;
+      margin: 0 20px;
+
+      &:hover {
+        text-decoration: underline;
+        background: var(--white-color);
+        color: var(--black-color);
+      }
+
+      @include before-desktop {
+        border-radius: 7px;
+        background: var(--my-acc-background);
+        text-transform: capitalize;
+        min-width: 140px;
+        margin-top: 38px;
+
+        &:hover {
+          text-decoration: underline;
+          background: var(--my-acc-background);
+        }
+      }
+    }
+  }
+
+  &-AddAddressWrapper {
+    .MyAccountAddressBook {
+      &-ContentWrapper {
+        margin-top: 20px;
+        background: #ffffff;
+        padding: 20px 60px 30px 60px;
+        &_formContent {
+          .MyAccountAddressPopup {
+            position: relative;
+          }
+        }
+
+        h2 {
+          border: none;
+        }
+
+        .MyAccountAddressBook {
+          &-backButton {
+            @include desktop {
+              display: none;
+            }
+          }
+        }
+
+        .MyAccountAddressPopup {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+.CheckoutComApplePayPayment-Wrapper {
+  margin-top: 20px;
+
+  .CheckoutComApplePayPayment-icon {
+    width: 50px !important;
+    height: 22px !important;
+    margin-left: 5px !important;
+    margin-right: 0px !important;
+
+    &_button_style {
+
+      &_black {
+        filter: invert(100%) brightness(20);
+        -webkit-filter:invert(100%) brightness(20);
+      }
+
+      &_white {
+        filter: invert(100%);
+        -webkit-filter:invert(100%);
+      }
+    }
+    &_isArabic {
+      margin-left: 0px !important;
+      margin-right: 5px !important;
+    }
+  }
+
+  .CheckoutComApplePayPayment-Button {
+    height: 50px;
+    margin-bottom: 20px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:disabled {
+      opacity: 0.5;
+      .CheckoutComApplePayPayment-icon {
+        opacity: 0.5;
+      }
+    }
+
+    &_button_style {
+      &_black {
+        color: white;
+        background-color: black;
+      }
+
+      &_white {
+        color: black;
+        background-color: white;
+      }
+    }
+
+    &.apple-pay-button-white-with-line {
+      -apple-pay-button-style: white-outline;
+    }
+  }
+}

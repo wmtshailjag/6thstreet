@@ -1,0 +1,315 @@
+.DynamicContentRichContentBanner {
+  @include desktop{
+    margin-bottom: 50px !important;
+  }
+  @include tablet {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .DynamicContentHeader{
+    margin-bottom: 20px;
+  }
+  max-width: 1396px;
+  .SliderWithLabelWrapper {
+    display: flex;
+  }
+  &-Label {
+    display: flex;
+    position: absolute;
+    bottom: 15rem;
+    right: 70%;
+    text-transform: uppercase;
+    align-items: center;
+    vertical-align: center;
+  }
+
+  .Slider {
+    &-Crumbs {
+      position: static;
+    }
+
+    &-Crumb {
+      width: 9px;
+      height: 9px;
+      border: 1px solid $black;
+      background: $white;
+
+      &_isActive {
+        width: 11px;
+        height: 11px;
+        border: 2px solid $white;
+        box-shadow: 0 0 0 1px $black;
+        background: $black;
+      }
+    }
+  }
+
+  .Image {
+    &-Image {
+      object-fit: cover;
+    }
+    img {
+      // margin-left: 25px;
+    }
+  }
+  .tns-outer {
+    button[data-action="stop"] {
+      display: none;
+    }
+    button[data-action="start"] {
+      display: none;
+    }
+  }
+  .tns-controls {
+    position: initial;
+    display: none;
+    button:first-child {
+      left: 0;
+      position: absolute;
+      font-size: 75px;
+      font-weight: 500;
+      color: #888;
+      bottom: 5%;
+      height: 100%;
+      margin-left: 15px;
+      &:hover {
+        color: #000000;
+      }
+    }
+    button:last-child {
+      right: 0;
+      position: absolute;
+      font-size: 75px;
+      font-weight: 500;
+      color: #888;
+      bottom: 5%;
+      height: 100%;
+      margin-right: 15px;
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+  .tns-ovh {
+    // margin-right: 80px;
+    // margin-left: 80px;
+  }
+  .tns-slider {
+    margin: 0 auto;
+  }
+  .tns-outer {
+    direction: ltr !important;
+  }
+  .tns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    button {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #bfbfbf;
+      padding: 0;
+    }
+    &-active {
+      background-color: #3d4447 !important;
+      width: 7px !important;
+      height: 7px !important;
+    }
+    @include tablet{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+  .Label {
+    text-align: center;
+    // width: 600px;
+    // height: 120px;
+    &-Title {
+      text-transform: uppercase;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 0px;
+      line-height: 25px;
+      margin-top: 15px;
+      letter-spacing: 2px;
+    }
+    &-SubTitle {
+      font-size: 16px;
+      //   color: white;
+      font-weight: 400;
+      line-height: 22px;
+      margin-top: 3px;
+      margin-bottom: 19px;
+    }
+    &-Button {
+      //   color: white;
+      text-decoration: underline;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+    @include tablet{
+      &-Title {
+        margin-top: 12px;
+      }
+      &-SubTitle {
+        margin-top: 2px;
+        margin-bottom: 12px;
+      }
+      &-Button {
+        //   color: white;
+        text-decoration: underline;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 500;
+      }
+    }
+  }
+  .Tag {
+    position: absolute;
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-transform: capitalize;
+    &-TopRight {
+      top: 22px;
+      right: 25px;
+    }
+    &-TopCenter {
+      top: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &-TopLeft {
+      top: 22px;
+      left: 25px;
+    }
+    &-BottomRight {
+      bottom: 22px;
+      right: 25px;
+    }
+    &-BottomLeft {
+      bottom: 22px;
+      left: 25px;
+    }
+    &-BottomCenter {
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .Title {
+    height: 40px;
+    width: 335px;
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 40px;
+    text-align: left;
+  }
+
+  .tns-item {
+    @include tablet {
+    }
+    @include mobile {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .DynamicContentRichContentBanner {
+    width: 100%;
+    .tns-controls {
+      display: none;
+    }
+    .Image {
+      margin-top: 12px;
+      &-Image {
+        object-fit: cover;
+      }
+      img {
+        // margin-left: 30px;
+      }
+    }
+    .tns-ovh {
+      margin: 0;
+    }
+    .CircleSliderLabel {
+      margin-top: 4px;
+      font-size: 12px;
+    }
+    .tns-nav {
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 25px;
+      button {
+        width: 5px;
+        height: 5px;
+      }
+    }
+    .Label {
+      height: 35%;
+      width: 100%;
+      position: absolute;
+      bottom: 0%;
+      text-align: center;
+      background-image: linear-gradient(to top, rgba(0, 0, 0, .7), transparent);
+      color: white;
+      &-Title {
+        text-transform: capitalize;
+        font-size: 20px;
+        line-height: 1;
+        margin-top: 15px;
+        letter-spacing: normal;
+        font-weight: 600;
+      }
+      &-SubTitle {
+        font-size: 12px;
+        margin-top: 3px;
+        margin-bottom: 12px;
+      }
+      &-Button {
+        font-size: 15px;
+        color: white;
+      }
+    }
+    .Tag {
+      font-size: 14px;
+      color: white;
+      &-TopRight {
+        top: 25px;
+        right: 15px;
+      }
+      &-TopCenter {
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &-TopLeft {
+        top: 25px;
+        left: 15px;
+      }
+      &-BottomRight {
+        bottom: 25px;
+        right: 15px;
+      }
+      &-BottomLeft {
+        bottom: 25px;
+        left: 15px;
+      }
+      &-BottomCenter {
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

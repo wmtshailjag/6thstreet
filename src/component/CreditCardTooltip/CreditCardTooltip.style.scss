@@ -1,0 +1,117 @@
+.CreditCardTooltip {
+    padding-bottom: 30px;
+    
+    @include desktop {
+        padding: 0 30px 30px;         
+    }
+
+    &-Background {
+        @include before-desktop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: 0; height: 100%; overflow: hidden;
+            background: rgba(70, 70, 70, 0.3);
+            cursor: default;
+            pointer-events: all;
+            z-index: 87
+        }
+    }
+
+    &-PromoBlock {
+        background: var(--my-acc-background);
+        font-size: 13px;
+        font-weight: var(--fw-regular);
+        padding: 10px 0;
+
+        span {
+            font-weight: var(--fw-demi);
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                font-weight: var(--fw-demi);
+            }
+        }
+    }
+
+    &-Popup {
+        position: absolute;
+        background: $white;
+        border-radius: 7px;
+        font-weight: var(--fw-regular);
+        font-size: 13px;
+        padding: 24px 28px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.11);
+        width: auto;
+        margin: auto 20px;
+        bottom: 190px;
+
+        @include tablet {
+            margin: auto 80px;
+        }
+
+        @include desktop {
+            left: 0;
+            margin-left: 70px;
+            bottom: 0;
+            width: 360px;
+        }
+
+        span {
+            font-weight: var(--fw-demi);
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 100px;
+            bottom: -5px;
+            height: 10px;
+            width: 10px;
+            z-index: 1;
+            transform: rotate(45deg);
+            background-color: $white;
+            border-top: 1px solid $white;
+            border-left: 1px solid $white;
+            box-shadow: 7px 7px 10px 0 rgba(0, 0, 0, 0.11);
+
+            @include desktop {
+                right: 140px;
+            }
+        }
+
+        &_isArabic {
+            @include desktop {
+                right: 0;
+                margin-left: 0;
+                margin-right: 70px;
+            }
+
+            &:after {
+                right: 180px;
+    
+                @include desktop {
+                    right: 170px;
+                }
+            }
+        }
+    }
+
+    &-Grid {
+        display: grid;
+        padding-top: 19px;
+        grid-template-columns: repeat(3, 32%);
+        grid-column-gap: 2%;
+
+        @media (max-width: 400px) {
+            grid-template-columns: repeat(2, 42%);
+            grid-column-gap: 5%;
+            grid-row-gap: 15%;
+        }
+    }
+}

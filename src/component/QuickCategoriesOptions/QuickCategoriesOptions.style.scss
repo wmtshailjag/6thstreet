@@ -1,0 +1,176 @@
+:root {
+  --choosed-field-gray-color: #f3f4f6;
+  --field-gray-text-color: #9b9b9b;
+}
+
+.FieldMultiselect {
+  .PLPQuickFilter {
+    .Slider {
+      &-Wrapper {
+        width: 200px;
+
+        & > * {
+          width: unset;
+        }
+      }
+    }
+
+    .QuickFilter {
+      &-List {
+        display: flex;
+        margin-top: 0;
+        max-width: 1200px;
+
+        @include after-mobile {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          flex-flow: row wrap;
+          grid-gap: 0 10px;
+        }
+
+        .PLPFilterOption {
+          &-List {
+            border: 0;
+            display: inline-table;
+            &-SelectedList {
+              .Field {
+                label {
+                  background-color: #000000;
+                }
+              }
+              label {
+                color: #ffffff !important;
+              }
+            }
+            @include mobile {
+              display: flex;
+              flex-wrap: nowrap;
+              white-space: nowrap;
+            }
+
+            .Field {
+              [type="checkbox"],
+              [type="radio"] {
+                + label {
+                  top: 10px;
+
+                  @include desktop {
+                    top: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        li {
+          display: block;
+          // height: 60px;
+          margin: 5px;
+          // max-width: 200px;
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+
+          @include mobile {
+            height: unset;
+          }
+          @include after-mobile {
+            margin-block: 5px;
+            margin-inline: 0;
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          label {
+            color: var(--field-gray-text-color);
+            height: 40px;
+            left: 0;
+            margin-left: 10px;
+            padding-left: 0;
+            padding-right: 10px;
+            pointer-events: none;
+            position: relative;
+            z-index: 1;
+            margin-top: -25px;
+            // @include desktop() {
+            //     margin-top: -25px;
+            // }
+            @include mobile {
+              margin-top: 0;
+            }
+          }
+
+          .Field [type="checkbox"]:checked + label {
+            --primary-base-color: var(--choosed-field-gray-color);
+            border-color: var(--choosed-field-gray-color);
+          }
+
+          .Field {
+            margin: 0;
+            width: 100%;
+
+            label {
+              border-radius: 20px;
+              height: 30px;
+              margin-left: 0;
+              margin-top: -5px;
+              // max-width: 200px;
+              pointer-events: none;
+              width: 100%;
+
+              &:after {
+                height: 0;
+                width: 0;
+              }
+
+              &:hover {
+                border-color: var(--field-gray-text-color);
+                content: " ";
+              }
+
+              @include before-desktop() {
+                border: 1px solid var(--field-gray-text-color);
+              }
+
+              @include desktop() {
+                height: 30px;
+                margin-top: -25px;
+                pointer-events: all;
+              }
+            }
+          }
+
+          span {
+            display: none;
+          }
+
+          &::before {
+            content: none;
+          }
+
+          padding: 0;
+        }
+
+        @include desktop() {
+          // margin-top: 15px;
+        }
+      }
+    }
+
+    &_inSearch {
+      .QuickFilter-List {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include before-desktop() {
+    direction: ltr;
+  }
+}

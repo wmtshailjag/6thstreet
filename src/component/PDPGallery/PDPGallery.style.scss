@@ -1,0 +1,266 @@
+:root {
+  --crumb-background-color: #9b9b9b;
+}
+
+.PDPGallery {
+  --gallery-crumbs-height: auto;
+  height: auto;
+  display: block;
+  // margin-top: 11px;
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    margin-top: 0;
+  }
+  &-Crumbs {
+    display: none;
+    height: var(--gallery-crumbs-height) !important;
+    @include desktop {
+      display: block;
+    }
+  }
+
+  .BackArrow {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+    background: transparent;
+
+    &_isArabic {
+      right: 1rem;
+      left: 1rem;
+
+      .BackArrow {
+        &-Button {
+          right: 5px;
+          left: unset;
+
+          &::before {
+            right: 5px;
+            left: unset;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+        }
+        &-HomeIcon {
+          // right: 5px;
+          left: unset;
+        }
+      }
+    }
+
+    &-Button {
+      top: 0;
+      left: 5px;
+      background-size: 30px;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      p {
+        display: none;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 5px;
+        border: solid #000000;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+      }
+    }
+    &-HomeIcon {
+      top: 15px;
+      background-size: 30px;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+    }
+
+    @include after-mobile {
+      display: none;
+    }
+  }
+  .Slider-Wrapper > * {
+    @include desktop {
+      // width: 100% !important;
+      // height: auto !important;
+    }
+  }
+  .Slider-Wrapper {
+    align-items: unset;
+  }
+  .SliderVertical {
+    height: 443px;
+    overflow-y: hidden;
+  }
+  .Crumbs {
+    margin-left: 10px;
+  }
+  .Slider {
+    position: relative;
+    min-width: 0;
+    margin: 0px;
+    direction: ltr;
+    @include desktop {
+      // width: 76.93px;
+      // margin-left: 8px;
+    }
+    &-Crumb {
+      background: var(--crumb-background-color);
+      border: none;
+      width: 5px;
+      height: 5px;
+      &_isActive {
+        background: $black;
+        width: 7px;
+        height: 7px;
+      }
+    }
+    &-Crumbs {
+      height: 7px;
+      grid-gap: 5px;
+      justify-content: left;
+      padding: 0px 20px;
+    }
+  }
+
+  .Image {
+    &-Image {
+      position: unset !important;
+    }
+    &_ratio_square {
+      padding: unset !important;
+    }
+  }
+
+  .OverlayIcons {
+    @include desktop {
+      display: none;
+    }
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 6.5rem;
+    background-color: #ffffff;
+    z-index: 1;
+    opacity: 0.7;
+    border-radius: 19.5px;
+    padding: 1px 0 1px 0px;
+
+    &_isArabic {
+      right: auto;
+      left: 1rem;
+    }
+
+    .HeaderCart {
+      width: 100%;
+      height: 2.25rem;
+      display: flex;
+      background: #ffffff;
+      border-radius: 50%;
+      justify-content: center;
+      margin-top: 6px;
+      margin-bottom: 4px;
+      @include mobile() {
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 4px;
+      }
+
+      &-Button {
+        top: 0;
+        background-size: 2.25rem;
+        background-position: top;
+      }
+      &-Count {
+        top: 1px;
+        right: 3px;
+        @include mobile {
+          top: 4.5px;
+          right: 10px;
+        }
+      }
+    }
+
+    .WishlistIcon {
+      top: initial;
+      right: initial;
+      width: 100%;
+      background-position: top;
+      margin-top: 4px &-Icon {
+        background-position: top;
+      }
+      @include mobile {
+        margin-top: 4px;
+      }
+    }
+    .ShareIcon {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      justify-content: center;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      margin-top: 4px;
+    }
+    .SearchIcon {
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      justify-content: center;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      margin-top: 4px;
+    }
+  }
+
+  button {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    @include desktop {
+      height: auto;
+    }
+  }
+}
+
+.PDP {
+  .PDPMainSection {
+    .PDPGallery {
+      &-OverlayButton {
+        height: fit-content;
+        .Image_imageStatus_2 {
+          display: flex;
+          height: 400px !important;
+        }
+        @include desktop {
+          margin-left: 5px;
+          &_isArabic {
+            margin-left: 0;
+            margin-right: 5px;
+          }
+        }
+      }
+      &-VideoButtonsContainer {
+        margin: 15px 0 0 0;
+      }
+    }
+  }
+}

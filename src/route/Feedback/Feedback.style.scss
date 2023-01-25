@@ -1,0 +1,64 @@
+.Feedback-Wrapper {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  text-align: center;
+  width: 50%;
+  @include mobile {
+    // width: 90%
+    width: auto;
+    margin-inline: 10px;
+    // margin-bottom: 86px;
+    padding-bottom: 86px !important;
+  }
+}
+
+.Feedback-form {
+  margin-top: 16px;
+}
+
+.Feedback-form-fieldset {
+  display: flex;
+}
+
+.Feedback-form-field-firstname,
+.Feedback-form-field-lastname {
+  width: 50%;
+  @include mobile {
+    width: 50%;
+  }
+}
+
+.Feedback-form-field-phone-code {
+  width: 84px;
+}
+
+.Feedback-form-field-phone-number {
+  width: calc(100% - 84px);
+  @include mobile {
+    width: calc(100% - 84px);
+  }
+}
+
+.Feedback-form-field-firstname input,
+.Feedback-form-field-lastname input,
+.Feedback-form-field-email,
+.Feedback-form-field-phone-code input,
+.Feedback-form-field-phone-number input,
+.Feedback-form-field-comment textarea {
+  width: 100%;
+}
+
+.Feedback-form-field-firstname,
+.Feedback-form-field-phone-code {
+  // margin-right: 1%;
+  @include mobile {
+    // margin-right: 2%;
+  }
+}
+
+.Feedback-submit-button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  min-height: 82px;
+  text-align: center;
+}

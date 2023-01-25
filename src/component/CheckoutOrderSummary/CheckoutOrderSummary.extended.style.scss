@@ -1,0 +1,226 @@
+.CheckoutOrderSummary {
+    background: #ffffff;
+    @include before-desktop {
+        padding: 0 0.5rem;
+    }
+    @include mobile {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &-HeaderWrapper {
+        display: flex;
+        // margin-top: 20px;
+        padding: 25px 18px 0;
+        @include tablet {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @include mobile {
+            display: none;
+            padding: 0;
+        }
+    }
+    &-ItemCount {
+        flex: 50%;
+        font-weight: var(--fw-demi);
+        font-size: 18px;
+        line-height: 25px;
+    }
+    &-Edit {
+        flex: 50%;
+        font-weight: var(--fw-regular);
+        font-size: 13px;
+        line-height: 18px;
+        text-align: right;
+        text-decoration: underline;
+        padding-top: 3px;
+        &_isArabic {
+            flex: 0;
+        }
+    }
+    &-OrderItems {
+        li {
+            border-top: none;
+            border-bottom: 1.5px solid var(--Gallery);
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    &-CartItemList {
+        margin-bottom: 10px;
+        .CartItem {
+            margin: 1rem 12px 0;
+            @include tablet {
+                margin: 1rem 0px 0;
+            }
+            &-Wrapper {
+                height: auto;
+            }
+        }
+    }
+    &-Promo {
+        &Block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 21px 18px 15px;
+            padding: 2rem 1rem;
+            height: 40px;
+            background: var(--cart-page-promo-background);
+            @include mobile {
+                padding: 1rem;
+                border: 0;
+                border-bottom: 1px solid var(--primary-divider-color);
+                margin: 21px 0 15px 0;
+            }
+            @include tablet {
+                margin: 21px 0 15px;
+            }
+            span:nth-child(2) {
+                font-weight: var(--fw-bold);
+            }
+            span:last-child {
+                font-weight: var(--fw-demi);
+                color: var(--color-green-cyan);
+                letter-spacing: -0.1px;
+                text-transform: capitalize;
+            }
+        }
+        &Image {
+            width: 46px;
+            margin-right: 0.5rem;
+            @include mobile {
+                width: 36px;
+            }
+        }
+        strong {
+            margin: 0 5px;
+        }
+        &Text {
+            font-size: 12px;
+            display: inline;
+            flex-wrap: wrap;
+            line-height: 20px;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            .Image {
+                overflow: inherit !important;
+                .LazyLoad-wrapper {
+                    img {
+                        width: 20px !important;
+                        height: auto !important;
+                        margin-right: 5px;
+                        float: left;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            @include mobile {
+                font-size: 11px;
+            }
+            &_isArabic {
+                .Image {
+                    .LazyLoad-wrapper {
+                        img {
+                            margin-right: unset;
+                            margin-left: 5px;
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-Currency {
+        font-weight: var(--fw-bold);
+    }
+    &-FreeDelivery {
+        color: var(--color-green-cyan);
+        font-weight: var(--fw-bold);
+    }
+    &-OrderTotals {
+        font-weight: var(--fw-regular);
+        padding: 0 18px;
+        @include tablet {
+            padding: 0;
+        }
+        @include mobile {
+            padding: 0;
+        }
+    }
+    &-SummaryItem {
+        padding: 5px 0;
+        @include mobile {
+            padding: 3px 0;
+        }
+        &_isDropdownOpen {
+            border-top: 2px solid var(--lightest-gray);
+        }
+    }
+    &-Subtotals {
+        margin: 5px auto 11px;
+        li {
+            .CheckoutOrderSummary {
+                &-Text {
+                    font-size: 13px;
+                    font-weight: var(--fw-regular);
+                }
+                &-Price {
+                    font-size: 13px;
+                    font-weight: var(--fw-medium);
+                }
+            }
+        }
+    }
+    &-Totals {
+        display: grid;
+        font-size: 15px;
+        border-top: 1.5px solid var(--Gallery);
+        padding-bottom: 13px;
+        @include mobile {
+            display: none;
+        }
+        li {
+            grid-column: 1 / span 4;
+            grid-row: 1;
+            .CheckoutOrderSummary {
+                &-Text {
+                    margin-top: 3px;
+                    font-weight: var(--fw-regular);
+                    font-size: 15px;
+                }
+                &-Price {
+                    font-size: 18px;
+                    font-weight: var(--fw-bold);
+                    line-height: 25px;
+                }
+            }
+        }
+        span {
+            font-size: 12px;
+            color: var(--color-nobel);
+            grid-column: 2;
+            grid-row: 1;
+            margin-top: 11px;
+            margin-right: 70px;
+        }
+    }
+    @include before-desktop {
+        display: block;
+        z-index: 0;
+    }
+    &-DiscountOptionWrapper {
+        padding: 0 18px;
+        @include mobile {
+            padding: 20px 0 0 0;
+        }
+    }
+    .Loader {
+        position: absolute;
+        &-Scale {
+            top: 50%;
+        }
+    }
+}

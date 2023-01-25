@@ -1,0 +1,89 @@
+.MyAccountExchangeView {
+  &-Details {
+    &Date {
+      font-size: 15px;
+      font-weight: var(--fe-medium);
+
+      @include desktop {
+        font-size: 16px;
+      }
+
+      span {
+        color: var(--color-gray);
+        font-weight: var(--fw-regular);
+      }
+    }
+  }
+
+  &-Status {
+    text-transform: capitalize;
+    margin-bottom: 0;
+
+    span {
+      font-weight: var(--fw-demi);
+    }
+
+    &_isDenied {
+      span {
+        color: var(--error-color);
+      }
+    }
+  }
+  &-Order {
+    margin-bottom: 0;
+
+    span {
+      font-weight: var(--fw-demi);
+    }
+
+    &_isDenied {
+      span {
+        color: var(--error-color);
+      }
+    }
+  }
+
+  &-SubDetails {
+    align-items: center;
+    border-top: 2px solid var(--color-gainsboro);
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 20px 0;
+
+    @include desktop {
+      align-items: unset;
+      border-bottom: 2px solid var(--color-gainsboro);
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 20px 0 35px;
+      padding: 10px 0;
+    }
+  }
+
+  &-Items {
+    margin-bottom: 40px;
+  }
+
+  &-Reason {
+    margin: 15px 0;
+
+    h3 {
+      font-size: 14px;
+      margin: 0;
+
+      @include desktop {
+        font-size: 15px;
+      }
+    }
+
+    p {
+      color: var(--color-gray);
+      font-size: 12px;
+
+      @include desktop {
+        font-size: 14px;
+      }
+    }
+  }
+}

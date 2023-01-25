@@ -1,0 +1,366 @@
+:root {
+  --ca-alto-color: #d8d8d8;
+  --ca-red-ribbon-color: #f01136;
+  --ca-thunder-color: #231f20;
+  --overlay-black-color: rgba(0, 0, 0, 0.7);
+}
+
+.MyAccountClubApparelOverlay {
+  background-color: var(--overlay-black-color);
+  .LinkAccountLogo {
+    .LazyLoad-wrapper {
+      img {
+        width: 150px !important;
+        display: inline-block;
+        max-width: 100%;
+        margin: 45px 0;
+      }
+    }
+}
+  .CountryMiniFlag-Container {
+    position: absolute;
+    top: 23px;
+    left: 2%;
+    z-index: 1;
+
+    &_isArabic {
+      left: unset;
+      right: 2%;
+    }
+  }
+
+  @include before-desktop {
+    width: 100%;
+    top: 0;
+  }
+
+  &-LinkAccount {
+    &Banner {
+      background-color: var(--ca-thunder-color);
+      background-image: url(../MyAccountClubApparel/images/bg-ca.png);
+      background-size: cover;
+      text-align: center;
+    }
+
+    &Phone {
+      margin: 46px 10% 10px;
+      display: flex;
+      height: 60px;
+
+      &Field {
+        height: 60px;
+        margin-left: 10px;
+        width: calc(100% - 10px);
+      }
+
+      .Field {
+        margin-top: 0;
+
+        &_type_text {
+          width: calc(100% - 100px);
+        }
+
+        p {
+          margin: 5px 0 0 5px;
+          text-align: left;
+        }
+
+        &-Message {
+          margin: 5px 0 0 5px;
+        }
+      }
+
+      &_isArabic {
+        flex-direction: row-reverse;
+
+        .MyAccountClubApparelOverlay {
+          &-LinkAccountPhoneField {
+            margin-left: unset;
+            margin-right: 10px;
+            text-align: right;
+          }
+        }
+
+        .Field {
+          .FieldSelect {
+            &-Select {
+              padding-left: 15px;
+              padding-right: 40px;
+            }
+          }
+        }
+      }
+    }
+
+    &Button {
+      background-color: #000000;
+      color: #ffffff;
+      margin: 30px auto 65px;
+      width: 80%;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: var(--light-gray);
+      }
+    }
+  }
+
+  .FieldSelect {
+    height: 60px;
+    width: 100px;
+
+    &-Select {
+      height: 60px;
+      width: 100px;
+      padding-left: 40px;
+      padding-right: 10px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &-Verify {
+    input {
+      font-size: 24px;
+      letter-spacing: 15px;
+      border: none;
+      width: 200px;
+      margin-left: 50px;
+      caret-color: transparent;
+
+      &::placeholder {
+        display: block;
+        color: var(--ca-alto-color);
+      }
+    }
+
+    &Button {
+      background-color: #000000;
+      color: #ffffff;
+      margin: 30px auto 0;
+      width: 80%;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: var(--light-gray);
+      }
+
+      &:disabled {
+        background-color: var(--light-gray);
+        cursor: not-allowed;
+      }
+    }
+
+    &Resend {
+      text-transform: unset;
+      font-weight: var(--fw-regular);
+      width: fit-content;
+      height: fit-content;
+      color: var(--ca-reward-point-color);
+      font-size: 13px;
+      margin: 10px auto 35px;
+    }
+  }
+
+  .Popup {
+    &-Content {
+      overflow: auto;
+      padding: 0;
+      width: 440px;
+      min-width: unset;
+      border-radius: unset;
+      text-align: center;
+
+      p {
+        margin: 45px 20% 0;
+      }
+
+      .MyAccountClubApparelOverlay {
+        &-LinkAccountPhone {
+          .Field {
+            p {
+              margin: 5px 0 0 10px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .Field {
+        &-Message {
+          margin: 0;
+        }
+      }
+
+      .MyAccountClubApparelOverlay {
+        &-Success {
+          margin-top: 90px;
+
+          p {
+            margin: 20px 10% 0;
+          }
+
+          span {
+            font-weight: var(--fw-demi);
+          }
+        }
+
+        &-NotSuccess {
+          h3 {
+            color: var(--ca-red-ribbon-color);
+            font-size: 18px;
+            font-weight: var(--fw-demi);
+          }
+
+          p {
+            margin: 20px 10% 0;
+          }
+
+          span {
+            font-weight: var(--fw-demi);
+          }
+
+          &ParagraphRed {
+            color: var(--ca-red-ribbon-color);
+          }
+        }
+      }
+    }
+
+    &-Header {
+      @include before-desktop {
+        display: block;
+      }
+    }
+
+    &-CloseBtn {
+      right: 15px;
+      top: 10px;
+      position: absolute;
+      background-color: #000000;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      padding: 0;
+
+      &::after,
+      &::before {
+        height: 17px;
+        width: 2px;
+        background-color: #ffffff;
+        right: 14px;
+        top: 6px;
+      }
+
+      @include mobile {
+        z-index: 1;
+        right: unset;
+        left: 10px;
+        top: 16px;
+        background-color: transparent;
+
+        &::after {
+          content: none;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          border: solid #ffffff;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 2px 7px 7px 2px;
+          margin: 0 auto;
+          top: 9px;
+          left: 10px;
+          transform: rotate(135deg);
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  &_isMessage {
+    @include before-desktop {
+      .Popup {
+        &-Content {
+          overflow: auto;
+          top: calc(100% - 350px);
+          width: 100%;
+
+          @include tablet {
+            top: calc(75% - 350px);
+          }
+
+          .MyAccountClubApparelOverlay {
+            &-Success,
+            &-NotSuccess {
+              margin-top: 0;
+
+              h3 {
+                margin: 30px 10% 0;
+                text-align: left;
+              }
+
+              p {
+                text-align: left;
+                margin: 20px 10% 0;
+              }
+
+              &_isArabic {
+                h3 {
+                  text-align: right;
+                }
+
+                p {
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+
+        &-Header {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_isArabic {
+    .Popup {
+      &-CloseBtn {
+        right: unset;
+        left: 15px;
+
+        @include mobile {
+          left: unset;
+          right: 10px;
+          top: 16px;
+
+          &::after {
+            content: none;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border: solid #ffffff;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 2px 7px 7px 2px;
+            margin: 0 auto;
+            top: 9px;
+            left: 10px;
+            transform: rotate(-45deg);
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

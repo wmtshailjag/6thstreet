@@ -1,0 +1,48 @@
+.ContactAndHelp {
+    .ContactUsWrapper {
+        padding-bottom: 0;
+    }
+    .contactHelpList {
+        .MyAccountTabListItem {
+            &:last-child {
+                button {
+                    &:before {
+                        background-image: none;
+                    }
+                }
+            }
+            &:first-child {
+                border-bottom: 2px solid var(--lightest-gray);
+            }
+            &-Button {
+                padding-left: 16px;
+                &::before {
+                    display: none;
+                }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.ContentWrapper {
+    &.MyAccount{
+        &-Wrapper {
+            &_isArabic {
+                .ContactAndHelp {
+                    .contactHelpList {
+                        .MyAccountTabListItem {
+                            &-Button {
+                                padding-left: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

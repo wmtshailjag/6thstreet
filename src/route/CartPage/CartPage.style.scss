@@ -1,0 +1,1003 @@
+/**
+* @category  6thstreet
+* @author    Alona Zvereva <alona.zvereva@scandiweb.com>
+* @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+* @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+*/
+
+:root {
+    --cart-page-totals-background: var(--secondary-base-color);
+    --cart-page-divider-background: #d8d8d8;
+    --cart-page-promo-background: #f6f6f6;
+    --cart-page-table-head-background: var(--secondary-base-color);
+    --color-black: #000000;
+    --color-green-cyan: #28d9aa;
+    --color-light-gray: #9b9b9b;
+    --color-soft-gray: #ccc;
+    --color-orange-soda: #f96446;
+    --color-white: #ffffff;
+}
+
+.CartPage {
+    display: flex;
+    justify-content: center;
+    font-weight: var(--fw-regular);
+    padding: 50px 0;
+    min-height: 100vh;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    @include mobile {
+        margin-bottom: 0;
+        height: auto;
+        padding: 17px 0;
+        > section:last-of-type {
+            width: 100%;
+        }
+    }
+    .Seperator {
+        background-color: #efefef;
+        margin: 32px 0 0 0;
+        height: 1px;
+
+        &_isDesktop {
+            display: none;
+        }
+    }
+
+    &-EmptyCartImg {
+        @media (max-width: 767px) {
+            margin-top: 64px;
+        }
+    }
+
+    &-EmptyCartText {
+        margin-top: 74px;
+
+        height: 20px;
+        width: 310px;
+        color: #000000;
+        font-family: "Avenir Next";
+        font-size: 30px;
+        font-weight: 600;
+        letter-spacing: -0.83px;
+        line-height: 20px;
+        text-align: center;
+    }
+    &-EmptyCartTextDec {
+        margin-top: 30px;
+        height: 44px;
+        width: 325px;
+        color: #000000;
+        font-family: "Avenir Next";
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+    }
+    &_isArabic {
+        .CartPage-Wrapper {
+            margin: 0 auto;
+            @include mobile {
+                margin: 0 auto !important;
+            }
+        }
+        .CartPage-BackArrow {
+            &::before {
+                right: 5px;
+                left: unset;
+                transform: rotate(-45deg);
+                -webkit-transform: rotate(-45deg);
+            }
+        }
+    }
+    &-Wrapper {
+        width: 640px;
+        @include mobile {
+            padding: 0;
+            margin-left: 0 !important;
+            width: 100%;
+            overflow-y: auto;
+        }
+    }
+    &-Items {
+        @include desktop() {
+            overflow-x: hidden;
+        }
+        @include mobile() {
+            padding: 0 16px;
+        }
+    }
+    &-Empty {
+        @include mobile {
+            padding: 1rem;
+            border-bottom: 1px solid var(--expandable-content-divider-color);
+        }
+        &Cart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include mobile {
+                margin-top: 0px;
+            }
+            &Icon {
+                width: 90px;
+                height: 90px;
+                border-radius: 90px;
+                border: 1px solid var(--color-soft-gray);
+                display: inline-block;
+                text-align: center;
+                margin-bottom: 20px;
+                background-position: -447px -31px;
+            }
+        }
+    }
+    &-Summary {
+        order: 3;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--color-white);
+        @include mobile {
+            position: sticky;
+            left: 0;
+            width: 100%;
+            padding-bottom: 10px;
+            padding: 0 12px;
+            box-shadow: 0 -4px 6px 0 rgba(0, 0, 0, 0.03);
+        }
+    }
+    &-SummaryHeading {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        @include mobile {
+            display: none;
+        }
+    }
+    &-CheckoutButtons {
+        padding: 1rem 0;
+        width: 100%;
+        @include mobile {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 12px;
+            line-height: 24px;
+        }
+    }
+    &-CheckoutButton {
+        width: 100%;
+        display: block;
+        text-align: center;
+        background-color: var(--color-orange-soda);
+        color: var(--color-white);
+        font-weight: var(--fw-bold);
+        border: none;
+        @include mobile {
+            height: 40px;
+            font-size: 14px;
+            order: 2;
+            border-radius: 6px;
+            line-height: 24px;
+            height: 48px;
+        }
+        &_isDisabled {
+            opacity: 0.5;
+            --button-select-color: var(--color-orange-soda);
+            &:hover,
+            &:focus {
+                --button-hover-background: var(--color-orange-soda);
+                background-color: var(--color-orange-soda);
+            }
+        }
+    }
+    &-ContinueShopping {
+        display: flex;
+        text-transform: uppercase;
+        margin-top: 1.5rem;
+        height: 50px;
+        border: 2px solid var(--color-black);
+        justify-content: center;
+        align-items: center;
+        font-weight: var(--fw-bold);
+        @include mobile {
+            width: 45%;
+            height: 40px;
+            margin: 0;
+            font-size: 12px;
+            order: 1;
+        }
+    }
+    &-Promo,
+    &-Total {
+        min-height: 4rem;
+        @include mobile {
+            min-height: 0;
+        }
+    }
+    &-PromoText {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    &-ClubApparel {
+        order: 3;
+        &Text {
+            font-size: 12px;
+            display: inline;
+            align-items: center;
+            flex-wrap: wrap;
+            line-height: 20px;
+            @include mobile {
+                font-size: 13px;
+            }
+        }
+        &Link {
+            text-decoration: underline;
+        }
+        &Block {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @include desktop {
+                justify-content: center;
+            }
+            padding: 1rem 1rem 0 3rem;
+            @include mobile {
+                padding: 0.75rem 2.5rem;
+                border: 0;
+                background-color: #f6f6f6;
+                border-bottom: none;
+            }
+            span {
+                font-weight: var(--fw-bold);
+            }
+            .Image {
+                .LazyLoad-wrapper {
+                    img {
+                        width: 20px !important;
+                        height: auto !important;
+                        margin: 0 12px 0 0;
+                        @include mobile {
+                            margin: 0 32px 0 0;
+                        }
+                    }
+                }
+            }
+            &_isArabic {
+                padding: 1rem 3rem 0 1rem;
+                img {
+                    margin: 0 0 0 12px;
+                }
+            }
+        }
+        &Image {
+            width: 46px;
+            margin-right: 0.5rem;
+            @include mobile {
+                width: 36px;
+            }
+        }
+        strong {
+            margin: 0 5px;
+        }
+    }
+    &-TabbyBlock {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px 0;
+        #TabbyPromo {
+            margin-top: 0px !important;
+        }
+        @include desktop {
+            width: 100%;
+        }
+    }
+    &-Promo {
+        order: 2;
+        background: var(--cart-page-promo-background);
+        padding: 8px !important;
+        &Block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            height: 40px;
+            @include mobile {
+                padding: 1rem;
+                border: 0;
+                border-bottom: 1px solid var(--primary-divider-color);
+            }
+            span:nth-child(2) {
+                font-weight: var(--fw-bold);
+            }
+            span:last-child {
+                font-weight: var(--fw-demi);
+                color: var(--color-green-cyan);
+                letter-spacing: -0.1px;
+                text-transform: capitalize;
+            }
+        }
+        &Image {
+            width: 46px;
+            margin-right: 0.5rem;
+            @include mobile {
+                width: 36px;
+            }
+        }
+        strong {
+            margin: 0 5px;
+        }
+        &Text {
+            font-size: 12px;
+            display: inline;
+            flex-wrap: wrap;
+            line-height: 20px;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            img {
+                width: 20px;
+                height: auto;
+                margin-right: 5px;
+                float: left;
+                margin-top: 5px;
+            }
+            @include mobile {
+                font-size: 11px;
+            }
+            &_isArabic {
+                img {
+                    margin-right: unset;
+                    margin-left: 5px;
+                    float: right;
+                }
+            }
+        }
+    }
+    &-PaymentMethods {
+        order: 4;
+        display: block;
+        max-width: 80%;
+        max-height: 50px;
+        margin: 1rem auto;
+        @include mobile {
+            max-width: 60%;
+        }
+        @include tablet {
+            max-width: 330px;
+            height: 55px;
+        }
+    }
+    &-Total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 17px;
+        font-weight: var(--fw-bold);
+        padding: 1rem 0;
+        font-weight: var(--fw-bold);
+        @include mobile {
+            padding: 1rem;
+        }
+    }
+    &-TotalDetails {
+        flex-grow: 1;
+        display: flex;
+        font-size: 15px;
+        align-items: center;
+        @include mobile {
+            padding: 1rem;
+            margin-top: 0;
+        }
+        dt:last-child {
+            margin: 0 20px;
+            color: var(--color-light-gray);
+        }
+        &_isMobile {
+            display: none;
+        }
+    }
+    &-TableHead {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        border-bottom: 1px solid var(--cart-page-divider-background);
+        background-color: var(--cart-page-table-head-background);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: var(--fw-demi);
+        padding: 0.9rem 1rem;
+        margin-bottom: 0;
+        @include mobile {
+            display: none;
+        }
+        span {
+            text-align: center;
+            &:last-of-type {
+                text-align: right;
+            }
+            &:first-of-type {
+                text-align: left;
+            }
+        }
+    }
+    &-Discount {
+        margin: 1rem 0;
+        border-bottom: none !important;
+    }
+    &-Static {
+        @include mobile {
+            overflow-y: hidden;
+            overflow-x: hidden;
+            width: 100%;
+            &_showClubOverflow {
+                margin-bottom: 261px !important;
+            }
+            &_showClubOverflowWithDic {
+                margin-bottom: 330px !important;
+            }
+            &_showOverflow {
+                margin-bottom: 124px !important;
+            }
+            &:first-child {
+                padding: 0 16px;
+                // padding-bottom: 280px; // disabling it for PWA-2642
+            }
+        }
+        &_isArabic {
+            .CartItem-Wrapper img {
+                margin-right: 0;
+                margin-left: 15px;
+            }
+        }
+        margin-bottom: 0 !important;
+    }
+    &-Floating {
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+        }
+        @include mobile {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            background-color: var(--color-white);
+            bottom: 0px;
+            padding-bottom: 12px;
+            z-index: 9;
+        }
+        &_isArabic {
+            img {
+                transform: scaleX(-1);
+            }
+        }
+    }
+    &-Heading {
+        font-size: 16px;
+        font-weight: var(--fw-demi);
+        text-transform: uppercase;
+        text-align: center;
+        @include desktop() {
+            font-size: 20px;
+            height: 3rem;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+            text-transform: capitalize;
+            span {
+                font-weight: var(--fw-regular);
+            }
+        }
+    }
+    .CartItem {
+        @include desktop {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        @include mobile {
+            &-Qty {
+                display: none;
+            }
+        }
+        &-Actions {
+            @include tablet {
+                flex-direction: column-reverse;
+                justify-content: center;
+            }
+        }
+    }
+    &-DiscountCoupon {
+        &::after {
+            content: ":";
+            font-weight: var(--fw-regular);
+        }
+    }
+    &-ExpandableContentContent {
+        margin-top: 0;
+    }
+    .ExpandableContent {
+        &-Content {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            @include before-desktop {
+                transition-property: opacity;
+                transition-duration: 200ms;
+                max-height: 100%;
+                opacity: 1;
+                padding: 1rem;
+            }
+            &_isContentExpanded {
+                padding: 1rem 0;
+                opacity: 1;
+                max-height: 100%;
+                @include mobile {
+                    padding: 1rem;
+                    max-height: 100%;
+                }
+            }
+        }
+        &-HeaderBlock {
+            padding: 1rem 0;
+            @include mobile {
+                display: none;
+            }
+        }
+        &-Header {
+            font-size: 15px;
+            @include mobile {
+                font-size: 12px;
+            }
+        }
+        &-Heading {
+            font-weight: var(--fw-bold);
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+        &-Button {
+            border: none;
+            transform: none;
+            margin: 0;
+            &:before {
+                content: "";
+                position: absolute;
+                right: 6px;
+                top: 1px;
+                background: #000000;
+                height: 14px;
+                width: 2px;
+                @include mobile {
+                    height: 10px;
+                    right: 4px;
+                }
+            }
+            &:after {
+                content: "" !important;
+                position: absolute;
+                right: 6px;
+                top: 1px;
+                background: #000000;
+                width: 2px;
+                height: 12px;
+                @include mobile {
+                    width: 10px;
+                    top: 5px;
+                }
+            }
+            @include before-desktop {
+                display: none;
+            }
+        }
+        &-Body {
+            @include mobile {
+                display: block;
+            }
+        }
+    }
+    .MyAccount {
+        &-Wrapper {
+            max-width: var(--content-wrapper-width);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            @include before-desktop {
+                display: none;
+            }
+            .MyAccountTabList {
+                padding: 1rem 0;
+                &-ExpandableContentContent {
+                    margin-top: 0;
+                    padding: 0 1rem;
+                    max-height: 100%;
+                    overflow: hidden;
+                    opacity: 1;
+                }
+                &-ExpandableContentButton {
+                    display: none;
+                }
+            }
+        }
+        &-TabContent {
+            display: none;
+        }
+    }
+    &-BackArrow {
+        height: 19px;
+        position: absolute;
+        width: 19px;
+        z-index: 10;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            border: solid #000;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            z-index: -9;
+        }
+        button {
+            height: 14px;
+            display: block;
+        }
+        @include after-mobile {
+            display: none;
+        }
+    }
+    &-OrderTotals {
+        font-weight: var(--fw-regular);
+        width: 100%;
+        padding: 0 12px;
+        @include desktop {
+            padding: 0;
+        }
+    }
+    &-Totals {
+        padding: 11px 0;
+        .CartPage {
+            &-SummaryItem {
+                strong:last-child {
+                    font-weight: var(--fw-bold);
+                }
+            }
+        }
+    }
+    &-Subtotals {
+        margin: 20px auto 11px;
+    }
+    &-SummaryItem {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0 5px;
+        @include mobile {
+            padding: 3px 0 3px;
+        }
+        .CartPage {
+            &-Text {
+                font-size: 13px;
+                font-weight: var(--fw-regular);
+            }
+            &-Price {
+                font-size: 13px;
+                font-weight: var(--fw-medium);
+            }
+        }
+        &::before {
+            content: none;
+        }
+        &_divider {
+            border-top: 1px solid var(--color-soft-gray);
+            padding: 10px 0px;
+            margin-top: 10px;
+            .CartPage {
+                &-Text {
+                    font-size: 15px;
+                    font-weight: var(--fw-regular);
+                }
+                &-Price {
+                    font-size: 15px;
+                    font-weight: var(--fw-bold);
+                }
+            }
+        }
+        &_subtotalOnly {
+            .CartPage {
+                &-Text {
+                    font-size: 15px;
+                    font-weight: var(--fw-regular);
+                }
+                &-Price {
+                    font-size: 15px;
+                    font-weight: var(--fw-bold);
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        margin-bottom: 0px;
+    }
+    // Cart Coupon block
+    .cartCouponBlock {
+        margin-top: 52px;
+        margin-bottom: 24px;
+        box-sizing: border-box;
+        border: 1px dashed #28d9aa;
+        border-radius: 6px;
+        background-color: #f4fffc;
+        cursor: pointer;
+        .showCouponBtn {
+            color: #28d9aa;
+            font-family: "Avenir Next";
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0;
+            line-height: 40px;
+            text-align: center;
+            width: 100%;
+        }
+        .appliedCouponBlock {
+            padding: 20px 15px;
+            display: flex;
+            align-items: center;
+            .appliedCouponDetail {
+                .appliedCouponCode {
+                    color: #28d9aa;
+                    font-family: "Avenir Next";
+                    font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    margin: 0 0 6px;
+                    word-break: break-word;
+                }
+                .appliedCouponName {
+                    color: #4a4a4a;
+                    font-family: "Avenir Next";
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    line-height: 16px;
+                    margin: 0 0 6px;
+                    word-wrap: break-word;
+                }
+                .appliedCouponViewBtn {
+                    height: auto;
+                    margin: 0;
+                    padding: 0;
+                    color: #4a4a4a;
+                    font-family: "Avenir Next";
+                    font-size: 12px;
+                    letter-spacing: 0;
+                    line-height: 16px;
+                    text-decoration: underline;
+                    text-transform: none;
+                    font-weight: normal;
+                }
+            }
+            .appliedCouponBtn {
+                margin-left: auto;
+                height: 34px;
+                text-transform: none;
+                cursor: pointer;
+                min-width: 80px;
+                &.remove {
+                    border-radius: 8px;
+                    background-color: #28d9aa;
+                    color: #ffffff;
+                    font-family: "Avenir Next";
+                    font-size: 13px;
+                    font-weight: 600;
+                    letter-spacing: 0;
+                    line-height: 18px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &_isArabic {
+        .cartCouponBlock .appliedCouponBlock .appliedCouponBtn {
+            margin-left: initial;
+            margin-right: auto;
+        }
+    }
+    .couponPopupBlock {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: 9;
+        background-color: rgba(0, 0, 0, 0.5);
+        .couponPopupContent {
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 115px auto 80px;
+            background: #ffffff;
+            overflow: hidden;
+            border-radius: 8px;
+            @include mobile {
+                margin: 0;
+                padding-left: 18px;
+                padding-right: 18px;
+                position: fixed;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: auto;
+                max-height: 80vh;
+                border-radius: 30px 30px 0 0;
+            }
+            .couponPopupTop {
+                color: #000000;
+                font-family: "Avenir Next";
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: 50px;
+                text-align: center;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                @include mobile {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                .closeCouponPopupBtn {
+                    cursor: pointer;
+                    float: right;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 16px;
+                        right: 5px;
+                        display: inline-block;
+                        padding: 1px;
+                        background-image: url(/static/media/icon.12cc0c19.svg);
+                        background-size: cover;
+                        height: 20px;
+                        width: 20px;
+                    }
+                    // }
+                    padding: 0;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ExploreNowBtn {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 10px 0;
+    &-ExploreButton {
+        color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000000;
+        height: 52px;
+        width: 180px;
+        border-radius: 6px;
+        background-color: #000000;
+    }
+    &-ExploreButtonText {
+        text-transform: none;
+        height: 15px;
+        color: #ffffff;
+        font-family: "Avenir Next";
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 0;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+.d-none {
+    display: none !important;
+}
+
+.mt-2 {
+    margin-top: 2rem !important;
+}
+
+.EmptyMessage {
+    font-size: 16px;
+}
+
+.PDPWidgets-cart {
+    &-Slider {
+        @include desktop {
+            margin-bottom: 70px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:nth-child(odd) {
+                &::-webkit-scrollbar {
+                    display: none !important;
+                }
+                width: 100vw;
+
+                margin-left: calc((-100vw + 76.389vw) / 2);
+                margin-right: calc((-100vw + 76.389vw) / 2);
+                overflow: hidden !important;
+
+                #productSlider {
+                    width: var(--main-container-width-dsk);
+                    max-width: var(--container-max-width);
+                    margin-inline: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            &_largeScreen {
+                &:nth-child(odd) {
+                    margin-left: calc((1100px - 100vw) / 2);
+                    margin-right: calc((1100px - 100vw) / 2);
+                }
+            }
+        }
+        @include mobile {
+            margin-bottom: 20px;
+        }
+    }
+
+    .VueProductSlider {
+        &-HeaderContainer {
+            margin-top: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include mobile {
+                margin-left: 0px;
+            }
+
+            @include tablet {
+                margin-left: 0px;
+            }
+        }
+        &-ViewAllBtn {
+            margin: 0 20px;
+            &_isArabic {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+.cartAlsoLikeHeading {
+    color: #000;
+    font-family: "Avenir Next";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 25px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    @media (max-width: 767px) {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 40px;
+    }
+}
+.Empty-cart-spacing {
+    margin-top: 120px;
+}

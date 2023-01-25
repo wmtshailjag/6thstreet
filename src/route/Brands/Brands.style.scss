@@ -1,0 +1,111 @@
+.Brands {
+    margin: 90px auto 110px;
+    max-width: var(--container-max-width);
+    padding: 5px 0;
+
+    @include desktop {
+        margin: 0 auto 110px;
+    }
+
+    &-Title {
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    &-Heading {
+        font-size: 29px;
+        text-align: center;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &-Categories {
+        border-bottom: 1px solid var(--color-dusty-gray);
+        text-align: center;
+    }
+
+    &-LetterFilter {
+        border-bottom: 5px solid var(--color-gainsboro);
+        text-align: center;
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &-CategoryButton,
+    &-LetterButton {
+        color: var(--color-medium-grey);
+        padding-left: 14px;
+        padding-right: 14px;
+        &:hover {
+            color: #000000;
+        }
+
+        &_isSelected {
+            color: #000000;
+
+            &::after {
+                border-bottom: 5px solid #000000;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                bottom: 0;
+                content: '';
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%) scale(1.3);
+            }
+        }
+    }
+
+    &-LetterButton {
+        font-weight: var(--fw-regular);
+
+        &_isSelected {
+            font-weight: var(--fw-bold);
+
+            &::after {
+                content: unset;
+            }
+        }
+    }
+
+    &-Groups {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        padding: 20px 40px;
+
+        @include after-mobile {
+            grid-template-columns: repeat(auto-fill, 210px);
+        }
+
+        @include desktop {
+            gap: 40px 20px;
+            padding: 20px 20px;
+        }
+
+        &_isFiltered {
+            grid-template-columns: 100%;
+        }
+    }
+    .DynamicContentSliderWithLabel {
+        margin-bottom: 40px !important;
+        .Outer {
+            margin-top: 24px;
+        }
+        
+        img {
+            min-width: 180px
+        }
+    }
+    .brands-bottom-content {
+        border-top: 1px solid var(--color-dusty-gray);
+        margin-top: 10px;
+        padding: 20px 20px;
+    }
+}

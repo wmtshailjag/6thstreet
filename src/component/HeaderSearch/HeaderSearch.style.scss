@@ -1,0 +1,217 @@
+:root {
+  --gray: #efefef;
+  --charcoal: #4a4a4a;
+  --zumthor: #d1d3d4;
+}
+
+// .SearchSuggestion {
+//   display: none;
+// }
+
+@include before-desktop {
+  .HeaderSearchSection .SearchSuggestion {
+    display: flex;
+    top: 0px;
+    position: fixed;
+  }
+}
+
+@include desktop() {
+  .HeaderSearchSection .SearchSuggestion {
+    display: flex;
+
+    &-Shade {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      position: fixed;
+      left: 0;
+      content: ".";
+      color: transparent;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+}
+
+.HeaderSearch {
+  position: absolute;
+  z-index: 100;
+  height: 33px;
+  width: 95%;
+  top: 3px;
+  right: 0;
+  border-radius: 5px;
+  background: #ffffff;
+
+  @include desktop {
+    max-width: 320px;
+
+    &:hover {
+      height: 37px;
+    }
+  }
+
+  @include before-desktop {
+    position: absolute;
+    top: 75px;
+    padding: 0 20px;
+  }
+
+  &-Clear {
+    display: none;
+
+    @include before-desktop {
+      width: 40px;
+      height: auto;
+      right: 0;
+      top: 10px;
+      display: block;
+    }
+  }
+
+  &-Container {
+    height: auto;
+    flex-grow: 1;
+    display: flex;
+
+    &_isArabic {
+      margin-left: 5px;
+      margin-right: auto;
+    }
+
+    .SearchBackground {
+      width: 100vw;
+      background-color: #000000;
+      transform: skew(-15deg, 0deg);
+      position: absolute;
+      left: -6px;
+      top: 0;
+      min-height: 100%;
+
+      &_isArabic {
+        right: -6px;
+        left: auto;
+      }
+    }
+  }
+
+  &-SubmitBtn {
+    height: 25px;
+    width: 25px;
+    padding: 0;
+    background-color: transparent;
+    position: absolute;
+    top: 7px;
+    left: 5px;
+    .Image {
+      .LazyLoad-wrapper {
+        img {
+          width: 15px !important;
+          height: 15px !important;
+        }
+      }
+    }
+
+    @include desktop {
+      top: 5px;
+      left: unset;
+      right: 5px;
+    }
+
+    &_isArabic {
+      left: unset;
+      right: 5px;
+
+      @include desktop {
+        left: 5px;
+        right: unset;
+      }
+    }
+  }
+
+  &-Clear {
+    width: 45px;
+    height: 100%;
+    top: 0;
+    display: none;
+
+    &_isClearVisible {
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  .Form {
+    width: 100%;
+    @include tablet {
+      width: 372px;
+    }
+
+    @include before-desktop {
+      border-radius: 10px;
+      width: 372px;
+      background-color: var(--gray);
+      height: 36px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &_isPLP {
+    @include mobile {
+      input {
+        padding-left: 13px !important;
+      }
+    }
+  }
+
+  .Field {
+    margin: 0;
+    width: 100%;
+
+    input {
+      background-color: #f5f5f5;
+      border: none;
+      border-radius: 5px;
+      font-weight: var(--fw-regular);
+      font-size: 14px;
+      padding-left: 35px;
+      text-transform: none;
+      width: 100%;
+      color: $black;
+      height: 30px;
+      @include mobile {
+        height: 36px;
+        border-radius: 10px;
+      }
+
+      &::placeholder {
+        color: $black;
+      }
+
+      @include desktop {
+        padding-left: 10px;
+        padding-right: 35px;
+        background-position: calc(100% - 10px) 50%;
+      }
+    }
+  }
+
+  &_isArabic {
+    #search-field {
+      background-position: calc(100% - 10px) 50%;
+      padding-right: 35px;
+      padding-left: 10px;
+
+      @include desktop {
+        padding-left: 35px;
+        padding-right: 30px;
+      }
+    }
+
+    right: unset;
+    left: 0;
+  }
+}

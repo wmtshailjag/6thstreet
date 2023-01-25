@@ -1,0 +1,25 @@
+.CreditCardPopup {
+    .Popup {
+        &-Content {
+            height: 100%;
+            left: 0;
+            max-height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+        }
+    }
+
+    &-CloseButtonWrapper {
+        position: absolute;
+        text-align: right;
+        z-index: 10;
+        width: 100%;
+
+        img {
+            width: 16px;
+        }
+    }
+}

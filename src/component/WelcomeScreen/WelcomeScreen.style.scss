@@ -1,0 +1,136 @@
+.WelcomeScreen {
+
+    &-Content {
+        min-width: 200px;
+        font-weight: var(--fw-regular);
+        height: 100%;
+
+        @include mobile() {
+            min-width: 200px;
+        }
+    }
+
+    &-ButtonsContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    &-List {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        &Container {
+            overflow: auto;
+            // height: calc(100% - 100px);
+
+        }
+
+        li {
+            list-style: none;
+            padding: 0;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgb(230, 230, 230);
+            cursor: pointer;
+
+            &::before {
+                content: '';
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-CountryItem {
+        &_isCurrent {
+            order: -1;
+        }
+    }
+
+    &-Options {
+        padding: 0px 18px 0px;
+        height: 100%;
+
+        h1, p {
+            text-align: left;
+        }
+
+        @include mobile() {
+            padding: 0px 10px 0px;
+        }
+    }
+
+    &-Close {
+        float: right;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background: black;
+        color: white;
+        margin: 10px;
+        cursor: pointer;
+        z-index: 10;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+
+        @include mobile() {
+            position: absolute;
+            top: -400px;
+            right: 10px;
+        }
+
+        svg {
+            fill: $white;
+            margin: 0 auto;
+        }
+    }
+
+    &-LanguageBtn {
+        width: 130px;
+    }
+
+    &-Check {
+        float: right;
+        right: 0px;
+        position: absolute;
+    }
+
+    &-CountryBtn {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: start;
+        padding: 0;
+        margin-top: 0;
+        font-weight: var(--fw-regular);
+        height: 30px;
+
+        &_isCurrent {
+            font-weight: var(--fw-demi);
+        }
+    }
+}
+
+.PageWrapper {
+    &_isArabic {
+        .WelcomeScreen {
+            &-Close {
+                float: left;
+                margin-top: 10px;
+            }
+            &-Check {
+                float: left;
+                left: 0;
+                right: unset;
+            }
+        }
+        .CountryMiniFlag-Container{
+            margin-left: 8px;
+            margin-right: 0px;
+        }
+    }
+}

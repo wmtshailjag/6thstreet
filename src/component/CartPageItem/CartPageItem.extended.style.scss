@@ -1,0 +1,250 @@
+/**
+* @category  6thstreet
+* @author    Alona Zvereva <alona.zvereva@scandiweb.com>
+* @license   http://opensource.org/licenses/OSL-3.0 The Open Software License 3.0 (OSL-3.0)
+* @copyright Copyright (c) 2020 Scandiweb, Inc (https://scandiweb.com)
+*/
+:root {
+  --cart-page-totals-background: var(--secondary-base-color);
+  --cart-page-divider-background: #d8d8d8;
+  --cart-page-promo-background: #f6f6f6;
+  --cart-page-table-head-background: var(--secondary-base-color);
+
+  --color-black: #000000;
+  --color-green-cyan: #28d9aa;
+  --color-light-gray: #9b9b9b;
+  --color-orange-soda: #f96446;
+  --color-white: #ffffff;
+  --color-charcoal: #4a4a4a;
+  --color-nobel: #9b9b9b;
+}
+
+.CartPage {
+  .CartPageItem {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+
+    @include desktop() {
+      height: 187px;
+    }
+
+    &-Wrapper {
+      display: flex;
+
+      .Image_hasSrc {
+        display: none;
+      }
+
+      .Image {
+        display: block;
+        width: 142px;
+        @include mobile() {
+          width: 138px;
+        }
+
+        &-Image {
+          position: relative;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &-Heading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0;
+      &:first-child {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 30px;
+        margin-bottom: 3px;
+      }
+    }
+
+    &-ColSizeQty {
+      color: var(--color-charcoal);
+
+      span {
+        color: var(--color-nobel);
+        margin-left: 0;
+        &:nth-child(2) {
+          color: black;
+        }
+      }
+    }
+
+    &-DiscountPrice {
+      flex-wrap: wrap;
+      line-height: 18px;
+    }
+
+    &_isArabic {
+      span {
+        padding-right: 0;
+        padding-left: 15px;
+        border-right: none;
+        border-left: 1px solid var(--color-nobel);
+      }
+    }
+
+    .swipeableItem {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      overflow: hidden;
+      width: 100%;
+      transition: all 2s;
+      position: relative;
+      margin-top: 15px;
+      &.active {        
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+      }
+
+      -moz-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+
+      .swipeableItemContent {
+        width: 100%;
+        transition: all 800ms;
+        padding-right: 8px;
+        .CartPageItem-Wrapper{
+          padding-top:0;
+          position: relative;
+          .SwipeActionBtn{
+            background: url(../Icons/Close/icon.svg) no-repeat center;
+            background-size: 16px;
+            width: 16px;
+            height: 16px;
+            padding: 0px;
+            top: 0;
+            right: 8px;
+            z-index: 9;
+            position: absolute;
+          }
+          .CartPageItem-Actions{
+            display:none;
+          }
+        }
+
+        //transform: translateX(-98px);
+      }
+
+      .swipeableItemLeftAction {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: self-start;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: "Avenir Next";
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-align: center;
+        max-height: 165px;
+        background: #28D9AA;
+        width: 98px;
+        height: 100%;
+        transition: all 800ms;
+        position: absolute;
+        left: 0;
+        top:0;
+        
+      }
+
+      .swipeableItemRightAction {
+        overflow: hidden;
+        justify-content: center;
+        align-items: self-start;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: "Avenir Next";
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-align: center;
+        max-height: 165px;
+        background: #F01136;
+        width: 98px;
+        height: 100%;
+        transition: all 800ms;
+        position: absolute;
+        right: 0;
+        top:0;
+        
+      }
+      .actionItem{          
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        .title{
+          color: #FFFFFF;
+          font-family: "Avenir Next";
+          font-size: 14px;
+          font-weight: 500;
+          letter-spacing: 0;
+          line-height: 19px;
+          text-transform: none;
+          display: block;
+          width:96px;
+        }
+        .WishlistIcon{
+          background: transparent;
+          position: relative;
+          top:unset;
+          right: unset;
+          svg path{
+            fill :white;
+            stroke :white;
+          }
+        }
+        img{
+          width:17px;
+          height: 19px;
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    
+      
+  }
+  &_isArabic {
+    .CartPageItem{
+      .swipeableItem {
+        .swipeableItemContent {
+          padding-left: 8px;
+          padding-right: 0;
+          .CartPageItem-Wrapper{
+           
+            .SwipeActionBtn{
+              left: 8px;
+              right: initial;
+            }
+            
+          }
+        }
+        .swipeableItemLeftAction {
+          left:initial;
+          right: 0;
+        }
+
+        .swipeableItemRightAction {
+          right: initial;
+          left:0;
+        }
+      }
+    }
+  }
+}
+

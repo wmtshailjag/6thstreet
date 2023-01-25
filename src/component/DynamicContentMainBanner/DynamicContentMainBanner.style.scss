@@ -1,0 +1,10 @@
+.DynamicContentMainBanner {
+    padding: 0 10px;
+    .Image {
+        height: auto;
+        &-Image {
+            position: static;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>CLOSE</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10,8.65706621 L16.3789355,2.2781307 C16.7497764,1.90728977 17.3510284,1.90728977 17.7218693,2.2781307 C18.0927102,2.64897162 18.0927102,3.25022356 17.7218693,3.62106449 L11.3429338,10 L17.7218693,16.3789355 C18.0927102,16.7497764 18.0927102,17.3510284 17.7218693,17.7218693 C17.3510284,18.0927102 16.7497764,18.0927102 16.3789355,17.7218693 L10,11.3429338 L3.62106449,17.7218693 C3.25022356,18.0927102 2.64897162,18.0927102 2.2781307,17.7218693 C1.90728977,17.3510284 1.90728977,16.7497764 2.2781307,16.3789355 L8.65706621,10 L2.2781307,3.62106449 C1.90728977,3.25022356 1.90728977,2.64897162 2.2781307,2.2781307 C2.64897162,1.90728977 3.25022356,1.90728977 3.62106449,2.2781307 L10,8.65706621 Z" id="path-1"></path>
+    </defs>
+    <g id="CLOSE" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="black">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Line" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="black" mask="url(#mask-2)" fill="#000000">
+            <rect x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

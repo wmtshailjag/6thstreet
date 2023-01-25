@@ -1,0 +1,195 @@
+.CmsPage {
+    .faq-page {
+        margin: 0 20px;
+        @include desktop {
+            margin: 0 80px;
+        }
+        .showHide {
+            @include mobile {
+                margin-top: 40px;
+            }
+            input {
+                display: none;
+            }
+            input:checked+label+.fieldsetContainer {
+                display: block;
+            }
+            input:checked+label>.expand>.plus-sign {
+                display: none;
+            }
+            input:checked+label>.expand>.minus-sign {
+                display: inline;
+            }
+            label {
+                margin-top: 12px;
+                font-weight: var(--fw-demi);
+                font-size: 14px;
+                cursor: pointer;
+                @include desktop {
+                    font-size: 16px;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    left: -3px;
+                    border: 1px solid $black;
+                    @include desktop {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .changeArrow {
+                    padding-left: 0.5px;
+                }
+                .minus-sign {
+                    top: -1px;
+                }
+            }
+            .fieldsetContainer {
+                display: none;
+                margin: 5px 0 0 20px;
+                font-size: 14px;
+            }
+            .minus-sign {
+                display: none;
+            }
+            .open {
+                display: block;
+            }
+            .minus-sign,
+            .plus-sign {
+                margin-right: 5px;
+                font-size: 14px;
+                @include mobile {
+                    font-size: 13px;
+                }
+            }
+        }
+        @include mobile {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    .return-information,
+    .shipping-policy {
+        @include mobile {
+            padding: 0 16px 40px 16px;
+            margin-top: 70px;
+        }
+    }
+    .privacy-policy,
+    .disclaimer {
+        @include mobile {
+            padding: 0px 16px 100px 16px;
+            margin-top: 120px;
+        }
+    }
+}
+
+.MyAccountMobileHeader {
+    &-TabOptionHeader {
+        display: flex;
+        z-index: 99;
+        background: #fff;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+    &-Heading {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 16px;
+        text-align: center;
+    }
+    &-Button {
+        position: absolute;
+        left: 0;
+        @include mobile {
+            top: 10px;
+        }
+        &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border: solid #000000;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 2px 5px 5px 2px;
+            margin: 0 auto;
+            transform: rotate(135deg);
+            left: 20px;
+            top: 14px;
+            background: transparent;
+        }
+        &_isArabic {
+            &:after {
+                left: unset;
+                right: 20px;
+                transform: rotate(-45deg);
+            }
+            left: unset;
+            right: 0;
+        }
+        &_isClubApparel {
+            z-index: 1;
+            top: -55px;
+            &:after {
+                border: solid #ffffff;
+                display: inline-block;
+                border-width: 0 2px 2px 0;
+                padding: 2px 7px 7px 2px;
+                top: 20px;
+            }
+        }
+    }
+}
+
+.noPadding {
+    padding-top: 0 !important;
+}
+
+.PageWrapper {
+    &_isArabic {
+        .CmsPage {
+            .faq-page {
+                .showHide {
+                    label {
+                        font-weight: var(--fw-regular);
+                        &::before {
+                            right: -3px;
+                            top: 1px;
+                        }
+                    }
+                    .fieldsetContainer {
+                        margin: 5px 20px 0 0;
+                        ul {
+                            li:before {
+                                right: -30px;
+                            }
+                        }
+                    }
+                    .minus-sign,
+                    .plus-sign {
+                        font-weight: var(--fw-demi);
+                        left: 5px;
+                        top: 0;
+                    }
+                    .plus-sign {
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+}

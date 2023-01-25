@@ -1,0 +1,135 @@
+:root {
+  --my-acc-default: rgb(216, 0, 0);
+  --my-acc-background: #f9f9f9;
+  --my-acc-street: #4a4a4a;
+}
+.MyAccountAddressTable {
+  display: flex;
+  align-items: center;
+
+  &-ActionBtn {
+    display: none;
+    height: 20px;
+    padding: 3px;
+    margin-left: 20px;
+
+    &_isOpen {
+      display: block;
+    }
+
+    @include desktop() {
+      display: block;
+    }
+  }
+
+  &-Edit {
+    img {
+      width: 17px !important;
+    }
+  }
+
+  &-Trash {
+    img {
+      width: 15px !important;
+    }
+  }
+
+  &_hide {
+    display: none;
+  }
+}
+
+.MyAccountAddressCard {
+  background: var(--my-acc-background);
+  width: 100%;
+  font-size: 14px;
+  line-height: 19px;
+  padding: 10px 24px 17px;
+  border-radius: 7px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 47%;
+    border: solid $black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  @include desktop() {
+    // width: 335px;
+
+    &::after {
+      content: none;
+    }
+
+    &:hover {
+      cursor: auto;
+    }
+  }
+
+  &-Default {
+    color: var(--my-acc-default);
+    text-transform: uppercase;
+    font-size: 10px;
+  }
+
+  &-Name {
+    font: 12px sans-serif;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    line-height: 16px;
+    word-break: break-all;
+  }
+
+  &-Street {
+    color: var(--my-acc-street);
+    word-break: break-all;
+  }
+
+  &-City {
+    font-weight: var(--fw-medium);
+  }
+
+  &-Phone {
+    font-weight: var(--fw-medium);
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .MyAccountAddressTable {
+      &-ActionBtn {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .MyAccountAddressCard {
+      &::after {
+        content: none;
+      }
+      @include mobile {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 15px;
+          top: 47%;
+          border: solid $black;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 4px;
+          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+        }
+      }
+    }
+  }
+}

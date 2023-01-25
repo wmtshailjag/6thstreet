@@ -1,0 +1,69 @@
+.CircleItemSliderSubPage{
+    @include mobile {
+        top: -48px;
+    }
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    @include mobile{
+        display: block;
+    }
+    video{
+        margin: 0 auto;
+        @include desktop {
+            max-width: 200px;
+        }
+    }
+    img{
+        margin: 0 auto;
+    }
+    &-Video{
+        display: flex;
+    }
+    &-Discription{
+        &-Title{
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: -1px;
+            line-height: 55px;
+            text-transform: capitalize;
+            margin-left: 30px;
+            margin-top: 0px;
+            @include mobile{
+                font-size: 18px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                line-height: unset;
+                text-transform: uppercase;
+                margin-left: 0px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            &_isArabic{
+                margin-left: unset;
+                margin-right: 30px;
+                @include mobile{
+                    margin-right: 0px;
+                }
+            }
+        }
+        &-Desc{
+            font-size: 16px;
+            margin-left: 30px;
+            letter-spacing: 0;
+            line-height: 25px;
+            @include mobile{
+                margin-right: 30px;
+                text-align: center;
+            }
+            &_isArabic{
+                margin-left: unset;
+                margin-right: 30px;
+                @include mobile{
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+}

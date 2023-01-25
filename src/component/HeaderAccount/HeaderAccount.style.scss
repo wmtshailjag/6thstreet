@@ -1,0 +1,129 @@
+.HeaderAccount {
+  width: auto;
+
+  &-Button {
+    // height: 30px;
+    // left: -30px;
+    padding: 0;
+    z-index: 3;
+    height: auto;
+
+    &:not(&_isBottomBar) {
+      // margin-left: 60px;
+
+      label {
+        text-transform: none;
+        position: relative;
+        height: 27px;
+        padding: 0;
+        cursor: pointer;
+        font-weight: var(--fw-demi);
+
+        &::before {
+          // position: absolute;
+          // left: -30px;
+          // top: -6px;
+          content: "";
+          background: url(./icons/account.svg) no-repeat;
+          background-size: 24px;
+          width: 24px;
+          height: 24px;
+          display: flex;
+          font-size: 0;
+          margin-right: 6px
+
+
+          //   margin-top: -8px;
+        }
+
+        span {
+          display: none;
+          font-size: 14px;
+          font-weight: var(--fw-demi);
+          letter-spacing: 0;
+          line-height: 19px;
+          height: 27px;
+          color: #000000;
+
+          @include after-mobile {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &_isArabic {
+
+      &:not(&_isBottomBar) {
+        label {
+
+          &::before {
+            margin-right: 0px;
+            margin-left: 6px;
+          }}
+        // margin-left: 90px;
+      }
+    }
+  }
+
+  &_isBottomBar {
+    display: block;
+    text-transform: none;
+    font-size: 10px;
+    font-weight: var(--fw-medium);
+    letter-spacing: -0.2px;
+    line-height: 14px;
+    color: var(--inactive-button-header-color);
+    height: 40px;
+    width: 40px;
+    margin: 12px auto 0;
+    padding: 0;
+    text-align: center;
+
+    &::before {
+      content: "";
+      right: 0;
+      background: url(./icons/account.svg) no-repeat center center;
+      background-size: 29px;
+      width: 27px;
+      height: 29px;
+      display: inline-block;
+      font-size: 0;
+      filter: invert(26%) sepia(2%) saturate(21%) hue-rotate(43deg)
+        brightness(90%) contrast(80%);
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &_isAccount {
+    color: var(--active-button-header-color);
+
+    &::before {
+      filter: invert(43%) sepia(60%) saturate(1535%) hue-rotate(335deg)
+        brightness(107%) contrast(95%);
+    }
+  }
+
+  &-PopUp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(70, 70, 70, 0.6);
+    cursor: default;
+    pointer-events: all;
+    z-index: 100;
+
+    @include desktop {
+      display: block;
+    }
+
+    &_isHidden {
+      display: none;
+    }
+  }
+}

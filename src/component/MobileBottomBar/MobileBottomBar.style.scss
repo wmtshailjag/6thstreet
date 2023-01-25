@@ -1,0 +1,281 @@
+:root {
+  --active-button-header-color: #f96446;
+  --inactive-button-header-color: #4a4a4a;
+}
+
+@include before-desktop {
+  .HeaderAccount-PopUp,
+  .HeaderAccount-PopUp_isHidden_undefined {
+    display: block;
+    overflow-y: auto;
+  }
+
+  .MyAccountOverlay-Heading {
+    display: block;
+  }
+
+  .MyAccountOverlay {
+    display: block;
+    height: 100%;
+    padding-top: 0;
+  }
+
+  .MyAccountOverlay-Action_state_createAccount {
+    padding-top: 0;
+  }
+
+  .MyAccountOverlay-Image {
+    object-position: 0;
+    width: 100%;
+  }
+
+  .MyAccountOverlay-ForgotPasswordSubheading {
+    font-weight: inherit;
+  }
+}
+
+@include mobile {
+  .MyAccountOverlay-Action {
+    display: block;
+  }
+
+  .MyAccountOverlay-Buttons {
+    margin: 30px;
+  }
+}
+
+.MyAccountOverlay-Button,
+.Button {
+  &:hover {
+    background-color: var(--black-color);
+  }
+}
+
+.MyAccountOverlay-Button_isSignIn::after {
+  background: none;
+}
+
+.MobileBottomBar {
+  display: flex;
+  z-index: 95;
+  background: $white;
+  height: 83px !important;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  border-top: 1px solid var(--light-gray);
+  transition: 0.1s ease;
+  &.hidden {
+    display: none;
+  }
+
+  // &_isIPhoneNavigationHidden {
+  //   height: 113px;
+  // }
+
+  @include tablet{
+    height: 80px;
+  }
+
+  @include desktop {
+    display: none;
+    z-index: 0;
+    background: none;
+    height: auto;
+    position: relative;
+  }
+
+  &-HomeAndBrand {
+    display: block;
+    height: fit-content;
+    width: 20%;
+    text-align: center;
+    padding-top: 16px;
+
+
+    &::before {
+      content: "";
+      right: 0;
+      background-size: 27px;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      font-size: 0;
+      // filter: invert(26%) sepia(2%) saturate(21%) hue-rotate(43deg)
+      //   brightness(90%) contrast(80%);
+    }
+
+    &_isHomeButton {
+      &::before {
+        background: url(./icons/home.svg) no-repeat center center;
+        background-size: 24px;
+        width: 40px;
+        height:40px;
+        background-position: center 20%;
+      }
+      &.MobileBottomBar-HomeAndBrand_isActive {
+        background-image: linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: 100% 1px, calc(100% - 1px) 100%;
+        background-position: center top, 1px 0;
+        &::before{
+          background: url(./icons/home-active.svg) no-repeat center center;
+          background-size: 24px;
+          width: 40px;
+          height:40px;
+          background-position: center 20%;
+        }
+      }
+    }
+
+    &_isBrandButton {
+      &::before {
+        background: url(./icons/brand.svg) no-repeat center center;
+        background-size: 24px;
+        width: 40px;
+        height:40px;
+        background-position: center 20%;
+      }
+      &.MobileBottomBar-HomeAndBrand_isActive {
+        background-image: linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: 100% 1px, calc(100% - 1px) 100%;
+        background-position: center top, 1px 0;
+        &::before{
+          background: url(./icons/brand-active.svg) no-repeat center center;
+          background-size: 24px;
+          width: 40px;
+          height:40px;
+          background-position: center 20%;
+        }
+      }
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  > div {
+    width: 20%;
+  }
+
+  &-WishListAndAccount {
+    width: 100%;
+  }
+
+  .HeaderMenu {
+    // width: 20%;
+    // padding: 12px 0 0;
+
+    .Menu {
+      &-Container {
+        display: none;
+      }
+    }
+
+    &-Button {
+      display: block;
+      height: fit-content;
+      width: 100%;
+      text-align: center;
+      padding-top: 16px;
+      margin-top: 0px;
+
+      &::before {
+        background: url(../../style/icons/categories.png) no-repeat center center;
+        background-size: 24px;
+        filter: none;
+        width: 40px;
+        height:40px;
+        background-position: center 20%;
+      }
+      &_isExpanded{
+        background-image: linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: 100% 1px, calc(100% - 1px) 100%;
+        background-position: center top, 1px 0;
+        &::before {
+          background: url(../../style/icons/categories-active.png) no-repeat center center;
+          background-size: 24px;
+          width: 40px;
+          height:40px;
+          background-position: center 20%;
+          filter: none;
+        }
+      }
+    }
+  }
+  &-WishListAndAccount{
+    display: block;
+    height: 24px;
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    .HeaderWishlist{
+      height: 24px;
+      padding-top: 16px;
+      margin-top: 0px;
+      width: 100%;
+      &::before {
+        background: url(./icons/favorites.svg) no-repeat center center;
+        background-size: 24px;
+        filter: none;
+        width: 40px;
+        height:40px;
+        background-position: center 20%;
+
+      }
+      &_isWishlist{
+        background-image: linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: 100% 1px, calc(100% - 1px) 100%;
+        background-position: center top, 1px 0;
+        &::before {
+          background: url(./icons/favorites-active.svg) no-repeat center center;
+          background-size: 24px;
+          width: 40px;
+          height:40px;
+          background-position: center 20%;
+          filter: none;
+
+        }
+      }
+    }
+    .HeaderAccount{
+      height: 24px;
+      padding-top: 16px;
+      margin-top: 0px;
+      width: 100%;
+      &::before {
+        background: url(./icons/account.svg) no-repeat center center;
+        background-size: 24px;
+        filter: none;
+        width: 40px;
+        height:40px;
+        background-position: center 20%;
+
+      }
+      &_isAccount{
+        background-image: linear-gradient(black, black);
+        background-repeat: no-repeat;
+        background-size: 100% 1px, calc(100% - 1px) 100%;
+        background-position: center top, 1px 0;
+        &::before {
+          background: url(./icons/account-active.svg) no-repeat center center;
+          width: 40px;
+          height:40px;
+          background-position: center 20%;
+          filter: none;
+
+        }
+      }
+    }
+    label{
+      @include mobile{
+        line-height: 1;
+      }
+
+    }
+  }
+}

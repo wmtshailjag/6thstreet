@@ -1,0 +1,116 @@
+.GenderButton {
+  &-Link {
+    &:hover {
+      text-shadow: 0 0 0.01px black;
+    }
+  }
+  &-Container {
+    display: inline-block;
+    height: 14px;
+    // margin: 20px 0;
+
+    @include before-desktop {
+      height: 16px;
+      border-left: 0;
+      border-right: 0;
+      margin-bottom: 0;
+      // padding-bottom: 49px;
+      // padding-top: 15px;
+      pointer-events: none;
+    }
+
+    @include desktop {
+      margin: 20px 12px;
+      &:first-child {
+        padding-left: 0;
+        margin-left: 0;
+      }
+      &:last-child {
+        padding-left: 0;
+        margin-right: 0;
+      }
+    }
+    @include tablet {
+      margin: 0px 15px;
+      padding: 0;
+      &:first-child {
+        padding-left: 0;
+        margin-left: 0;
+      }
+      &:last-child {
+        padding-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-Button {
+    font-weight: var(--fw-regular);
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding: 0;
+    pointer-events: all;
+    z-index: 2;
+    &::before {
+      display: block;
+      content: attr(name);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      width: 60px;
+    }
+
+    &_isCurrentGender,
+    &:hover {
+      font-weight: var(--fw-bold);
+      letter-spacing: 0;
+      font-size: 12px;
+      transition-duration: unset;
+      @include desktop {
+        font-size: 14px;
+      }
+    }
+
+    &_isUnsetStyle {
+      border-bottom: 0;
+      font-weight: var(--fw-regular);
+    }
+
+    @include desktop {
+      height: 30px;
+      margin-top: -30px;
+    }
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .GenderButton {
+      &-Container {
+        @include desktop {
+          &:first-child {
+            margin-left: 15px;
+            padding-right: 0;
+            margin-right: 0;
+          }
+          &:last-child {
+            margin-left: 0px;
+            margin-right: 15px;
+          }
+        }
+        @include tablet {
+          margin: 0px 15px;
+          &:first-child {
+            padding-left: 0;
+            margin-right: 0;
+          }
+          &:last-child {
+            padding-left: 0;
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}

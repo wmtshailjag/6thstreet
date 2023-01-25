@@ -1,0 +1,256 @@
+:root {
+    --button-background-color: #f8f8f8;
+    --overlay-background-color: #f4f4f4;
+    --crumb-border-color: #ececec;
+}
+
+.PDPGalleryOverlay {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--overlay-background-color);
+    z-index: 1000;
+    grid-template-columns: 1fr 6fr;
+    height:100%;
+    &-Crumbs {
+        z-index: 100;
+        // height: 150px;
+        order: 2;
+        display: flex;
+        bottom: 0;
+        background: var(--white-color);
+        .SliderHorizontal {
+            height: auto !important;
+            &-ButtonRight, &-ButtonLeft {
+                @include mobile {
+                    display: flex;
+                    height: 100%!important;
+                    margin: 0px!important;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+                }
+                &_isArrowDownHidden {
+                    display: none;
+                }
+                &_isArrowUpHidden {
+                    display: none;
+                }
+            }
+        }
+        .PDPGalleryCrumb {
+            margin-right: 1px;
+            display: block;
+            width: 120px;
+            height: auto;
+            border: 1px solid var(--crumb-border-color);
+            transition: unset;
+            &:last-of-type {
+                padding-bottom: 0px;
+            }
+            &_isActive {
+                border: 2px solid $black;
+                img {
+                    border: unset;
+                }
+            }
+            .Image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden !important;
+                &-Image {
+                    object-position: 50% 0;
+                }
+            }
+        }
+    }
+    .Slider {
+        position: relative;
+        min-width: 0;
+        order: 1;
+        &_isArabic {
+            //direction: rtl!important;
+        }
+        &_isCrumbs {
+            width: 85px;
+            @include mobile {
+                margin: 0!important;
+            }
+        }
+        &-Wrapper {
+            &_isCrumbs {
+                flex-direction: column;
+            }
+        }
+        .Image {
+            &-Image {
+                object-fit: contain;
+            }
+            &_ratio {
+                &_square {
+                    padding-bottom: 100%;
+                    @include desktop {
+                        padding-bottom: 600px;
+                    }
+                }
+            }
+        }
+        &-Crumbs {
+            position: fixed;
+            left: 0;
+        }
+    }
+    &-Button {
+        position: fixed;
+        right: 0;
+        padding: 0;
+        background: transparent;
+        z-index: 601;
+        @include desktop {
+            background: var(--button-background-color);
+        }
+    }
+    &-ZoomIn {
+        position: fixed;
+        left: 0;
+        z-index: 601;
+        svg {
+            height: 30px;
+            width: 30px;
+            @include desktop {
+                height: 60px;
+                width: 60px;
+            }
+        }
+    }
+    &-ZoomOut {
+        position: fixed;
+        top: 50px;
+        left: 0;
+        z-index: 601;
+        @include desktop {
+            top: 80px;
+        }
+        svg {
+            height: 20px;
+            width: 20px;
+            @include desktop {
+                height: 35px;
+                width: 35px;
+            }
+        }
+    }
+}
+
+.PDPGallery {
+    .PDPGalleryOverlay {
+        .Slider {
+            margin: auto 10px;
+            bottom: 0;
+        }
+        .ZoomGuide {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 901;
+            font-size: 16px;
+            background: grey;
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 0px;
+            line-height: 30px;
+            transform: translate(-50%, -50%);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        &-Button {
+            height: 50px;
+            width: 50px;
+            @include desktop {
+                width: 80px;
+                height: 80px;
+            }
+            svg {
+                height: 30px;
+                width: 30px;
+                @include desktop {
+                    height: unset;
+                    width: unset;
+                }
+            }
+        }
+        &-ZoomIn,
+        &-ZoomOut,
+        &-Prev,
+        &-Next {
+            height: 50px;
+            width: 50px;
+            @include desktop {
+                width: 80px;
+                height: 80px;
+                background: var(--button-background-color);
+            }
+        }
+        &-Prev {
+            position: absolute;
+            top: 50%;
+            z-index: 601;
+            left: 0;
+            transform: translateY(-50%);
+            @include mobile {
+                display: none;
+            }
+        }
+        &-Next {
+            position: absolute;
+            top: 50%;
+            z-index: 601;
+            right: 0;
+            transform: translateY(-50%);
+            @include mobile {
+                display: none;
+            }
+        }
+        &-Crumbs {
+            display: flex;
+        }
+    }
+    .Slider-Wrapper>* {
+        width: 100%;
+        height: 100%;
+    }
+    .Slider-Wrapper {
+        .SliderVertical {
+            &-ButtonUp,
+            &-ButtonDown {
+                height: 30px;
+            }
+        }
+    }
+}
+
+.react-transform-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.CurrentImage {
+    pointer-events: unset!important;
+    cursor: -moz-zoom-in!important; 
+    cursor: -webkit-zoom-in!important;
+    cursor: zoom-in!important;
+    &_isMaxZoomedIn {
+        cursor: -moz-zoom-out!important;
+        cursor: -webkit-zoom-out!important;
+        cursor: zoom-out!important
+    }
+}

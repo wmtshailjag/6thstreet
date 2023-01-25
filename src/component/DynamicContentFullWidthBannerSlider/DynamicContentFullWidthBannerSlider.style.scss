@@ -1,0 +1,132 @@
+.DynamicContentFullWidthBannerSlider {
+  margin-bottom: 30px;
+  a + a {
+    margin-left: 0px;
+  }
+  @include mobile {
+    a {
+      margin-left: -30px;
+      padding: 0 2px 0 10px;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @include tablet{
+    margin-bottom: 20px;
+  }
+  .DynamicContentHeader{
+    padding-left: 15px;
+    padding-right: 15px;
+    p{
+      text-align: left;
+    }
+    @include mobile{
+      padding-left: 0px;
+      padding-right: 0px;
+      p{
+        text-align: center;
+      }
+      .title{
+        text-align: center;
+      }
+    }
+  }
+
+
+  // .Image {
+  //   height: auto;
+  //   &-Image {
+  //     position: static;
+  //     @include desktop {
+  //       margin-top: 50px;
+  //     }
+  //   }
+  // }
+  .tns-outer {
+    direction: ltr !important;
+    button[data-action="stop"] {
+      display: none;
+    }
+    button[data-action="start"] {
+      display: none;
+    }
+    .tns-liveregion{
+      display: none;
+    }
+  }
+  .tns-controls {
+    display: none;
+    position: initial;
+    button:first-child {
+      left: 0;
+      position: absolute;
+      font-size: 75px;
+      font-weight: 500;
+      color: #888;
+      bottom: 5%;
+      height: 100%;
+      margin-left: 15px;
+      &:hover {
+        color: #000000;
+      }
+      z-index: 2;
+    }
+    button:last-child {
+      right: 0;
+      position: absolute;
+      font-size: 75px;
+      font-weight: 500;
+      color: #888;
+      bottom: 5%;
+      height: 100%;
+      margin-right: 15px;
+      z-index: 2;
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+  .tns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 20px;
+    align-items: center;
+    // margin-bottom: 25px;
+    button {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #bfbfbf;
+      padding: 0;
+    }
+    &-active {
+      background-color: #3d4447 !important;
+      width: 7px !important;
+      height: 7px !important;
+
+    }
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      margin-top: 17px;
+      // margin-bottom: 10px;
+
+    }
+  }
+  .tns-nav {
+    // display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .DynamicContentFullWidthBannerSlider {
+    margin-top: 0px;
+    .tns-controls {
+      display: none;
+    }
+  }
+}

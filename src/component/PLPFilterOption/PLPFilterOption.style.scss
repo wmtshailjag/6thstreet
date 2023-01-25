@@ -1,0 +1,259 @@
+:root {
+  --filter-product-count-color: #666;
+  --disabeled-radio-button-color: #b8b8b8;
+  --check-mark-mobile-filter-color: #f96446;
+  --option-list-bottom-border-color: #ddd;
+}
+
+.PLPFilterOption {
+  &-Input {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    z-index: 1;
+    &_isArabic {
+      right: 0;
+    }
+    @include desktop {
+      width: calc(100% - 20px);
+      cursor: pointer;
+      label {
+        top: 11px;
+      }
+    }
+  }
+  &-Color {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 0 8px;
+    border-radius: 50%;
+    border: 1px solid var(--option-list-bottom-border-color);
+  }
+  &_allColor {
+    margin-left: 8px;
+    width: 96% !important;
+  }
+  &-List {
+    margin: 0;
+    display: flex;
+    label {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      @include desktop {
+        position: absolute;
+        height: 42px;
+        padding-left: 32px;
+        cursor: pointer;
+      }
+    }
+    &_isArabic {
+      label {
+        display: unset;
+        align-items: unset;
+        text-align: right;
+        overflow: hidden;
+        justify-content: right;
+        top: 12px;
+        @include tablet {
+          top: -15px;
+        }
+        @include desktop {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          top: unset;
+          padding-right: 32px;
+          padding-left: 0;
+          cursor: pointer;
+        }
+      }
+      label:nth-child(2) {
+        direction: rtl;
+      }
+      .Field {
+        [type="checkbox"],
+        [type="radio"] {
+          + label {
+            top: 11px;
+          }
+        }
+      }
+    }
+    span {
+      margin-left: 5px;
+      color: var(--filter-product-count-color);
+    }
+    @include before-desktop {
+      justify-content: space-between;
+      border-bottom: solid 1px var(--option-list-bottom-border-color);
+      margin: auto 7%;
+      &_isArabic {
+        justify-content: flex-end;
+        .Field {
+          [type="radio"],
+          [type="checkbox"] {
+            + label {
+              @include before-desktop {
+                left: 5%;
+                right: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+    .Field_type_radio {
+      label {
+        display: inline-block;
+        max-width: calc(100vw - 2rem - 45px);
+        vertical-align: middle;
+        padding: 0;
+        @include before-desktop {
+          top: unset;
+        }
+        .PLPFilterOption {
+          &-Input {
+            top: -10px;
+          }
+        }
+        label {
+          top: 1px;
+        }
+      }
+      @include before-desktop {
+        label {
+          width: 100%;
+          height: 42px;
+        }
+      }
+    }
+    .Field {
+      margin: auto 5px auto 0px;
+      @include before-desktop {
+        margin: 0;
+      }
+      [type="radio"] {
+        @include before-desktop {
+          left: 5%;
+        }
+        + label {
+          @include before-desktop {
+            position: absolute;
+            width: 21px;
+            height: 21px;
+            top: 10px;
+            right: 5px;
+          }
+        }
+        + label {
+          &:hover {
+            &::after {
+              --checkmark-color: var(--black-color);
+            }
+          }
+          border-radius: 50%;
+        }
+        &:disabled + label {
+          color: var(--disabeled-radio-button-color);
+          cursor: auto;
+        }
+        &:checked + label {
+          --primary-base-color: var(--white-color);
+          border-color: #000000;
+          background-color: #000000;
+          &::after {
+            --checkmark-color: #ffffff;
+          }
+        }
+        &:focus {
+          &::after {
+            //--checkmark-color: var(--check-mark-mobile-filter-color);
+          }
+          + label {
+            border-color: #000000;
+            background-color: #000000;
+            &::after {
+              --checkmark-color: var(--white-color);
+            }
+          }
+        }
+        .PLPFilterOption {
+          label {
+            padding-top: 20px;
+          }
+        }
+        @include before-desktop {
+          &:checked + label {
+            &::after {
+              //--checkmark-color: #F96446;
+            }
+          }
+        }
+      }
+      [type="checkbox"] {
+        + label {
+          @include before-desktop {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            width: 21px;
+            height: 21px;
+            border-radius: 50%;
+            background-color: var(--box-color);
+            border: 1px solid var(--input-border-color) !important;
+          }
+        }
+        &:checked + label {
+          --primary-base-color: transparent;
+          @include desktop {
+            //border-color: var(--disabeled-radio-button-color);
+            border-color: #000000;
+            background-color: #000000;
+          }
+          &::after {
+            //--checkmark-color: var(--check-mark-mobile-filter-color);
+          }
+        }
+        @include before-desktop {
+          + label {
+            border-color: transparent;
+          }
+          &:checked + label {
+            --primary-base-color: transparent;
+            &::after {
+              --checkmark-color: var(--check-mark-mobile-filter-color);
+            }
+          }
+        }
+      }
+    }
+    &_isArabic {
+      span {
+        margin-right: 5px;
+      }
+      .Field {
+        margin: auto 0px auto 5px;
+      }
+    }
+  }
+}
+
+.PLPFilter {
+  .PLPFilterOption {
+    &-List {
+      &_isArabic {
+        .Field {
+          label {
+            .PLPFilterOption {
+              &-Input {
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

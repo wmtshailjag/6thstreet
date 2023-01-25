@@ -1,0 +1,43 @@
+:root {
+  // Declare imported primary colors to change the theme's colors
+  --primary-base-color: var(
+    --imported_primary_base_color,
+    #{$default-primary-base-color}
+  );
+  --primary-dark-color: var(
+    --imported_primary_dark_color,
+    #{$default-primary-dark-color}
+  );
+  --primary-light-color: var(
+    --imported_primary_light_color,
+    #{$default-primary-light-color}
+  );
+
+  // Colors
+  --color-turquoise: #{$color-turquoise};
+  --color-cardinal: #{$color-cardinal};
+  --color-tundora: #{$color-tundora};
+  --color-nobel: #{$color-nobel};
+  --color-silver: #{$color-silver};
+  --color-pure-black: #{$color-pure-black};
+
+  // Font declaration
+  --avenir-next-font: "Avenir Next", sans-serif;
+  --cairo-next-font: 'Cairo', sans-serif;
+  --fw-ultra-light: #{$fw-ultra-light};
+  --fw-thin: #{$fw-thin};
+  --fw-light: #{$fw-light};
+  --fw-regular: #{$fw-regular};
+  --fw-medium: #{$fw-medium};
+  --fw-demi: #{$fw-demi};
+  --fw-bold: #{$fw-bold};
+  --fw-heavy: #{$fw-heavy};
+
+  --fs-normal: #{$fs-normal};
+  --fs-italic: #{$fs-italic};
+}
+
+body {
+  font-family: var(--avenir-next-font);
+  
+}

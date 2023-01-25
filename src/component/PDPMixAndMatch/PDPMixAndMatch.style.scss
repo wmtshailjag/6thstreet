@@ -1,0 +1,61 @@
+.PDPMixAndMatch {
+    margin-top: 12px;
+    padding: 0 20px;
+    overflow-x: hidden;
+    @include desktop {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    li {
+        // flex: 0 0 auto;
+        padding-left: 0;
+        margin-right:48px;
+        @include mobile {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: solid 1.5px #EFEFEF;
+            margin-right:0;
+
+        }    
+        &:before {
+            content: none;
+        }
+        &:last-child{
+            @include desktop {
+                margin-right:20px;
+            }
+        }
+    }
+
+    &-List {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+    }
+
+    &-List::-webkit-scrollbar {
+        display: none;
+    }
+
+    &-Title {
+        @include desktop {
+            font-size: 17px;
+            font-weight: var(--fw-demi);
+        }
+    }
+
+    &_isAlsoAvailable {
+        display: none;
+    }
+    h2 {
+        text-transform: none;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0;
+        line-height: 25px;
+        margin-top: 0;
+    }
+}

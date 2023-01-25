@@ -1,0 +1,130 @@
+.Settings {
+    .SettingsList {
+        .MyAccountTabListItem {
+            &:first-child {
+                border-bottom: 2px solid var(--lightest-gray);
+            }
+
+            &:last-child {
+                button {
+                    &:before {
+                        background-image: none;
+                    }
+                }
+            }
+
+            button {
+                font-weight: normal;
+            }
+
+            &:hover {
+                font-weight: normal;
+
+                button {
+                    font-weight: normal;
+                }
+            }
+
+            &-Button {
+                padding-left: 16px;
+                padding-top: 0;
+                padding-bottom: 0;
+
+                &::before,
+                &::after {
+                    display: none;
+                }
+
+                a {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &-ButtonText {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .StoreSwitcherPopup {
+            position: relative !important;
+
+            &-Container {
+                right: 0;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .MyAccount-Wrapper {
+        &_isArabic {
+            .Settings {
+                .SettingsList {
+                    .StoreSwitcherPopup {
+                        &-Container {
+                            left: 0;
+                            right: unset;
+                        }
+                    }
+
+                    .MyAccountTabListItem {
+
+                        &-Button,
+                        button {
+                            padding-right: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .LanguageSwitcher {
+        &_isArabic {
+            button {
+                &:last-child {
+                    padding-left: 0 !important;
+                }
+
+                span {
+                    padding-left: 0;
+                    border-left: unset;
+
+                    &:last-child {
+                        padding-left: 0 !important;
+                        padding-right: 15px !important;
+                        border-left: unset;
+                    }
+                }
+            }
+        }
+
+        button {
+            &:last-child {
+                padding-right: 0 !important;
+            }
+
+            span {
+                &:last-child {
+                    padding-right: 0 !important;
+                    border-right: unset;
+                }
+            }
+        }
+    }
+
+    // .PageWrapper {
+    //     &_isArabic {
+    //         .CountrySwitcher {
+    //             &-CountryBtn {
+    //                 &::before {
+    //                     left: 12px !important;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}

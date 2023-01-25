@@ -1,0 +1,355 @@
+:root {
+  --new-tag-color: #c8b581;
+  --divider-color: #efefef;
+  --button-text-color: #ffffff;
+  --button-color: #000000;
+  --heart-background: #f9f9f9;
+}
+.VueProductSlider {
+  &-SliderContainer::-webkit-scrollbar {
+    display: none;
+  }
+  &-HeaderContainer {
+    h4,
+    .productWidgetHeading {
+      color: #000000;
+      font-family: "Avenir Next";
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      line-height: 25px;
+      text-transform: uppercase;
+      @include mobile {
+        height: 40px;
+        width: 335px;
+        color: #000000;
+        font-family: "Avenir Next";
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 40px;
+        text-align: left;
+        text-transform: uppercase;
+      }
+    }
+    &_isArabic {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .productWidgetHeading {
+        text-align: right;
+        width: 100%;
+        padding: 0 24px;
+      }
+      .VueProductSlider {
+        &-ViewAllBtn {
+          text-align: left;
+        }
+      }
+    }
+  }
+  &-VueProductContainer {
+    cursor: pointer;
+    #brandName {
+      color: #000000;
+      font-family: "Avenir Next";
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 19px;
+      text-align: start;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    #productName {
+      color: #4a4a4a;
+      font-family: "Avenir Next";
+      font-size: 13px;
+      letter-spacing: 0;
+      line-height: 15px;
+      text-align: left;
+      &_isArabic {
+        text-align: right;
+      }
+    }
+    &_isArabic {
+      #brandName, #productName {
+        text-align: right;
+      }
+    }
+    .Price > span:first-child {
+      color: #000000;
+      font-family: "Avenir Next";
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: -0.5px;
+      line-height: 19px;
+      text-align: start;
+      @include mobile {
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.DynamicContentProductSliderHomePage {
+  &_isArabic {
+    left: 0;
+    right: 0 !important;
+    text-align: right;
+    transform: translateX(0%) !important;
+  }
+}
+.DynamicContentProductSlider,
+.DynamicContentProductSliderHomePage {
+  text-align: left;
+  .VueProductSlider {
+    &-VueProductContainer {
+      height: auto;
+    }
+  }
+  @include tablet {
+    .VueProductSlider {
+      &-Container {
+        padding-left: 0px;
+        width: 100%;
+      }
+      &-SliderContainer {
+        width: 100%;
+      }
+      &-HeaderContainer {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
+  @include mobile {
+    &-HeaderContainer {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    &_isArabic { 
+      text-align: left;
+      }
+  }
+  &_isArabic {
+    right: 50%;
+    left: 0;
+    transform: translateX(50%);
+    text-align: right;
+  }
+  &-HeaderContainer {
+    // position: relative;
+    // left: 30%;
+    // transform: translateX(-50%);
+    // width: 80%;
+    // margin-top: 2%;
+    // padding-top: 2rem;
+    // padding-bottom: 2rem;
+    // text-align: center;
+    // margin-bottom: 2%;
+    position: relative;
+    text-align: start;
+    // left: 20px;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    &_isArabic {
+      right: 50%;
+      transform: translateX(50%);
+    }
+    @include tablet {
+      left: 0px;
+    }
+  }
+  &-Header,
+  &-SubHeader {
+    width: 100%;
+    margin: 0;
+    line-height: 1.5rem;
+  }
+  &-Header {
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 25px;
+    @include desktop {
+      padding-bottom: 0.5rem;
+      font-size: 20px;
+    }
+  }
+  &-SubHeader {
+    @include desktop {
+      font-size: 1.2rem;
+    }
+  }
+  li {
+    content: "";
+    padding: 0;
+    &:before {
+      content: none;
+    }
+  }
+  img {
+    object-fit: cover;
+  }
+  &-ProductContainer {
+    @include desktop {
+      // position: relative;
+      // margin-bottom: 45px;
+      // height: 80px;
+      height: 423px;
+      margin-bottom: 20px;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+  }
+  &-ProductItem {
+    flex: 0 0 auto;
+    margin-right: 3px;
+    min-width: 220px;
+    min-height: 326px;
+    background: white;
+    // display: block;
+    // margin-right: 11%;
+    // width: 89%;
+    // height: 100%;
+    // text-align: center;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // text-overflow: ellipsis;
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+    }
+    p {
+      margin-bottom: 0;
+      font-weight: var(--fw-regular);
+    }
+    del {
+      display: none;
+    }
+    .Price {
+      font-weight: var(--fw-bold);
+    }
+    // &_isArabic {
+    //     margin-right: auto;
+    //     margin-left: 10%;
+    //     overflow: hidden;
+    // }
+    @include desktop {
+      // vertical-align: top;
+      // display: inline-block;
+      // width: 21%;
+      // margin-left: 2%;
+      // margin-right: 2%;
+    }
+  }
+  &-MobileSliderWrapper {
+    // overflow: hidden;
+    // width: 92.6vw;
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+  &-MobileSlider {
+    width: 80%;
+    overflow: visible;
+    &_isArabic {
+      direction: ltr;
+    }
+  }
+  &-TagOverlay {
+    position: absolute;
+    top: 1.5rem;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    font-size: 1.2rem;
+    color: var(--button-text-color);
+    background-color: var(--new-tag-color);
+    width: 3.5rem;
+    height: 2rem;
+    padding: 3px;
+    &_isArabic {
+      border-radius: 1rem 0rem 0rem 1rem;
+      right: 0;
+    }
+  }
+  &-FavoriteOverlay {
+    position: absolute;
+    background: url(../../style/icons/heart.svg) 5px no-repeat;
+    top: 1.2rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    padding: 1rem;
+    border-radius: 2rem;
+    background-color: var(--heart-background);
+    &_isArabic {
+      right: auto;
+      left: 1rem;
+    }
+  }
+  &-ButtonNext {
+    @include desktop {
+      right: 0;
+    }
+    &_isArabic {
+      right: auto;
+      left: 0;
+    }
+  }
+  &-ButtonPrev {
+    @include desktop {
+      left: 0;
+    }
+    &_isArabic {
+      right: 0;
+    }
+  }
+  &-ArrowNext,
+  &-ArrowPrev {
+    position: relative;
+    left: 35%;
+    top: 40%;
+    width: 0.6vw;
+    height: 0.6vw;
+    transform: rotate(45deg);
+    border-top: solid 2px var(--button-text-color);
+    border-right: solid 2px var(--button-text-color);
+  }
+  &-ArrowPrev {
+    transform: rotate(225deg);
+    left: 40%;
+    &_isArabic {
+      transform: rotate(45deg);
+      right: 45%;
+    }
+  }
+  &-ArrowNext {
+    &_isArabic {
+      transform: rotate(225deg);
+      right: 40%;
+    }
+  }
+  &-ButtonPrev,
+  &-ButtonNext {
+    display: none;
+    @include desktop {
+      display: block;
+      background-color: var(--button-color);
+      position: absolute;
+      width: 3.5vw;
+      height: 3.5vw;
+      top: 7vw;
+      z-index: 2;
+    }
+  }
+}

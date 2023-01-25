@@ -1,0 +1,94 @@
+.PLP {
+    padding-top: 15px;
+    // padding-top: 60px;
+    margin-bottom: 82px;
+    @include mobile {
+        padding-top: 0;
+    }
+    .DynamicContentGrid {
+        @include mobile {
+            margin: 0;
+        }
+        &-Grid img {
+            object-fit: cover;
+        }
+    }
+    // .DynamicContent > div {
+    //   margin-bottom: 30px !important;
+    // }
+    .DynamicContentBanner {
+        box-sizing: border-box;
+        margin: 0;
+        // padding: 0 8px;
+        &:last-of-type {
+            padding-bottom: 30px;
+            @include desktop() {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .DynamicContent {
+        padding-top: 17px;
+        @include mobile {
+            margin-top: 0;
+            padding-top: 0;
+        }
+        >div:not(.DynamicContentFullWidthBannerSlider) {
+            @include desktop {
+                margin: 0 auto;
+                width: var(--main-container-width-dsk);
+                max-width: var(--container-max-width);
+            }
+        }
+        .DynamicContentGrid {
+            @include tablet {
+                margin-left: 30px !important;
+                margin-right: 30px !important;
+            }
+        }
+    }
+    .DynamicContent {
+        >div:not(.DynamicContentCircleItemSlider) {
+            margin-bottom: 60px !important;
+            @include tablet {
+                margin-bottom: 40px !important;
+            }
+            @include mobile {
+                margin-bottom: 20px !important;
+            }
+        }
+    }
+
+    .SortBy{
+        position: absolute;
+        right: 0;
+        top: -30px;
+        .PLPFilters-ProductsCount{
+            display: none;
+        }
+        .FilterHeader{
+            display: none;
+        }
+        &_isArabic{
+            right: unset;
+            left: 0;
+        }
+        .Products {
+            &-FixScroll {
+              position: static !important; // for resolving 2663.
+            }
+          }  
+    }
+
+
+}
+
+.Products-Wrapper {
+    @include desktop() {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 51px;
+        padding-top: 17px;
+        grid-gap: 52px;
+    }
+}

@@ -1,0 +1,457 @@
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/base-theme
+ * @link https://github.com/scandipwa/base-theme
+ */
+
+:root {
+  --cart-overlay-totals-background: var(--secondary-base-color);
+  --cart-overlay-divider-background: #d8d8d8;
+  --cart-overlay-promo-background: #ffffff;
+  --cart-overlay-width: 400px;
+
+  --White: #ffffff;
+  --Black: #000000;
+  --BlackOpacityOf6: #00000099;
+  --BlackOpacityOf1: #0000001a;
+  --Tundora: #4a4a4a;
+  --Iron: #d1d3d4;
+  --DustyGray: #9b9b9b;
+}
+
+.CartOverlay {
+  text-transform: initial;
+
+  @include desktop {
+    // left: -174px;
+  }
+
+  @include after-mobile {
+    // position: fixed;
+    // top: 95px;
+    // right: 0;
+    position: absolute;
+    top: 30px;
+    right: -150px;
+    padding: 0;
+    width: var(--cart-overlay-width);
+
+    &_isArabic {
+      right: unset;
+      left: -150px;
+    }
+  }
+
+  &-Promo {
+    &Block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      height: 40px;
+      background: var(--cart-page-promo-background);
+
+      @include mobile {
+        padding: 1rem;
+        border: 0;
+        border-bottom: 1px solid var(--primary-divider-color);
+      }
+
+      span:nth-child(2) {
+        font-weight: var(--fw-bold);
+      }
+
+      span:last-child {
+        font-weight: var(--fw-demi);
+        color: var(--color-green-cyan);
+        letter-spacing: -0.1px;
+        text-transform: capitalize;
+      }
+    }
+
+    &FreeShipping {
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    &Image {
+      width: 46px;
+      margin-right: 0.5rem;
+
+      @include mobile {
+        width: 36px;
+      }
+    }
+
+    strong {
+      margin: 0 5px;
+    }
+
+    &Text {
+      font-size: 12px;
+      display: inline;
+      flex-wrap: wrap;
+      line-height: 20px;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      .Image {
+        overflow: inherit !important;
+
+        .LazyLoad-wrapper {
+          img {
+            width: 20px !important;
+            height: auto !important;
+            margin-right: 5px;
+            float: left;
+            margin-top: 5px;
+          }
+        }
+      }
+
+      @include mobile {
+        font-size: 11px;
+      }
+
+      &_isArabic {
+        .Image {
+          .LazyLoad-wrapper {
+            img {
+              margin-right: unset;
+              margin-left: 5px;
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-Wrapper {
+    .Image {
+      &-Image {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-Currency {
+    font-weight: var(--fw-bold);
+  }
+
+  &-FreeDelivery {
+    color: var(--color-green-cyan);
+    font-weight: var(--fw-bold);
+  }
+
+  &::before {
+    @include after-mobile {
+      content: "";
+      position: absolute;
+      //   top: -5px;
+      //   right: 9px;
+      height: 1px;
+      width: 70px;
+      z-index: 900;
+      margin-left: auto;
+      margin-right: auto;
+      left: 55px;
+      right: 0;
+      text-align: center;
+      //   transform: rotate(45deg);
+      background-color: #4a4a4a;
+      //   border: {
+      //     top: 1px solid #4a4a4a;
+      //     left: 1px solid #4a4a4a;
+      //   }
+    }
+  }
+
+  &_isArabic {
+    &::before {
+      @include after-mobile {
+        // right: 327px;
+        left: -50px;
+      }
+    }
+  }
+
+  &_isPopup {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  &-ItemCount {
+    height: 50px;
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 18px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 2px;
+    line-height: 25px;
+    // padding: 2.0625rem 1rem 0.5rem;
+    padding: 33px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      font-size: 15px;
+      font-weight: var(--fw-demi);
+      text-transform: uppercase !important;
+
+      div {
+        font-weight: var(--fw-light);
+        padding-left: 7px;
+        padding-right: 5px;
+      }
+    }
+
+    span:last-of-type {
+      @include close-button;
+      --header-color: #ffffff;
+      padding-right: 10px;
+      top: -18px;
+    }
+  }
+
+  &-ItemCount,
+  &-Promo,
+  &-Total dt,
+  &-Empty {
+    font-weight: var(--fw-regular);
+  }
+
+  &_isVisible {
+    @include after-mobile {
+      //   border: 1px solid var(--overlay-desktop-border-color);
+    }
+  }
+
+  &-Actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // display: grid;
+    // // grid-template-columns: 47.775% 47.775%;
+    // grid-template-columns: 100%;
+    // // grid-column-gap: 4.45%;
+    padding: 15px 20px;
+  }
+
+  &-CheckoutButton {
+    color: #ffffff;
+    background-color: var(--OutrageousOrange);
+    box-shadow: 0 1px 4px var(--BlackOpacityOf6);
+
+    @include mobile {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+    @include after-mobile {
+      // flex-grow: 1;
+      text-align: center;
+    }
+
+    &_isDisabled {
+      opacity: 0.5;
+    }
+  }
+
+  &-CartButton {
+    border: 2px solid #000000;
+    color: #000000 !important;
+    width: 124px !important;
+    background-color: #ffffff !important;
+    font-size: 12px;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &-CartButton:hover {
+    text-decoration: none;
+  }
+
+  &-CheckoutButton,
+  &-CartButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 40px;
+    font-size: 12px;
+    font-weight: var(--fw-bold);
+    border-radius: 6px;
+    background-color: #000000;
+    height: 50px;
+    width: 200px;
+    color: #ffffff;
+    font-family: "Avenir Next";
+    letter-spacing: 0;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  &-Promo,
+  &-Total {
+    min-height: 4rem;
+
+    @include after-mobile {
+      min-height: 3rem;
+    }
+  }
+
+  &-Promo {
+    padding: 1rem;
+    text-align: center;
+    background: var(--cart-overlay-promo-background);
+    margin-bottom: 0;
+    color: #4a4a4a;
+    font-size: 12px;
+
+    @include mobile {
+      border-bottom: 1px solid var(--cart-overlay-divider-background);
+      border-top: 1px solid var(--expandable-content-color);
+    }
+
+    @include after-mobile {
+      padding: 0 20px 10px 20px;
+      background: #ffffff;
+    }
+
+    strong {
+      margin: 0 5px;
+    }
+  }
+
+  &-Items {
+    padding-bottom: 20px;
+    max-height: calc(60vh - 150px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 4px;
+      border: 1px solid #d5d5d5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #585757;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #dcdcdc;
+    }
+
+    .CartItem {
+      &-Content {
+        height: auto;
+      }
+
+      .Image-Image {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-Total,
+  &-Discount,
+  &-Tax {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 0.5rem 1rem 0.5rem;
+    padding: 15px 20px 0 20px;
+    font-size: 18px;
+    dt {
+      color: #000000;
+      font-family: "Avenir Next";
+      font-size: 15px;
+      letter-spacing: 0;
+      line-height: 20px;
+      span {
+        // color: #9b9b9b;
+        color: #9b9b9b;
+        font-family: "Avenir Next";
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+    }
+    @include after-mobile {
+      font-size: 14px;
+    }
+  }
+
+  &-Total {
+    font-weight: var(--fw-light);
+    // padding: 0.5rem 1rem 1rem;
+
+    dd {
+      font-weight: var(--fw-bold);
+      font-size: 18px;
+      letter-spacing: 0;
+      line-height: 25px;
+    }
+
+    &_isArabic {
+      dt {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 10px;
+      }
+    }
+  }
+
+  &-Empty {
+    font-size: 15px;
+    font-weight: var(--fw-light);
+    text-align: center;
+    letter-spacing: 0.75px;
+    padding: 20px 0;
+  }
+
+  &-DiscountCoupon {
+    &::after {
+      content: ":";
+      font-weight: var(--fw-regular);
+    }
+  }
+}
+.Overlay {
+  &_isVisible {
+    overflow: auto;
+  }
+  &_isInstant {
+    pointer-events: all;
+    touch-action: pan-y;
+    opacity: 1;
+    z-index: 99;
+
+    @include desktop {
+      height: auto;
+      //   overflow: visible;
+    }
+  }
+}
+
+div.CartOverlay.Overlay {
+  width: 375px;
+  //   overflow: unset;
+  opacity: 1;
+  border-radius: 12px;
+  //   border: 1px solid #d1d3d4;
+  background-color: #ffffff;
+  //   box-shadow: 0 0 6px 0 var(--BlackOpacityOf1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}

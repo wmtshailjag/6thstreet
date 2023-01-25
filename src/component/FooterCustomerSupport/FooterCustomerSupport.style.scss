@@ -1,0 +1,87 @@
+.FooterCustomerSupport {
+  h4 {
+    padding-bottom: 17px;
+  }
+
+
+
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0;
+    line-height: 0;
+    font-weight: var(--fw-regular);
+  }
+
+  a {
+    display: block;
+    color: var(--link-color);
+
+    @include before-desktop {
+      color: #ffffff;
+    }
+  }
+
+  div{
+
+
+
+    .FooterCustomerSupport-FirstParagraph{
+      p{
+        font-size: 16px;
+
+      }
+      .FooterCustomerSupport-OpenHours  {
+        padding-top: 0;
+        font-weight: 600;
+        padding-bottom: 19px;
+        font-size: 14px;
+
+      }
+    }
+  }
+
+
+
+  &-DisplayPhone {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  &-Phone {
+    font-weight: var(--fw-medium);
+    font-size: 15px;
+  }
+
+  &-PhoneIcon {
+    background: url(../../style/icons/call.svg) no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+
+  &-DisplayEmail {
+    display: flex;
+  }
+
+  &-Email {
+    margin: 0;
+    vertical-align: top;
+    font-size: 15px;
+    font-weight: var(--fw-medium);
+    letter-spacing: 0;
+    text-decoration: revert;
+  }
+
+  &-EmailIcon {
+    background: url(../../style/icons/mail.svg) no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  p {
+    display: flex;
+  }
+
+  span {
+    width: 15px;
+  }
+}

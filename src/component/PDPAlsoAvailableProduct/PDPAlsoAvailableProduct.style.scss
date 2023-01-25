@@ -1,0 +1,94 @@
+.PDPAlsoAvailableProduct {
+  height: 100%;
+
+  &-OverlayContainer {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0rem;
+    border: none;
+    background: none;
+    .ProductLabel {
+      position: absolute !important;
+      justify-content: centere !important;
+      top: 0.8rem !important;
+      left: 0.25rem !important;
+      transform: translateY(8px) !important;
+      margin: 0 !important;
+      height: 20px !important;
+      width: 35px !important;
+      z-index: 1 !important;
+      text-transform: none !important;
+      color: white !important;
+      background-color: var(--pdp-new-text-color) !important;
+      border-radius: 0 10px 10px 0 !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 4px !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0 !important;
+      line-height: 13px !important;
+    }
+    .WishlistIcon {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+
+      &-Icon {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+  &-Link {
+    &-Image {
+      height: 200px;
+      width: 150px;
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 8px;
+      background-color: #ddd;
+      @include desktop {
+        height: 112px !important;
+        width: 110px !important;
+      }
+    }
+  }
+  // .Image {
+  //     height: 150px;
+  //     &-Image {
+  //         object-position: 0% 50%;
+  //         object-fit: contain;
+  //     }
+  //     @include before-desktop {
+  //         height: 229.5px;
+  //         margin: 16px 0 -16px 0;
+  //         &-Image {
+  //             object-position: 0% 50%;
+  //             object-fit: contain;
+  //         }
+  //     }
+  // }
+
+  @include tablet {
+    width: 33%;
+  }
+
+  h5 {
+    text-transform: uppercase;
+
+    color: #000000;
+    font-family: "Avenir Next";
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18px;
+    line-height: 15px;
+  }
+}

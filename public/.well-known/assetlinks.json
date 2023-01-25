@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "com.apparel.app6thstreet",
+               "sha256_cert_fingerprints": ["78:B4:C6:86:FD:3D:B2:79:57:B5:E8:E2:85:BE:B3:A6:5C:57:91:35:00:EF:1E:C6:24:F3:90:44:C0:10:AB:ED"] }
+}]

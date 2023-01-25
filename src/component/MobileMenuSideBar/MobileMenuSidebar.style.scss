@@ -1,0 +1,59 @@
+.MobileMenuSidebar-Modal {
+  top: 0;
+  z-index: 50 !important;
+
+  .Menu-Header-Mobile {
+    @include mobile {
+      display: unset;
+    }
+  }
+
+  .Popup-Content {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+
+    .HeaderBottomBar {
+      display: block;
+      left: 0;
+      pointer-events: all;
+      position: fixed;
+
+      .GenderButton {
+        display: flex;
+      }
+
+      .SearchBackground,
+      .HeaderSearch {
+        display: none;
+      }
+    }
+
+    @include tablet {
+      background-color: transparent;
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  &_isArabic {
+    .Popup-Content {
+      .HeaderBottomBar {
+        direction: rtl;
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  .HeaderCart {
+    &-Count {
+      top: -40px;
+      right: 20px;
+    }
+  }
+}

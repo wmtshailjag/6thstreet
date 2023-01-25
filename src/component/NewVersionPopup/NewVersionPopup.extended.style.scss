@@ -1,0 +1,9 @@
+.NewVersionPopup {
+    &_isArabic {
+        .Popup {
+            &-Content {
+                text-align: right;
+            }
+        }
+    }
+}

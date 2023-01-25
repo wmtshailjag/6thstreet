@@ -1,0 +1,97 @@
+/**
+ * ScandiPWA - Progressive Web App for Magento
+ *
+ * Copyright © Scandiweb, Inc. All rights reserved.
+ * See LICENSE for license details.
+ *
+ * @license OSL-3.0 (Open Software License ("OSL") v. 3.0)
+ * @package scandipwa/base-theme
+ * @link https://github.com/scandipwa/base-theme
+ */
+
+ :root {
+    --DustyGray: #9b9b9b;
+}
+
+.CheckoutGuestForm {
+    background-color: #ffffff;
+
+    &-FieldAndSignIn {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    @include desktop {
+        padding: 20px 30px 20px;
+    }
+
+    p {
+        color: #9b9b9b;
+    }
+
+    .Checkout {
+        &-Heading {
+            &_isEmailAdded {
+                display: none;
+            }
+        }
+    }
+
+    div.FieldForm-Fields {
+        width: 100%;
+        margin: 0;
+
+        label {
+            display: none;
+        }
+
+        input {
+            height: 40px;
+            background-color: red !important;
+            border-radius: 40px !important;
+            --input-color: #000000;
+            caret-color: #000000;
+            text-transform: none;
+            font-size: 14px;
+            padding: 16px 15px;
+        }
+
+        @include desktop {
+            width: 75%;
+
+            input {
+                width: 95%;
+            }
+        }
+
+    }
+
+    p:first-of-type {
+        display: none;
+    }
+
+    &_isInvalidEmail {
+        input {
+            border: 1px solid var(--primary-error-color);
+        }
+
+        p:first-of-type {
+            display: block;
+            color: var(--primary-error-color);
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        button {
+            @include before-desktop {
+                bottom: -110px;
+            }
+        }
+    }
+
+    &_isEmailAdded {
+        display: none;
+        margin-bottom: 8px;
+    }
+}

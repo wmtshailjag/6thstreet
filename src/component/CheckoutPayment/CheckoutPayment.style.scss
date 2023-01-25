@@ -1,0 +1,95 @@
+:root {
+    --checkout-payment-standart: #9B9B9B;
+}
+
+.CheckoutPayment {
+    padding: 0;
+    border: 1px solid var(--checkout-payment-standart);
+    border-radius: 4px;
+    font-size: 10px;
+    max-width: 85px;
+    height: 55px;
+    margin: 0 2px;
+    &:first-child {
+        margin-left: 0;
+    }
+    &:last-child {
+        margin-bottom: 12px;
+    }
+    &::before {
+        content: none;
+    }
+    &-Method {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        p {
+            margin-top: 5px;
+            font-size: 10px;
+            line-height: 14px;
+            color: var(--checkout-payment-standart);
+        }
+        &_card,
+        &_cash,
+        &_free {
+            img {
+                width: 22px !important;
+            }
+        }
+        &_apple,
+        &_tabby,
+        &_qpay {
+            img {
+                width: 40px !important;
+                filter: invert(50%);
+            }
+        }
+        // &_tabby {
+        //     img {
+        //         width: 40px !important;
+        //         // filter: invert(50%);
+        //     }
+        // }
+    }
+    &-MethodQPay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-transform: none;
+        p {
+            margin-top: 5px;
+            font-size: 16px;
+            line-height: 14px;
+            color: var(--checkout-payment-standart);
+        }
+    }
+    &-Button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        text-align: left;
+        width: 100%;
+        padding: 0;
+        height: 100%;
+        &_isSelected {
+            background: $black;
+            img {
+                filter: invert(100%) brightness(20);
+            }
+            // .CheckoutPayment-Method {
+            //     &_tabby {
+            //         img {
+            //             filter: none;
+            //             // filter: invert(50%);
+            //         }
+            //     }
+            // }
+            p {
+                color: $white;
+            }
+        }
+    }
+}

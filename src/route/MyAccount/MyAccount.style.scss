@@ -1,0 +1,659 @@
+.MyAccount {
+  padding-top: 30px;
+  width: var(--main-container-width-dsk);
+  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mobile {
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  &-Wrapper {
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &-HeadingBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include before-desktop {
+      display: none;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &-Heading {
+    @include before-desktop {
+      display: none;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &-ReturnButton {
+    margin: 0 5px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
+    font-family: var(--avenir-regular-font);
+    font-size: 14px;
+    font-weight: var(--fw-normal);
+    height: auto;
+    padding: 10px;
+    text-transform: none;
+  }
+
+  &-TabContent {
+    @include after-mobile {
+      //   padding-left: 105px;
+      width: 100%;
+    }
+
+    @include desktop {
+      width: 100%;
+      margin-left: 50px;
+    }
+
+    &_isArabic {
+      @include after-mobile {
+        padding-left: 0;
+        padding-right: 50px;
+        margin-left: 0px;
+      }
+    }
+  }
+
+  .FieldForm-Fields {
+    .Field {
+      @include desktop {
+        margin: 10px 10px 20px 0;
+      }
+    }
+  }
+}
+
+.MyAccountTabListItem {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--lightest-gray);
+
+  &:first-child {
+    border-bottom: 0;
+  }
+
+  &-Button {
+    font-weight: var(--fw-demi);
+    letter-spacing: 0.55px;
+    padding-left: 40px;
+    font-size: 13px;
+
+    &:before {
+      left: 0;
+      top: 14px;
+      background-repeat: no-repeat;
+      position: absolute;
+      background-size: 20px 20px;
+      width: 40px;
+      height: 40px;
+      content: '';
+      display: inline-block;
+    }
+
+    &_tabImageId {
+      &_club-apparel {
+        &:before {
+          background-image: url(./icons/apparel.png);
+        }
+      }
+
+      &_dashboard {
+        &:before {
+          background-image: url(./icons/dashboard.png);
+        }
+      }
+
+      &_my-orders {
+        &:before {
+          background-image: url(./icons/history.svg);
+        }
+      }
+
+      &_return-item {
+        &:before {
+          background-image: url(./icons/return.svg);
+        }
+      }
+
+      &_my-wishlist {
+        &:before {
+          background-image: url(./icons/wishlist.png);
+        }
+      }
+
+      &_return-exchange-item {
+        &:before {
+          background-image: url(./icons/return-exchange.png);
+        }
+      }
+
+      &_address-book {
+        &:before {
+          background-image: url(./icons/address.png);
+        }
+      }
+
+      &_wallet-payments {
+        &:before {
+          background-image: url(../../style/icons/payment.png);
+        }
+      }
+
+      &_contact-help {
+        &:before {
+          background-image: url(./icons/contact-help.png);
+        }
+      }
+
+      &_settings {
+        &:before {
+          background-image: url(./icons/settings.png);
+        }
+      }
+    }
+  }
+
+  &-nameElem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_isArabic {
+      .StoreCredit {
+        margin-left: 24px;
+        margin-right: 0 !important;
+      }
+    }
+    .StoreCredit {
+      margin-right: 24px;
+      label {
+        font-weight: normal;
+      }
+      &-Amount {
+        display: block;
+      }
+    }
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    button {
+      &:before {
+        background-image: url(./icons/logout.svg);
+      }
+    }
+  }
+
+  &_isActive,
+  &:hover {
+    --text-shadow: none;
+
+    button {
+      font-weight: var(--fw-bold);
+      letter-spacing: 0.3px;
+    }
+  }
+}
+
+.MyAccount {
+  &-Wrapper {
+    &_isArabic {
+      .MyAccountMobileHeader {
+        &-StoreCreditLink {
+          padding: 0 10px 0 10px;
+          width: auto;
+        }
+      }
+
+      .MyAccountTabListItem {
+        button {
+          text-align: right;
+          padding-right: 50px;
+          padding-left: 0;
+
+          &:before {
+            left: unset;
+            right: -5px;
+          }
+
+          &:after {
+            transform: rotate(-135deg);
+            right: unset;
+            left: 0;
+          }
+        }
+
+        &:first-child {
+          button {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.MobileFooterMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mobile {
+    a + a {
+      margin-left: 0;
+    }
+  }
+}
+
+.FooterMain {
+  &-FooterHeading {
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+
+.MyAccountTabList {
+  @include after-mobile {
+    padding: 0;
+  }
+}
+
+@include before-desktop {
+  .ExpandableContent:last-of-type {
+    border-bottom: none;
+  }
+  .MyAccountOverlay-Close {
+    display: block;
+  }
+
+  #privacy-link {
+    font-weight: var(--fw-bold);
+    text-decoration: underline;
+  }
+
+  .MyAccountTabList {
+    width: 100%;
+  }
+
+  .MyAccountTabListItem {
+    font-weight: var(--fw-demi);
+
+    &_isActive {
+      display: block;
+    }
+
+    &_isActive,
+    &:hover {
+      --border-width: 2px !important;
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  .ExpandableContent-Content {
+    opacity: 1;
+    overflow: visible;
+
+    @include tablet {
+      max-height: 0px !important;
+
+      ul {
+        margin-top: 100px;
+      }
+    }
+
+    @include before-desktop {
+      padding: 0;
+      max-height: 100%;
+    }
+  }
+
+  .ExpandableContent-Button {
+    display: none;
+  }
+
+  .Hidden {
+    display: none;
+  }
+
+  .Active {
+    display: block;
+    width: 100%;
+  }
+
+  .Cross-button {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .TermsAndPrivacy {
+    width: 100%;
+    position: fixed;
+    bottom: 83px;
+    background-color: #ffffff;
+  }
+
+  .MyAccountTabListItem-Button {
+    width: 100%;
+    text-transform: capitalize !important;
+  }
+}
+
+@include mobile {
+  .MobileCards {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .CardsContainer {
+      margin: 0 5px;
+      height: 176px;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      background-color: #ffffff;
+      padding: 14px;
+      width: 33.33%;
+      display: flex;
+      flex-direction: column;
+      color: #000000;
+      font-family: 'Avenir Next';
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        height: 30px !important;
+        width: 30px !important;
+      }
+
+      .CardTitle {
+        color: #000000;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+      }
+
+      button {
+        border-radius: 8px;
+        background-color: #000000;
+        width: 100%;
+        height: 35px;
+        color: white;
+        font-family: 'Avenir Next';
+        padding: 0 4px;
+        text-transform: capitalize;
+        display: flex;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 18px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover,
+        &:focus &:active {
+          text-decoration: none;
+          color: white;
+        }
+
+        &.AccountLinked {
+          border-radius: 6px;
+          line-height: 12px;
+          // actual style
+          // background-color: #fff;
+          background-color: #000000;
+          width: 100%;
+          height: 40px;
+          padding: 8px;
+          // actual style
+          // color: #000000;
+          color: #fff;
+          font-family: 'Avenir Next';
+          padding: 0 4px;
+          text-transform: capitalize;
+          display: flex;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0;
+          justify-content: center;
+          align-items: center;
+
+          &:hover,
+          &:focus &:active {
+            text-decoration: none;
+            // actual style
+            // color: #000000;
+            color: #fff;
+          }
+
+          .TierName {
+            // actual style
+            // color: #4A4A4A;
+            color: #fff;
+            display: block;
+          }
+
+          .pointsValue {
+            font-weight: bold;
+          }
+
+          .AccountLinkedTextBlock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+    }
+
+    .CaCardsContainer {
+      margin: 0 5px;
+      height: 176px;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      background-image: url(./icons/caback.png);
+      background-size: cover;
+      padding: 14px;
+      width: 33.33%;
+      display: flex;
+      flex-direction: column;
+      color: #000000;
+      font-family: 'Avenir Next';
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-align: center;
+      justify-content: space-between;
+      align-items: center;
+
+      .InfoIconBlock {
+        align-self: flex-end;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        img {
+          height: 16px !important;
+          width: 16px !important;
+        }
+      }
+
+      .CardsIconBlock {
+        margin-top: 15px;
+
+        img {
+          height: 70px !important;
+          width: 90px !important;
+        }
+      }
+
+      .CardTitle {
+        color: #000000;
+        font-family: 'Avenir Next';
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: center;
+      }
+
+      button {
+        border-radius: 8px;
+        background-color: #fff;
+        width: 100%;
+        height: 35px;
+        color: #000000;
+        font-family: 'Avenir Next';
+        padding: 0 4px;
+        text-transform: capitalize;
+        display: flex;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 18px;
+        justify-content: center;
+        align-items: center;
+
+        &:hover,
+        &:focus &:active {
+          text-decoration: none;
+          color: white;
+        }
+
+        &.AccountLinked {
+          border-radius: 6px;
+          // actual style
+          background-color: #fff;
+          // background-color: #000000;
+          width: 100%;
+          height: 35px;
+          // actual style
+          color: #000000;
+          // color: #fff;
+          font-family: 'Avenir Next';
+          padding: 0 4px;
+          text-transform: capitalize;
+          display: flex;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0;
+          line-height: 12px !important;
+          justify-content: center;
+          align-items: center;
+
+          &:hover,
+          &:focus &:active {
+            text-decoration: none;
+            // actual style
+            color: #000000;
+            // color: #fff;
+          }
+
+          .TierName {
+            // actual style
+            color: #4a4a4a;
+            // color: #fff;
+            font-size: 12px;
+            display: block;
+          }
+
+          .AccountLinkedTextBlock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .TierName {
+              display: block;
+              margin-top: 4px;
+            }
+            .pointDetails {
+              font-size: 12px;
+              .pointsValue {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+
+        .ClubApparelImgBlock {
+          width: 16px !important;
+          height: 16px !important;
+          display: block;
+          margin: 0 auto;
+          position: absolute;
+          transform: translateY(-50%);
+          z-index: 9999999999999999;
+          top: -2px;
+          img {
+            width: 16px !important;
+            height: 16px !important;
+          }
+        }
+      }
+    }
+  }
+  .ExpandableContent.MyAccountTabList{
+    border-bottom: none;
+  }
+}
+
+.UserBlock {
+  font-size: 20px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  margin-left: 5px;
+
+  .UserName {
+    font-weight: bold;
+  }
+}
+
+@include mobile {
+  .MobileHide {
+    display: none;
+  }
+}
+
+@include desktop {
+  .DesktopHide {
+    display: none;
+  }
+}
+
+.HideBoth {
+  display: none;
+}

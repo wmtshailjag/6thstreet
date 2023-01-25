@@ -1,0 +1,117 @@
+button,
+.button {
+    font-weight: var(--fw-bold);
+    height: 50px;
+    padding: 0 15px;
+    text-transform: uppercase;
+    transition-property: background-color, color, border;
+    transition-timing-function: ease-out;
+    transition-duration: .25s;
+
+    // Button colors
+    &.primary {
+        background: $black;
+        border: 2px solid $black;
+        color: $white;
+
+        &:hover {
+            background: transparent;
+            color: $black;
+        }
+    }
+
+    &.secondary {
+        border: 2px solid $black;
+        color: $black;
+
+        &:hover {
+            background: $black;
+            color: $white;
+        }
+    }
+
+    &.red {
+        background-color: #d12228;
+        border: 2px solid $white;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            background: $white;
+            border: 2px solid #d12228;
+            color: #d12228;
+        }
+    }
+
+    &.bright-red {
+        border: 2px solid $default-primary-base-color;
+        background-color: $default-primary-base-color;
+        color: $white;
+
+        &:hover,
+        &:focus {
+            background: $white;
+            color: $default-primary-base-color;
+        }
+    }
+
+    &.transparent {
+        border: none;
+        color: $default-primary-light-color;
+        text-transform: capitalize;
+    }
+
+    // Button sizes
+    &.xs {
+        min-width: 100px;
+    }
+
+    &.small {
+        min-width: 150px;
+    }
+
+    &.medium {
+        min-width: 200px;
+    }
+
+    &.big {
+        min-width: 300px;
+    }
+
+    &.full {
+        min-width: 100%;
+    }
+
+    &.wide {
+        height: 70px;
+    }
+
+    // Button with images
+    &.image {
+        background-repeat: no-repeat;
+        background-size: 25px;
+
+        &-left {
+            background-position: 15% 45%;
+        }
+
+        &-right {
+            background-position: 85% 45%;
+        }
+
+        &-no-label {
+            background-position: 50% 45%;
+            min-width: 60px;
+        }
+    }
+
+    // Button additional styles
+    &.rounded {
+        border-radius: 7px;
+    }
+
+    &.thin {
+        border-width: 1px;
+        font-weight: var(--fw-regular);
+    }
+}

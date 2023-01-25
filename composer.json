@@ -1,0 +1,17 @@
+{
+    "name": "scandipwa/6th-street",
+    "description": "N/A",
+    "type": "magento2-theme",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "scandipwa/scandipwa": "2.16.4",
+        "magento/framework": "*"
+    },
+    "autoload": {
+        "files": [
+            "magento/registration.php"
+        ]
+    }
+}

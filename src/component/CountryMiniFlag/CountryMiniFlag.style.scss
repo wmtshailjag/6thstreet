@@ -1,0 +1,30 @@
+.CountryMiniFlag {
+    &-Container {
+        height: 19px;
+        width: 31px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        display: inline-block;
+
+        span {
+            position: absolute;
+            display: block;
+            float:left;
+            border-left: 7px solid $white;
+            border-right: 7px solid $white;
+        }
+    }
+
+    &-top {
+        top: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 0 solid transparent;
+    }
+
+    &-bottom{
+        bottom: 0;
+        border-bottom: 0 solid transparent;
+        border-top: 0 solid transparent;
+    }
+}

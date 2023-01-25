@@ -1,0 +1,47 @@
+.VeuSliderWrapper {
+  text-align: left;
+  // min-height: 406px;
+  &_isArabic {
+    text-align: right;
+  }
+  .VueProductSlider {
+    &-VueProductContainer {
+      height: auto;
+    }
+  }
+
+  @include tablet {
+    .VueProductSlider {
+      &-Container {
+        padding-left: 0px;
+        width: 100%;
+      }
+      &-SliderContainer {
+        width: 100%;
+      }
+      &-HeaderContainer {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
+  @include mobile {
+    .VueProductSlider {
+      &-Container {
+        padding-left: 0px;
+        width: 100%;
+        margin: 0px;
+      }
+      &-SliderContainer {
+        width: 100%;
+      }
+      &-HeaderContainer {
+        margin-left: 10px;
+        margin-left: 10px;
+      }
+      &-VueProductContainer {
+        width: calc(50vw - 10px) !important;
+      }
+    }
+  }
+}

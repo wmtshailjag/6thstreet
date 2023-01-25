@@ -1,0 +1,407 @@
+:root {
+    --gold: #ccb47a;
+}
+
+.MenuCategory {
+    font-weight: var(--fw-demi);
+    padding: 0;
+    position: unset;
+    letter-spacing: 0;
+    font-size: 14px;
+    &:before {
+        content: none;
+    }
+    @include before-desktop {
+        border: solid #ffffff;
+        border-width: 7px 0;
+        color: #000000;
+        font-size: 13px;
+        font-weight: var(--fw-demi);
+        line-height: 45px;
+        text-indent: 20px;
+        text-transform: uppercase;
+        width: 34%;
+        button {
+            transition-duration: 0s;
+        }
+        &-CategoryButton {
+            font-size: calc(9px + 1vw);
+            font-weight: var(--fw-normal);
+            margin-left: -20px;
+            padding: 0 3vw;
+            text-align: left;
+            width: 100%;
+        }
+        &:first-child {
+            .MenuCategory {
+                &-CategoryButton {
+                    color: var(--gold);
+                    margin-top: 0;
+                }
+            }
+        }
+        &:last-child {
+            .MenuCategory {
+                &-CategoryButton {
+                    color: #d12229;
+                }
+            }
+        }
+        &_isDefaultCategoryOpen {
+            &:first-child {
+                .MenuCategory {
+                    &-CategoryButton {
+                        background-color: var(--gold);
+                        color: #ffffff;
+                        font-weight: var(--fw-bold);
+                    }
+                }
+            }
+            .MenuCategory {
+                &-CategoryButton {
+                    color: #ffffff;
+                    font-size: 15px;
+                }
+            }
+            .DynamicContent {
+                font-weight: var(--fw-regular);
+            }
+            .ViewAll-Button {
+                font-weight: var(--fw-bold);
+            }
+        }
+        &_isVisible {
+            .MenuCategory {
+                &-CategoryButton {
+                    background-color: #000000;
+                    color: #ffffff;
+                    font-weight: var(--fw-bold);
+                    font-size: 15px;
+                    transition-duration: 0s;
+                }
+            }
+            .DynamicContent {
+                font-weight: var(--fw-regular);
+            }
+            &:first-child {
+                .MenuCategory {
+                    &-CategoryButton {
+                        color: #ffffff;
+                        background-color: var(--gold);
+                    }
+                }
+            }
+            &:last-child {
+                .MenuCategory {
+                    &-CategoryButton {
+                        background-color: #d12229;
+                        color: #ffffff;
+                    }
+                }
+            }
+            .ViewAll-Button {
+                font-weight: var(--fw-bold);
+            }
+        }
+        .DynamicContentBanner {
+            background-color: transparent;
+            margin: 10px 0;
+            a {
+                display: flex;
+                height: 100%;
+                .Image {
+                    display: flex;
+                    height: auto;
+                    padding-bottom: unset;
+                    &-Image {
+                        position: static;
+                    }
+                }
+            }
+        }
+        .DynamicContent {
+            background-color: #ffffff;
+            border-left: 1px solid var(--light-gray);
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: absolute;
+            width: 100%;
+            z-index: 5;
+            &-Wrapper {
+                height: calc(100% - 140px - 83px);
+                width: 66%;
+                top: 140px;
+                left: 33%;
+                position: fixed;
+            }
+            .MenuBrands {
+                &-ContentWrapper {
+                    font-weight: var(--fw-bold);
+                }
+            }
+        }
+        &_isArabic {
+            .MenuCategory-CategoryButton {
+                text-align: right;
+                margin-right: -20px;
+            }
+            .DynamicContent {
+                border-left: 0;
+                border-right: 1px solid var(--light-gray);
+                &-Wrapper {
+                    left: 0;
+                }
+            }
+            .ViewAll {
+                &-Button {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+    @include desktop {
+        padding: 0 15px;
+        z-index: 3;
+        &:nth-child(1) {
+            padding-left: 0;
+        }
+        &-CategoryLink {
+            &:hover {
+                text-decoration: none;
+            }
+            &-Label {
+                color: #ffffff;
+                font-family: "Avenir Next";
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: 0;
+                text-transform: uppercase;
+            }
+        }
+        .DynamicContent {
+            background-color: #ffffff;
+            // display: flex;
+            height: 403px;
+            overflow: hidden;
+            pointer-events: all;
+            position: absolute;
+            width: var(--main-container-width-dsk);
+            max-width: var(--container-max-width);
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            &-Wrapper {
+                position: unset;
+            }
+            &:after {
+                background: rgba(0, 0, 0, 0.7);
+                content: " ";
+                height: 100%;
+                left: 0;
+                pointer-events: none;
+                position: fixed;
+                width: 100%;
+                z-index: -1;
+            }
+            &>div {
+                border-right: 1px solid var(--light-gray);
+            }
+            .DynamicContentBanner {
+                background-color: transparent;
+                border-right: 0;
+                display: block;
+                order: 2;
+                margin: 0 !important;
+                padding: 20px 15px;
+                a {
+                    width: 100%;
+                }
+                .Image {
+                    height: 100%;
+                    width: 100%;
+                    max-height: 303px;
+                    object-fit: cover;
+                }
+            }
+            .MenuBrands {
+                order: 1;
+                width: 100%;
+                margin: 0;
+                padding: 20px 15px;
+                &-ContentWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    a {
+                        .Image {
+                            display: none;
+                        }
+                    }
+                }
+                &-Title {
+                    line-height: 16px;
+                    margin-bottom: 15px;
+                }
+            }
+            .MenuGrid {
+                width: 100%;
+                margin: 0;
+                padding: 20px 15px;
+                &-Column {
+                    display: flex;
+                    flex-direction: column;
+                }
+                &-Title {
+                    line-height: 16px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &:first-child {
+            text-transform: uppercase;
+            .MenuCategory {
+                &-CategoryLink {
+                    text-decoration: none;
+                    &-Label {
+                        color: #C8B581;
+                    }
+                }
+            }
+        }
+        &:last-child {
+            text-transform: uppercase;
+            .MenuCategory {
+                &-CategoryLink {
+                    text-decoration: none;
+                    &-Label {
+                        &::before {
+                            background-color: #d12229;
+                            color: transparent;
+                            transform: skew(-15deg, 0deg) translate(-10px, 0px);
+                            content: "";
+                            width: calc(100% + 20px);
+                            height: 100%;
+                            position: absolute;
+                            z-index: -1;
+                        }
+                    }
+                }
+                &_isArabic {
+                    .MenuCategory {
+                        &::before {
+                            transform: skew(-15deg, 0deg) translate(10px, 0px);
+                        }
+                    }
+                }
+            }
+            .DynamicContent {
+                background-color: #d12229;
+                .DynamicContentBanner {
+                    button:hover {
+                        color: #ffffff;
+                    }
+                }
+                .MenuBrands {
+                    &-ContentWrapper {
+                        &-Brands {
+                            a {
+                                color: #ffffff;
+                            }
+                        }
+                        span {
+                            color: #ffffff;
+                        }
+                    }
+                }
+                .MenuGrid {
+                    &-Content {
+                        background-color: #d12229;
+                        a,
+                        span {
+                            color: #ffffff;
+                        }
+                    }
+                }
+            }
+        }
+        &-LastCategoryBackground {
+            background-color: #d12229;
+            color: transparent;
+            margin-left: -65px;
+            transform: skew(-15deg, 0deg);
+            width: 70px;
+            &_isArabic {
+                color: transparent;
+                margin-right: -90px;
+                transform: skew(-15deg, 0deg);
+                width: 85px;
+                margin-left: 0;
+            }
+        }
+        &:hover {
+            cursor: default;
+            font-weight: var(--fw-bold);
+            height: 40px;
+            letter-spacing: 0;
+        }
+        &_isArabic {
+            .DynamicContent {
+                left: unset;
+                max-width: var(--container-max-width);
+                right: -5px;
+                &>div {
+                    border-left: 1px solid var(--light-gray);
+                    border-right: 0;
+                    &:first-child {
+                        border: 0;
+                    }
+                }
+            }
+            .DynamicContentBanner {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            &:first-child {
+                padding-left: 10px;
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.PageWrapper {
+    &_isArabic {
+        .MenuCategory {
+            @include desktop {
+                &:last-child {
+                    .MenuCategory {
+                        &-CategoryLink {
+                            &-Label {
+                                &::before {
+                                    transform: skew(-15deg, 0deg) translate(10px, 0px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.PageWrapper {
+    .Menu {
+        &.home-menu {
+            .MenuCategory {
+                &:first-child {
+                    text-transform: none;
+                    .MenuCategory-CategoryLink-Label {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}

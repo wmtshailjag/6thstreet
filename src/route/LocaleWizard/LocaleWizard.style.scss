@@ -1,0 +1,118 @@
+:root {
+    --milk-white: #e8e8e8;
+    --lightest-gray: #f5f5f5;
+}
+
+.LocaleWizard {
+    background: url('./icons/trans-bg.png') top center no-repeat;
+
+    @include mobile() {
+        background-size: 500%;
+        min-height: 90vh;
+        padding: 10px 10px 30px;
+    }
+
+    &-Background {
+        background: var(--lightest-gray);
+        height: 100%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &-ContentWrapper {
+        margin: 5% auto 0;
+        max-width: 385px;
+        padding-bottom: 10%;
+
+        @include mobile {
+            background: $white;
+            border: solid 2px var(--milk-white);
+        }
+    }
+
+    &-Logo {
+        padding-top: 50px;
+        text-align: center;
+
+        .HeaderLogo {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &_isArabic {
+            .HeaderLogo {
+                @include mobile {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        .Image {
+            height: 40px;
+            margin: 0 20px;
+            width: 190px;
+        }
+    }
+
+    .WelcomeScreen {
+        &-Close {
+            display: none;
+        }
+
+        &-Options {
+            background: $white;
+            margin-top: 20px;
+
+            @include mobile() {
+                margin: 0 auto;
+                padding: 30px 20px;
+                text-align: center;
+            }
+        }
+
+        &-ButtonsContainer {
+            @include mobile() {
+                button {
+                    width: 100%;
+
+                    &:first-of-type {
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+
+        &-Content {
+            &_isArabic {
+                direction: rtl;
+
+                .WelcomeScreen {
+                    &-Check {
+                        float: left;
+                    }
+
+                    &-ButtonsContainer {
+                        @include mobile() {
+                            button {
+                                width: 100%;
+
+                                &:first-of-type {
+                                    margin-right: 0;
+                                    margin-left: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    &-Options {        
+                        h1, p {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

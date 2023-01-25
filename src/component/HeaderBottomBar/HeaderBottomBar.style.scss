@@ -1,0 +1,198 @@
+:root {
+  --black: #000000;
+  --dark-grey: #a9a9a9;
+  --grey: #d3d3d3;
+  --light-grey: #f3f4f6;
+  --red: #d12229;
+  --white: #ffffff;
+  --white-smoke: #f5f5f5;
+}
+
+.HeaderBottomBar {
+  background: var(--color-black);
+  z-index: 2;
+
+  @include before-desktop {
+    display: none;
+  }
+
+  &-Content {
+    background: var(--color-black);
+
+    .HeaderMenu {
+      height: 100%;
+    }
+
+    @include before-desktop {
+      background-color: #ffffff;
+      height: 100%;
+      padding-bottom: 83px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+      .FooterMain {
+        background-color: #ffffff;
+        display: block;
+        height: 280px;
+        margin-bottom: -144px;
+        padding: 0;
+
+        &-WrapperSecond {
+          margin-bottom: 40px;
+          margin-left: 10px;
+          margin-top: 10px;
+        }
+
+        &-SocialIcon {
+          background-color: var(--light-grey);
+        }
+
+        .HeaderAccount {
+          border-bottom: 1px solid var(--light-grey);
+          margin: 0 10px;
+          padding-bottom: 10px;
+
+          &-Button {
+            margin-left: 50px;
+
+            &_isArabic {
+              left: 12px;
+            }
+          }
+
+          label {
+            font-size: 17px;
+            font-weight: var(--fw-regular);
+            padding-left: 10px;
+
+            &:before {
+              margin-top: 2px;
+            }
+          }
+        }
+
+        h4 {
+          font-weight: var(--fw-thin);
+          margin-bottom: 10px;
+          margin-left: 12px;
+          margin-top: 30px;
+        }
+
+        &-WrapperFirst {
+          margin: 10px 11px;
+          margin-right: 0;
+
+          a {
+            margin-left: 0;
+
+            img {
+              max-width: 125px;
+            }
+          }
+        }
+
+        &-Column {
+          height: 250px;
+          margin-top: 150px;
+
+          .FooterMain-Nav {
+            display: grid;
+
+            a {
+              border-bottom: 1px solid var(--light-gray);
+              line-height: 50px;
+              margin-left: 12px;
+
+              &:after {
+                border-bottom: 2px solid #a9a9a9;
+                border-right: 2px solid #a9a9a9;
+                content: "";
+                display: inline-block;
+                height: 7px;
+                margin-left: auto;
+                margin-right: 0;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                transform: rotate(-45deg);
+                width: 7px;
+                z-index: 100;
+              }
+            }
+          }
+        }
+      }
+
+      .FooterMiddle {
+        &-StoreSwitcher {
+          margin-top: -20px;
+        }
+      }
+
+      &_isArabic {
+        .FooterMain {
+          &-Column {
+            .FooterMain-Nav {
+              a {
+                margin-left: 0;
+                margin-right: 12px;
+
+                &:after {
+                  left: 20px;
+                  right: unset;
+                  top: 20px;
+                  transform: rotate(135deg);
+                }
+              }
+            }
+          }
+
+          h4 {
+            margin-left: 0;
+            margin-right: 12px;
+          }
+
+          &-WrapperFirst {
+            margin-left: 0;
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+
+    .HeaderMenu {
+      &-Button {
+        display: none;
+      }
+    }
+
+    @include desktop {
+      .FooterMain {
+        display: none;
+
+        &-Column {
+          display: none;
+        }
+      }
+
+      .FooterMiddle {
+        display: none;
+
+        &-StoreSwitcher {
+          display: none;
+        }
+      }
+
+      display: flex;
+      margin: 0 auto;
+      max-width: var(--container-max-width);
+      width: var(--main-container-width-dsk);
+    }
+  }
+
+  @include desktop {
+    padding: 0 15px;
+  }
+}

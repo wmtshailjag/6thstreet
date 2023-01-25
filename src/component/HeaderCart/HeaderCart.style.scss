@@ -1,0 +1,71 @@
+:root {
+  --OutrageousOrange: #f96446;
+}
+
+.HeaderCart {
+  position: relative;
+  // z-index: 96;
+  @include mobile {
+    z-index: 96;
+  }
+  &-PopUp {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0;
+    cursor: default;
+    pointer-events: all;
+    z-index: 96;
+
+    @include desktop {
+      display: block;
+    }
+
+    &_isHidden {
+      display: none;
+    }
+  }
+
+  &-Button {
+    content: "";
+    background: url(./icons/basket.svg) no-repeat;
+    background-size: 24px;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    // top: -4px;
+    padding: 0;
+  }
+
+  &-Count {
+    position: absolute;
+    top: -2px;
+    right: 14px;
+    background-color: var(--OutrageousOrange);
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 8px;
+    font-weight: var(--fw-demi);
+    padding-top: 2px;
+
+    @include desktop() {
+      right: 0;
+    }
+  }
+
+  .Loader {
+    position: absolute;
+
+    &-Scale {
+      top: 50%;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.Brand {
+    display: block;
+    margin-top: 1rem;
+}
+.BrandLink {
+    text-transform: none;
+    height: unset;
+    padding: 0;
+    font-weight: var(--fw-regular);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-left: 0;
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+    }
+}

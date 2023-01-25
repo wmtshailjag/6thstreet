@@ -1,0 +1,154 @@
+.MyAccountMyWishlist {
+  margin: 20px 0 150px 0;
+  @include tablet {
+    margin-top: 594px;
+    padding-bottom: 130px;
+  }
+  .Price {
+    justify-content: center;
+    display: block;
+    text-align: left;
+  }
+  .ProductItem {
+    &-ImageBox {
+      padding-top: unset!important;
+      margin-bottom: 10px;
+    }
+    .Image {
+      // position: unset!important;
+      top: unset!important;
+      left: unset!important;
+      padding-bottom: unset!important;
+    }
+    &-Brand {
+      text-align: left;
+      @include mobile {
+          font-size: 12px;
+          line-height: 7px;
+      }
+    }
+    &-Title {
+      // margin: 0 auto;
+      text-align: left;
+      @include mobile {
+          font-size: 11px;
+          line-height: 14px;
+      }
+    }
+    .Price {
+      justify-content: center;
+      display: block;
+      text-align: left;
+      @include mobile {
+          line-height: 17px;
+          &-Wrapper {
+              display: block;
+              //text-align: center;
+          }
+          &-Discount {
+              display: block;
+              //text-align: center;
+          }
+          &-Base {
+              display: block;
+              //text-align: center;
+          }
+          &-Base_discount {
+              display: inline;
+          }
+      }
+    }
+    .PLPSummary-Colors {
+      background-color: #ffffff;
+      opacity: 0.8;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 4px 0px;
+    }
+    .PLPSummary-Exclusive {
+      background-color: #ffffff;
+      opacity: 0.8;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 4px 0px;
+      @include mobile {
+          font-size: 12px;
+      }
+    }
+  }
+  &-Empty {
+    h2 {
+      font-size: 30px;
+      font-weight: var(--fw-demi);
+      letter-spacing: -0.83px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: unset;
+    }
+
+    span {
+      background: linear-gradient(225deg, #ff8960 0%, #ff62a5 100%);
+    }
+  }
+
+  &-Items {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-column-gap: 1.8%;
+    width: 98%;
+
+    @include after-mobile {
+      grid-template-columns: 32.66% 32.66% 32.66%;
+      grid-column-gap: 2%;
+      grid-row-gap: 65px;
+    }
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 10px;
+      width: 100%;
+      padding-bottom: 80px;
+    }
+  }
+
+  &-Item {
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    font-weight: var(--fw-regular);
+
+    li::before {
+      content: "";
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.PageWrapper {
+  &_isArabic {
+    .MyAccountMyWishlist {
+      .Price {
+        text-align: right;
+        flex-direction: row-reverse;
+      
+        &-Wrapper {
+          // display: flex;
+          flex-direction: row-reverse;
+          margin: 0;
+        }
+      }
+      .ProductItem {
+        &-Brand {
+          text-align: right;
+        }
+        &-Title {
+            text-align: right;
+        }
+      }
+    }
+  }
+}

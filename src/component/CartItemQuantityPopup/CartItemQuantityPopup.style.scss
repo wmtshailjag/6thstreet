@@ -1,0 +1,53 @@
+$select-arrow-height: 6px !default;
+$select-arrow-width: 6px !default;
+
+:root {
+    --text-color: #000000;
+    --text-color-on-dark-background: #ffffff;
+    --loading-button-background-color: #808080;
+    --success-color: #00f0a5;
+    --checkout-border-gray: #d6d6d6;
+    --checkout-button-red: #ff0505
+}
+
+.CartItemQuantityPopup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    z-index: 999999;
+    background-color: #ffffff;
+    left: 0;
+    height: 58%;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 -4px 6px 0 rgba(0,0,0,0.15);
+    h3 {
+        margin-bottom: 1.25rem;
+    }
+    &-QuantitySelectContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 0 32px;
+        display: flex;
+        overflow-y: scroll;
+        .QuantityButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 24px 32px;
+            border-bottom: 1px solid #EFEFEF;
+            color: #9B9B9B;
+            font-weight: 500;
+            height: 60px;
+            &_isSelected {
+                color: #000000;
+                svg {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
